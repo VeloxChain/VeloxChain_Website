@@ -17,14 +17,18 @@ $(document).scroll(function(){
             $('.navbar-nav').removeClass('navbar-nav-fix');
             $('.navbar-brand').removeClass('logo-fix');
         }
+    } else {
+        $('.navbar-default').addClass('nav-menu');
+        $('.navbar-nav').addClass('navbar-nav-fix');
+        $('.navbar-brand').addClass('logo-fix');
     }
 });
 
-$('.navbar-default').addClass('nav-menu');
-$('.navbar-nav').addClass('navbar-nav-fix');
-$('.navbar-brand').addClass('logo-fix');
-
-
+if($(window).width() < 767) {
+    $('.navbar-default').addClass('nav-menu');
+    $('.navbar-nav').addClass('navbar-nav-fix');
+    $('.navbar-brand').addClass('logo-fix');
+}
 // count down
 
 var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();

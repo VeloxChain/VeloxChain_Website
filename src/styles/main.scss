@@ -1,17 +1,17 @@
-
 @font-face {
     font-family: "Lato-Regular";
     src: url("../fonts/Lato-Regular.ttf");
 }
 
+$color: #00F58A;
+
 body { 
-    background: #10122d !important; 
     font-family: "Lato-Regular" !important;
     color: #fff !important;
 }
 
 .cl-web {
-    color: #00F58A;
+    color: $color;
 }
 
 .particles-container { 
@@ -39,22 +39,32 @@ body {
             }
 
             .whitepaper {
-                border: 1px solid #00F58A;
+                border: 1px solid $color;
                 border-radius: 5px;
                 padding: 10px 15px;
                 margin-top: 5px;
-                color: #00F58A !important;
+                color: $color !important;
             }
         }
     }
 
+    .navbar-collapse {
+        @media screen and (max-width: 767px) {
+            margin-top: 10px;
+        }
+    }
+
     .navbar-toggle {
-        border-color: #00F58A !important;
+        border-color: $color !important;
         border-radius: 0px;
         margin-top: 18px;
 
+        &:hover {
+            background-color: transparent !important;
+        }
+
         .icon-bar {
-            background-color: #00F58A !important;
+            background-color: $color !important;
         }
     }
 
@@ -162,7 +172,7 @@ body {
             content: '';
             width: 100px;
             height: 2px;
-            background-color: #00F58A;
+            background-color: $color;
             position: absolute;
             bottom: 0;
             left: 50%;
@@ -174,10 +184,61 @@ body {
 .about {
     background-image: url('../images/test.png');
     background-size: cover;
-    padding-top: 30px;
+    padding: 30px 0px;
 
     .block-about {
         text-align: center;
         margin-bottom: 30px;
+    }
+}
+
+.roadmap {
+    padding: 30px 0px;
+
+    .title-web {
+        color: #000;
+    }
+
+    .timeline__item {
+        padding: 0 0 3.5rem !important;
+
+        @media screen and (max-width: 767px) {
+            padding: .625rem 1rem 1rem 4.5rem !important;
+        }
+
+        &:after {
+            height: 30px;
+            width: 30px;
+            border: 4px solid $color;
+        }
+    }
+
+    .timeline__item--bottom {
+        padding: 3.5rem 0 0 !important;
+    }
+
+    .timeline-nav-button {
+        border: 2px solid $color;
+    }
+
+    .timeline-divider {
+        background-color: $color !important;
+    }
+
+    .timeline__content {
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    .timeline--mobile {
+        &:before {
+            background-color: $color !important;
+            left: 15px !important;
+        }
     }
 }
