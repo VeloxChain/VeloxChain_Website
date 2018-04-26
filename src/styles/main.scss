@@ -1,0 +1,183 @@
+
+@font-face {
+    font-family: "Lato-Regular";
+    src: url("../fonts/Lato-Regular.ttf");
+}
+
+body { 
+    background: #10122d !important; 
+    font-family: "Lato-Regular" !important;
+    color: #fff !important;
+}
+
+.cl-web {
+    color: #00F58A;
+}
+
+.particles-container { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    height: 100%; 
+    width: 100%; 
+    z-index: 2;
+}
+
+.navbar-default {
+    background-color: transparent !important;
+    border: none !important;
+    margin-top: 20px;
+    transition: all 0.3s;
+
+    .navbar-nav {
+        transition: all 0.3s;
+
+        li {
+            a {
+                color: #fff !important;
+                font-weight: bold;
+            }
+
+            .whitepaper {
+                border: 1px solid #00F58A;
+                border-radius: 5px;
+                padding: 10px 15px;
+                margin-top: 5px;
+                color: #00F58A !important;
+            }
+        }
+    }
+
+    .navbar-toggle {
+        border-color: #00F58A !important;
+        border-radius: 0px;
+        margin-top: 18px;
+
+        .icon-bar {
+            background-color: #00F58A !important;
+        }
+    }
+
+    .navbar-brand {
+        padding: 5px 15px;
+        transition: all 0.3s;
+
+        img {
+            height: 40px;
+        }
+    }
+}
+
+.navbar {
+    min-height: 70px !important;
+}
+
+.nav-menu {
+    margin-top: 0px;
+    background: rgba(6, 10, 26, 0.8) !important;
+}
+
+.logo-fix {
+    padding: 15px !important;
+}
+
+.navbar-nav-fix {
+    margin-top: 8px !important;
+}
+
+.site-header {
+    background-image: url('../images/banner.jpg');
+    background-size: cover;
+    min-height: 100vh; 
+    position: relative;
+
+    .content-banner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .title {
+            font-size: 60px;
+
+            @media screen and (max-width: 767px) {
+                font-size: 30px;
+            }
+        }
+
+        .description {
+            font-size: 20px;
+        }
+
+        .countup {
+            margin-top: 30px;
+
+            .block {
+                position: relative;
+
+                .countup-img {
+                    opacity: 0.4;
+                    width: 70%;
+                }
+
+                .number {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 30px;
+                }
+            }
+
+            .title-countup {
+                margin-top: 10px;
+                font-size: 20px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.title-web {
+    text-align: center;
+
+    .title-top {
+    }
+
+    .title-bottom {
+        text-transform: uppercase;
+        padding-bottom: 20px;
+        margin-bottom: 50px;
+        position: relative;
+
+        &:after {
+            content: '';
+            width: 100px;
+            height: 2px;
+            background-color: #00F58A;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+    }
+}
+
+.about {
+    background-image: url('../images/test.png');
+    background-size: cover;
+    padding-top: 30px;
+
+    .block-about {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
