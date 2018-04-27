@@ -28,14 +28,16 @@
   "vendorCss": [
     "./bower_components/bootstrap/dist/css/bootstrap.min.css",
     "./bower_components/font-awesome/css/font-awesome.min.css",
-    "./bower_components/timeline/css/timeline.min.css"
+    "./bower_components/timeline/css/timeline.min.css",
+    "./bower_components/fancybox/jquery.fancybox.min.css"
   ],
   "vendors": [
     "./bower_components/jquery/dist/jquery.min.js",
     "./bower_components/bootstrap/dist/js/bootstrap.min.js",
     "./bower_components/particles/js/jquery.bundle.js",
     "./bower_components/particles/js/script.js",
-    "./bower_components/timeline/js/timeline.min.js"
+    "./bower_components/timeline/js/timeline.min.js",
+    "./bower_components/fancybox/jquery.fancybox.min.js"
   ],
   "fonts": [
     "./bower_components/bootstrap/fonts/*.*",
