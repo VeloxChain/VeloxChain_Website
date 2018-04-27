@@ -28,6 +28,12 @@ a {
     }
 }
 
+.btn {
+    &:focus {
+        outline: none !important;
+    }
+}
+
 .particles-container { 
     position: absolute; 
     top: 0; 
@@ -116,6 +122,7 @@ a {
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: 10;
 
         .title {
             font-size: 60px;
@@ -127,6 +134,101 @@ a {
 
         .description {
             font-size: 20px;
+        }
+
+        .action {
+            position: relative;
+            margin-top: 40px;
+
+            @media screen and (max-width: 767px) {
+                padding: 0px 10px;
+                margin-top: 20px;
+            }
+
+            .subcribe {
+                padding: 25px;
+                border-radius: 50px;
+                border-color: $color;
+                background-color: #2f3982;
+                color: #fff;
+                font-size: 16px;
+
+                @media screen and (max-width: 767px) {
+                    font-size: 14px;
+                    padding: 20px;
+                }
+            }
+
+            .btn-action {
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: #3bdc90;
+                color: #fff;
+                padding: 14px 40px;
+                border-radius: 50px;
+                font-size: 16px;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+
+                @media screen and (max-width: 767px) {
+                    right: 10px;
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                    padding: 10px 20px;
+                }
+            }
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+                @media screen and (max-width: 767px) {
+                    display: block;
+                }
+
+            .btn-click {
+                background-color: transparent;
+                border: 1px solid $color;
+                border-radius: 40px;
+                padding: 10px 20px;
+                text-transform: uppercase;
+                color: $color;
+                letter-spacing: 1px;
+                width: 230px;
+
+                &:hover {
+                    color: $color;
+                }
+
+                &:focus {
+                    color: $color;
+                }
+            }
+
+            .or {
+                margin: 0px 20px;
+                font-size: 20px;
+                line-height: 42px;
+            }
+        }
+
+
+        ul.social {
+            list-style: none;
+            margin-top: 20px;
+            -webkit-padding-start: 0px;
+
+            li {
+                display: inline-block;
+                width: 40px;
+
+                a {
+                    color: #fff;
+                    font-size: 22px;
+                }
+            }
         }
 
         /*.countup {
@@ -347,6 +449,22 @@ a {
 
     .contribuling {
         margin-bottom: 40px;
+    }
+}
+
+.partner {
+    padding: 30px 0px 50px;
+    background-image: url('../images/How-blockchain-can-revitalize_Banner.png');
+    background-size: cover;
+
+    .media-logo {
+        margin-bottom: 20px;
+        text-align: center;
+
+        img {
+            width: 70%;
+            margin: 20px auto;
+        }
     }
 }
 
