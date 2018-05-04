@@ -38,7 +38,7 @@ router.post('/add_whitelist', function(req, res, next) {
   let emailToAdd = req.body.email;
 
   if(!validateEmail(emailToAdd)) {
-    return failResponse(res, 'invalid email');
+    return failResponse(res, 'Invalid email');
   }
 
   models.whitelist.findOrCreate({
@@ -52,7 +52,7 @@ router.post('/add_whitelist', function(req, res, next) {
   }).spread(
     (data, created) => {
       if(!created){
-        return failResponse(res, 'email is added');
+        return failResponse(res, 'Email is added');
       }
 
       const msg = {
@@ -74,7 +74,7 @@ router.post('/add_whitelist', function(req, res, next) {
 router.post('/action_presale', function(req, res, next) {
   let { full_name, email, is_investor, represent_type, desired_allocation, citizenship, sending_addr, note } = req.body;
   if(!validateEmail(email)) {
-    return failResponse(res, 'invalid email');
+    return failResponse(res, 'Invalid email');
   }
 
   models.presale.create({

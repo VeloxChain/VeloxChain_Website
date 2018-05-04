@@ -473,15 +473,18 @@
           serializedData = $(this).serialize();
 
           request = $.ajax({
-              url: "/action_presale",
-              type: "post",
-              data: serializedData
+            url: "/action_presale",
+            type: "post",
+            data: serializedData
           });
 
           // Callback handler that will be called on success
           request.done(function (response, textStatus, jqXHR){
             if(response.status === "success") {
               document.location.href="/";
+            }
+            else {
+              toastr.error(response.data);
             }
           });
         });

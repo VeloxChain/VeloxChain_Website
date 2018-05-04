@@ -103,7 +103,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="presale.html">Pre-sale
+                                <a href="presale">Pre-sale
                                 </a>
                             </li>
                         </ul>
@@ -772,6 +772,9 @@
 
             request.done(function (response, textStatus, jqXHR){
               if(response.status === "success") {
+                toastr.success("Thank you for registration!");
+              } else {
+                toastr.error(response.data);
               }
             });
           });
