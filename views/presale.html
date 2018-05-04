@@ -470,6 +470,13 @@
       $( document ).ready(function() {
         $("#presale-form").on("submit", function( event ) {
           event.preventDefault();
+
+          if(!$('#confirm').is(":checked")) {
+            toastr.warning("please agree to the 'I understand ....'");
+            return
+          }
+
+
           serializedData = $(this).serialize();
 
           request = $.ajax({
