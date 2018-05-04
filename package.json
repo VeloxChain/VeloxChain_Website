@@ -29,7 +29,8 @@
     "./bower_components/bootstrap/dist/css/bootstrap.min.css",
     "./bower_components/font-awesome/css/font-awesome.min.css",
     "./bower_components/timeline/timeline.min.css",
-    "./bower_components/fancybox/jquery.fancybox.min.css"
+    "./bower_components/fancybox/jquery.fancybox.min.css",
+    "./bower_components/toastr/toastr.css"
   ],
   "vendors": [
     "./bower_components/jquery/dist/jquery.min.js",
@@ -37,7 +38,8 @@
     "./bower_components/particles/js/jquery.bundle.js",
     "./bower_components/particles/js/script.js",
     "./bower_components/timeline/timeline.min.js",
-    "./bower_components/fancybox/jquery.fancybox.min.js"
+    "./bower_components/fancybox/jquery.fancybox.min.js",
+    "./bower_components/toastr/toastr.min.js"
   ],
   "fonts": [
     "./bower_components/bootstrap/fonts/*.*",
