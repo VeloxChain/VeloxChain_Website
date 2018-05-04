@@ -18,9 +18,7 @@ npm install
 
 ### Start docker for MySQL virtual machine
 
-cd docker
-docker-compose up -d
+cd docker && docker-compose up -d
 
 ### Start project as development environment
-cd ..
-npm start
+cd .. && npm start
