@@ -22,10 +22,10 @@ cd docker && docker-compose up -d
 
 ### Export mysql database
 1. Access mysql database local by
-  DB_HOST: 127.0.0.1
-  DB_PORT: 3306
-  DB_USERNAME: root
-  DB_PASS: password
+  #DB_HOST: 127.0.0.1
+  #DB_PORT: 3306
+  #DB_USERNAME: root
+  #DB_PASS: password
 2. Create a database which named by volatacycle
 3. Import DB by mysql_script/volatacycle_export.sql file
 
