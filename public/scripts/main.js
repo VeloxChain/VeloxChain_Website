@@ -49,7 +49,7 @@ menuItems.click(function(e){
   e.preventDefault();
 });
 
-$('.navbar-brand').click(function(e){
+$('#home .navbar-brand').click(function(e){
     var href = $(this).attr("href"),
         offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
     $('html, body').stop().animate({ 
