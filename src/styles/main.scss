@@ -143,11 +143,12 @@ a {
         }
 
         .description {
-            font-size: 22px;
+            font-size: 30px;
             font-family: "Lato-Light";
 
             @media screen and (max-width: 767px) {
                 padding: 0px 10px;
+                font-size: 22px;
             }
         }
 
@@ -314,7 +315,7 @@ a {
     }
 
     .description {
-        font-size: 16px;
+        font-size: 18px;
         max-width: 80%;
         margin: 0 auto;
 
@@ -341,19 +342,36 @@ a {
 }
 
 .token {
-    background-image: url('../images/world.png');
-    background-size: cover;
+    /*background-image: url('../images/world.png');
+    background-size: cover;*/
     padding: 30px 0px;
+    position: relative;
+    height: auto;
+
+    .content-token {
+        position: relative;
+        z-index: 5;
+    }
 
     .images-token {
         margin: 50px 0px 30px;
         width: 100%;
     }
+    
+    .image-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+    }
+}
+
+.group {
+    background: linear-gradient(#030A12, #323A4E, #0D2035);
 }
 
 .token-sale {
-    background-image: url('../images/Group214.png');
-    background-size: cover;
     padding: 30px 0px 50px;
 
     .title-top {
@@ -365,37 +383,67 @@ a {
         margin-bottom: 50px;
     }
 
-    .content {
-        margin: 40px 100px;
-        border: 1px solid $color;
-        padding: 30px 50px;
+    .title-fund {
+        margin-top: 100px;
+    }
 
-        @media screen and (max-width: 992px) {
-            padding: 30px;
-        }
+    .content {
+        display: flex;
 
         @media screen and (max-width: 767px) {
-            margin: 40px 0px;
-            padding: 10px;
+            display: block;
         }
 
-        ul {
-            list-style: none;
-            text-transform: uppercase;
+        .content-left {
+            width: 50%;
+            border-radius: 10px 0px 0px 10px;
 
-            @media screen and (max-width: 992px) {
-                -webkit-padding-start: 0px;
+            @media screen and (max-width: 767px) {
+                border-radius: 0;
+                width: 100%;
             }
 
-            li {
-                margin-bottom: 25px;
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px 0px 0px 10px;
 
-                h4 {
-                    color: $color;
+                @media screen and (max-width: 767px) {
+                    border-radius: 0;
+                    height: auto;
                 }
+            }
+        }
 
-                h5 {
-                    color: #0d2135;
+        .content-right {
+            width: 50%;
+            background-image: url('../images/Group 344.png');
+            background-size: cover;
+            padding: 35px 20px 10px;
+            border-radius: 0px 10px 10px 0px;
+
+            @media screen and (max-width: 767px) {
+                border-radius: 0;
+                width: 100%;
+            }
+
+            ul {
+                list-style: none;
+                text-transform: uppercase;
+                -webkit-padding-start: 0px;
+
+                li {
+                    margin-bottom: 25px;
+
+                    h4 {
+                        color: $color;
+                        font-size: 14px;
+                    }
+
+                    h5 {
+                        color: #fff;
+                        font-size: 18px;
+                    }
                 }
             }
         }
@@ -441,10 +489,12 @@ a {
     }
 
     .timeline__content {
+        background: transparent;
         border: none;
         margin-left: 20px;
         padding-left: 20px !important;
         padding-right: 30px !important;
+        color: #fff;
 
         @media screen and (max-width: 767px) {
             padding-left: 10px !important;
@@ -461,6 +511,7 @@ a {
 
         h2 {
             font-size: 20px;
+            color: $color;
         }
 
         p {
@@ -603,7 +654,6 @@ a {
 }
 
 .team {
-    background: linear-gradient(rgb(235, 235, 235), #fff);
     padding: 30px 0px 50px;
 
     .title-top {
@@ -612,14 +662,14 @@ a {
 
     .title-team {
         text-transform: uppercase;
-        color: rgb(13, 33, 53);
+        color: #fff;
         text-align: center;
         margin-bottom: 30px;
     }
 
     .title-web {
         .description {
-            color: #000;
+            color: #fff;
             margin-bottom: 40px;
         }
     }
@@ -643,19 +693,18 @@ a {
         }
 
         .position {
-            color: $color;
+            color: #686868;
             font-size: 16px;
         }
 
         .linkedin {
             font-size: 20px;
-            color: $color;
+            color: #293448;
         }
 
         .description {
             margin-top: 20px;
             margin-bottom: 20px;
-            font-style: italic;
         }
 
         .logo {
@@ -680,10 +729,6 @@ a {
 .partner {
     padding: 30px 0px 50px;
     background: rgb(236, 236, 236);
-
-    .title-top {
-        color: #0d2135;
-    }
 
     .media-logo {
         text-align: center;
@@ -764,44 +809,6 @@ a {
         text-align: center;
     }
 }
-
-/*.contact {
-    background-image: url('../images/contact.jpg');
-    background-size: cover;
-    padding: 30px 0px;
-
-    .input-contact {
-        width: 100%;
-        border: none;
-        border-bottom: 2px solid #fdfdfd;
-        background: transparent;
-        padding: 15px;
-        margin: 30px 0px;
-        transition: .5s;
-
-        &:focus {
-            outline: none;
-            border-bottom: 2px solid $color;
-        }
-
-        @media screen and (max-width: 767px) {
-            margin: 10px 0px;
-        }
-    }
-
-    .btn-web {
-        background-color: $color;
-        color: #fff;
-        font-size: 18px;
-        padding: 10px 30px;
-        margin-top: 20px;
-        text-transform: uppercase;
-
-        &:hover {
-            color: #fff;
-        }
-    }
-}*/
 
 .presale {
     margin-top: 70px;
@@ -900,15 +907,23 @@ a {
         cursor: pointer;
     }
 
+    .action-xs {
+        @media screen and (max-width: 767px) {
+            text-align: center;
+        }
+    }
+
     .btn-presale {
         color: #fff;
-        background-color: #007bff;
-        border-color: #007bff;
+        background-color: $color;
+        border-color: $color;
         min-height: 48px;
         min-width: 250px;
         border-radius: 30px;
         font-weight: bold;
         font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
 
         &:hover {
             color: #fff;
