@@ -123,7 +123,7 @@ a:focus {
       position: relative;
       margin-top: 40px;
       z-index: 10; }
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: 992px) {
         .site-header .content-banner .action {
           padding: 0px 10px;
           margin-top: 20px; } }
@@ -149,9 +149,11 @@ a:focus {
         font-size: 16px;
         text-transform: uppercase;
         letter-spacing: 3px; }
+        @media screen and (max-width: 992px) {
+          .site-header .content-banner .action .btn-action {
+            right: 10px; } }
         @media screen and (max-width: 767px) {
           .site-header .content-banner .action .btn-action {
-            right: 10px;
             font-size: 14px;
             letter-spacing: 1px;
             padding: 10px 20px; } }
@@ -576,18 +578,18 @@ a:focus {
     color: #333; }
   
     .team .member.member-first {
-      min-height: 807px; }
+      min-height: 784px; }
     .team .member.member-second {
-      min-height: 858px; }
+      min-height: 751px; }
     .team .member.member-three {
-      min-height: 724px; }
+      min-height: 686px; }
     @media screen and (max-width: 1200px) {
       .team .member.member-first {
-        min-height: 910px; }
+        min-height: 878px; }
       .team .member.member-second {
-        min-height: 870px; }
+        min-height: 811px; }
       .team .member.member-three {
-        min-height: 746px; } }
+        min-height: 730px; } }
     @media screen and (max-width: 992px) {
       .team .member.member-first {
         min-height: 1062px; }
@@ -595,6 +597,11 @@ a:focus {
         min-height: 1020px; }
       .team .member.member-three {
         min-height: 892px; } }
+    @media screen and (max-width: 767px) {
+      .team .member.member-first,
+      .team .member.member-second,
+      .team .member.member-three {
+        min-height: auto; } }
 
     .team .member .avatar {
       width: 150px;
@@ -620,6 +627,32 @@ a:focus {
             height: auto; } }
       .team .member .logo .logo-company {
         width: 100%; }
+      .team .member .logo .logo-company.custom {
+        height: 100px;
+        width: auto; }
+      .team .member .logo .logo-company.w100 {
+        width: 100px; }
+      .team .member .logo .logo-company.w70 {
+        width: 70px; }
+      .team .member .logo .logo-company.h120 {
+        height: 120px;
+        width: auto; }
+
+      @media screen and (max-width: 1200px) {
+        .team .member .logo .logo-company.custom {
+          height: 80px; } 
+        .team .member .logo .logo-company.w100 {
+          width: 80px; } 
+        .member.rossi .description {
+          margin-bottom: 0px; } }
+
+      @media screen and (max-width: 992px) {
+        .team .member .logo .logo-company.custom {
+          height: auto; 
+          width: 100%; } 
+        .team .member .logo .logo-company.w100 {
+          width: 100%; } }
+
   .team .contribuling {
     margin-top: 20px;
     margin-bottom: 40px; }
