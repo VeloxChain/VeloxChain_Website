@@ -650,7 +650,7 @@ a:focus {
 
       @media screen and (max-width: 992px) {
         .team .member .logo .logo-company.w120 {
-          width: 1000%; }
+          width: 100%; }
         .team .member .logo .logo-company.custom {
           height: auto; 
           width: 100%; } 
