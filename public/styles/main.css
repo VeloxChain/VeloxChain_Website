@@ -223,7 +223,7 @@ a:focus {
         width: 40px; }
         .site-header .content-banner ul.social li a {
           color: #fff;
-          font-size: 22px; }
+          font-size: 27px; }
 
 .title-web {
   text-align: center; }
@@ -341,7 +341,8 @@ a:focus {
 .token-sale {
   padding: 30px 0px 50px; }
   .token-sale .title-top {
-    color: #0d2135; }
+    color: #0d2135;
+    margin-bottom: 50px; }
   .token-sale .description {
     color: #0d2135;
     margin-bottom: 50px; }
@@ -546,6 +547,28 @@ a:focus {
     text-align: center;
     background: #fff;
     color: #333; }
+  
+    .team .member.member-first {
+      min-height: 807px; }
+    .team .member.member-second {
+      min-height: 858px; }
+    .team .member.member-three {
+      min-height: 724px; }
+    @media screen and (max-width: 1200px) {
+      .team .member.member-first {
+        min-height: 910px; }
+      .team .member.member-second {
+        min-height: 870px; }
+      .team .member.member-three {
+        min-height: 746px; } }
+    @media screen and (max-width: 992px) {
+      .team .member.member-first {
+        min-height: 1062px; }
+      .team .member.member-second {
+        min-height: 1020px; }
+      .team .member.member-three {
+        min-height: 892px; } }
+
     .team .member .avatar {
       width: 150px;
       border-radius: 50%;
@@ -561,11 +584,13 @@ a:focus {
     .team .member .description {
       margin-top: 20px;
       margin-bottom: 20px; }
-    .team .member .logo {
-      height: 70px; }
       @media screen and (max-width: 767px) {
         .team .member .logo {
-          height: auto; } }
+          height: auto; }
+          .team .member.member-first,
+          .team .member.member-second,
+          .team .member.member-three {
+            height: auto; } }
       .team .member .logo .logo-company {
         width: 100%; }
   .team .contribuling {
