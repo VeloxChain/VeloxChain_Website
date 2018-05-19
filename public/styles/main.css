@@ -578,9 +578,9 @@ a:focus {
     color: #333; }
   
     .team .member.member-first {
-      min-height: 784px; }
+      min-height: 762px; }
     .team .member.member-second {
-      min-height: 751px; }
+      min-height: 737px; }
     .team .member.member-three {
       min-height: 686px; }
     @media screen and (max-width: 1200px) {
@@ -628,15 +628,17 @@ a:focus {
       .team .member .logo .logo-company {
         width: 100%; }
       .team .member .logo .logo-company.custom {
-        height: 100px;
+        height: 80px;
         width: auto; }
       .team .member .logo .logo-company.w100 {
-        width: 100px; }
+        width: 80px; }
       .team .member .logo .logo-company.w70 {
-        width: 70px; }
+        width: 60px; }
       .team .member .logo .logo-company.h120 {
         height: 120px;
         width: auto; }
+      .team .member .logo .logo-company.w120 {
+        width: 120px; }
 
       @media screen and (max-width: 1200px) {
         .team .member .logo .logo-company.custom {
@@ -647,6 +649,8 @@ a:focus {
           margin-bottom: 0px; } }
 
       @media screen and (max-width: 992px) {
+        .team .member .logo .logo-company.w120 {
+          width: 1000%; }
         .team .member .logo .logo-company.custom {
           height: auto; 
           width: 100%; } 
