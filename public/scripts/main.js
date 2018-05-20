@@ -60,12 +60,7 @@ $('#home .navbar-brand').click(function(e){
 
 // time line
 
-timeline(document.querySelectorAll('.timeline'), {
-  forceVerticalMode: 700,
-  mode: 'horizontal',
-  verticalStartPosition: 'left',
-  visibleItems: 3
-});
+timeline(document.querySelectorAll('.timeline'));
 
 // menu mobile
 
