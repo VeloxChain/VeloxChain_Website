@@ -284,7 +284,7 @@ a:focus {
         display: block; } }
     .tech .content .content-left {
       width: 50%;
-      background-image: url("../images/Group 344.png");
+      background-image: url("../images/Group-344.png");
       background-size: cover;
       padding: 35px 20px 10px;
       border-radius: 10px 0px 0px 10px; }
@@ -352,7 +352,7 @@ a:focus {
             height: auto; } }
     .token-sale .content .content-right {
       width: 50%;
-      background-image: url("../images/Group 344.png");
+      background-image: url("../images/Group-344.png");
       background-size: cover;
       padding: 35px 20px 10px;
       border-radius: 0px 10px 10px 0px; }
@@ -418,6 +418,8 @@ a:focus {
           .roadmap .timeline__content h2 {
             font-size: 20px;
             color: #000; }
+          .roadmap .timeline__content ul {
+            -webkit-padding-start: 0px;  }
           .roadmap .timeline__content li {
             list-style: none;
             font-size: 16px;
