@@ -184,9 +184,11 @@ a:focus {
         width: 230px;
         font-weight: bold; }
         .site-header .content-banner .button .btn-click:hover {
-          color: #00F58A; }
+          background: rgba(6, 10, 26, 0.8);
+          color: #00ff90; }
         .site-header .content-banner .button .btn-click:focus {
-          color: #00F58A; }
+          background: transparent;
+          color: #00ff90; }
     .site-header .content-banner ul.social {
       position: relative;
       list-style: none;
@@ -205,8 +207,6 @@ a:focus {
 
 .title-web {
   text-align: center; }
-  .title-web .title-top {
-    font-weight: bold; }
   .title-web .title-bottom {
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -244,6 +244,8 @@ a:focus {
     .about .block-about .title {
       margin: 40px 0px;
       letter-spacing: 1px; }
+      .about .block-about .description {
+        font-size: 16px;}
 
 .token {
   /*background-image: url('../images/world.png');
