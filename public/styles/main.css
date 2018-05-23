@@ -730,8 +730,8 @@ a:focus {
     text-align: center; }
 
 .presale {
-  margin-top: 70px;
-  padding: 30px 0px;
+  /* margin-top: 70px;
+  padding: 30px 0px; */
   color: #212529;
   font-size: 16px;
   font-family: "Lato-Light"; }
@@ -744,17 +744,6 @@ a:focus {
     margin-bottom: 30px; }
     .presale .form-group label {
       margin-bottom: 10px; }
-    .presale .form-group .input-group-btn {
-      min-width: 75px; }
-      .presale .form-group .input-group-btn button {
-        border-bottom-right-radius: 10px;
-        border-top-right-radius: 10px;
-        color: #fff;
-        background-color: #868e96;
-        border-color: #868e96;
-        font-weight: bold;
-        width: 100%;
-        padding: 13px; }
         .presale .form-group .input-group-btn button:after {
           display: inline-block;
           width: 0;
@@ -783,16 +772,13 @@ a:focus {
           .presale .form-group .input-group-btn .dropdown-menu .dropdown-item:hover {
             text-decoration: none;
             background: #fff; }
-  .presale input.form-control {
-    min-height: 48px;
-    min-width: 250px;
-    border-radius: 10px;
-    background-color: #ebf0f3; }
   .presale input[type="radio"]:focus {
     outline: none; }
   .presale input[type="checkbox"]:focus {
     outline: none; }
   .presale .form-check-label {
+    font-weight: normal;
+    font-style: italic;
     cursor: pointer; }
   @media screen and (max-width: 767px) {
     .presale .action-xs {
@@ -801,17 +787,96 @@ a:focus {
     color: #fff;
     background-color: #00F58A;
     border-color: #00F58A;
-    min-height: 48px;
+    min-height: 40px;
     min-width: 250px;
-    border-radius: 30px;
+    border-radius: 4px;
     font-weight: bold;
     font-size: 16px;
+    font-family: "Lato-Regular";
     text-transform: uppercase;
-    letter-spacing: 2px; }
+    letter-spacing: 5px; }
     .presale .btn-presale:hover {
       color: #fff; }
     .presale .btn-presale:focus {
       color: #fff; }
+  
+  .presale .content-presale {
+    display: flex;
+  }
+
+  .presale .presale-left {
+    width: 50%;
+    text-align: center;
+    background-image: url("../images/Group-24.png");
+    margin-top: 70px;
+    padding: 30px 40px 50px;
+  }
+
+  .presale .presale-left .title-left {
+    color: #00F58A;
+  }
+
+  .presale .presale-left .illus {
+    width: 70%;
+    margin-top: 50px;
+  }
+
+  .presale .presale-right {
+    width: 50%;
+    margin-top: 70px;
+    padding: 30px 60px 50px;
+  }
+
+  .presale-right .title {
+    color: #00F58A;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .presale .description {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .presale .text { 
+    margin-bottom: 30px;
+  }
+
+  .presale .form-horizontal .control-label {
+    text-align: left;
+    padding-left: 0;
+  }
+
+  .presale .form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    .presale .content-presale {
+      display: block;
+    }
+  
+    .presale .presale-left {
+      width: 100%;
+      padding: 30px 0px;
+    }
+    
+    .presale .presale-right {
+      width: 100%;
+      margin-top: 0px;
+      padding: 30px 0px;
+    }
+
+    .presale .btn-presale {
+      width: 100%;
+    }
+
+    .presale .presale-left .illus {
+      margin-top: 0px;
+    }
+  }
 
 footer {
   padding: 30px 0px;
