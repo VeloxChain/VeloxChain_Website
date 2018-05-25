@@ -5,10 +5,14 @@
 @font-face {
   font-family: "BebasNeue-Book";
   src: url("../fonts/BebasNeue Book.ttf"); }
-
+  
 @font-face {
   font-family: "Lato-Light";
   src: url("../fonts/Lato-Light.ttf"); }
+
+@font-face {
+  font-family: "Lato-Black";
+  src: url("../fonts/Lato-Black.ttf"); }
 
 body {
   font-family: "Lato-Regular" !important;
@@ -88,6 +92,9 @@ a:focus {
 .navbar-nav-fix {
   margin-top: 8px !important; }
 
+.font-black {
+  font-family:"Lato-Black";
+}
 .site-header {
   background-image: url("../images/banner.png");
   background-size: cover;
@@ -102,29 +109,128 @@ a:focus {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
         }
-    .site-header .content-banner .title {
+    .site-header .content-banner .content-banner-left {
+      padding-left: 40px;
+      margin-top: 100px;
+      position: relative;
+      z-index: 10000;
+    }
+    @media screen and (max-width: 1500px) {
+      .site-header .content-banner .content-banner-left {
+        margin-top: 50px;
+      }
+    }
+    @media screen and (max-width: 1200px) {
+      .site-header .content-banner .content-banner-left {
+        margin-top: 0px;
+      }
+    }
+    @media screen and (max-width: 1100px) {
+      .site-header .content-banner .content-banner-left {
+        padding-left: 15px;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      .site-header {
+        min-height: auto;
+      }
+      .site-header .content-banner {
+        position: initial;
+        padding-top: 100px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+    }
+    .site-header .content-banner .content-banner-left .block {
+      padding: 20px 0px;
+      border: 1px solid rgba(0, 245, 138, .2);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      text-align: center;
+    }
+    .site-header .content-banner .content-banner-left .block .private {
+      margin-top: 0px;
+      border-bottom: 1px solid rgba(0, 245, 138, .2);
+      padding-bottom: 20px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+    .site-header .content-banner .content-banner-left .block .text-progress {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-top: 20px;
+      margin-bottom: 15px;
+    }
+    .site-header .content-banner .content-banner-left .block .joinwhitelist {
+      padding: 10px 20px;
+      background: #00d679;
+      color: #fff;
+      font-weight: bold;
+      font-size: 15px;
+      letter-spacing: 3px;
+    }
+    .site-header .content-banner .action {
       margin-bottom: 20px;
+    }
+    @media screen and (max-width: 1200px) {
+      .site-header .content-banner .action {
+        margin: 20px 0px 0px;
+      }
+      .social {
+        margin-top: 20px;
+      }
+    }
+    .site-header .content-banner .btn-click {
+      color: #00F58A;
+      text-transform: uppercase;
       letter-spacing: 2px;
+      font-size: 20px;
+      position: relative;
+      font-family: "BebasNeue-Book";
+    }
+    .site-header .content-banner .btn-click::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 2px;
+      height: 25px;
+      background: #00F58A;
+    }
+    .site-header .content-banner .btn-click:hover {
+      color: #00F58A;
+    }
+    .site-header .content-banner img {
+      width: 100%;
+    }
+
+    .site-header .content-banner .title {
+      letter-spacing: 5px;
+      font-weight: bold;
+      margin-top: 0px;
+      margin-bottom: 0px;
       font-size: 55px; }
       @media screen and (max-width: 767px) {
+        .site-header .content-banner .action {
+          margin: 20px 0px 0px;}
+        .site-header .content-banner .btn-click::after {
+          content: none; }
         .site-header .content-banner .title {
           font-size: 30px; } }
     .site-header .content-banner .description {
-      font-size: 26px;
+      font-size: 22px;
       letter-spacing: 1px;
+      margin: 30px 0px;
       font-family: "Lato-Light"; }
       @media screen and (max-width: 767px) {
         .site-header .content-banner .description {
           padding: 0px 10px;
-          font-size: 22px; } }
-    .site-header .content-banner .action {
+          font-size: 20px; } }
+    /* .site-header .content-banner .action {
       position: relative;
       margin-top: 40px;
       z-index: 10; }
@@ -142,8 +248,8 @@ a:focus {
         @media screen and (max-width: 767px) {
           .site-header .content-banner .action .subcribe {
             font-size: 14px;
-            padding: 20px; } }
-      .site-header .content-banner .action .btn-action {
+            padding: 20px; } } */
+      /* .site-header .content-banner .action .btn-action {
         position: absolute;
         top: 0;
         right: 0;
@@ -174,8 +280,8 @@ a:focus {
       z-index: 10; }
       @media screen and (max-width: 767px) {
         .site-header .content-banner .button {
-          display: block; } }
-      .site-header .content-banner .button .btn-click {
+          display: block; } } */
+      /* .site-header .content-banner .button .btn-click {
         background-color: transparent;
         border: 1px solid #00F58A;
         border-radius: 40px;
@@ -193,11 +299,10 @@ a:focus {
           color: #00ff90; }
         .site-header .content-banner .button .btn-click:focus {
           background: transparent;
-          color: #00ff90; }
+          color: #00ff90; } */
     .site-header .content-banner ul.social {
       position: relative;
       list-style: none;
-      margin-top: 30px;
       -webkit-padding-start: 0px;
       z-index: 10; }
       @media screen and (max-width: 767px) {
@@ -205,10 +310,10 @@ a:focus {
           margin-top: 20px; } }
       .site-header .content-banner ul.social li {
         display: inline-block;
-        width: 40px; }
+        width: 30px; }
         .site-header .content-banner ul.social li a {
           color: #fff;
-          font-size: 27px; }
+          font-size: 22px; }
 
 .title-web {
   text-align: center; }
@@ -408,29 +513,18 @@ a:focus {
   .token-sale .content .content-left.content-left-preorder img {
     border-radius: 0;}
   .token-sale  .title-presale {
-    letter-spacing: 2px;
-    text-transform: initial; }
+    text-transform: uppercase;
+    margin-top: 0px;
+    letter-spacing: 3px; }
   .token-sale .content .content-right.content-right-preorder {
     padding-left: 40px;
     background: transparent; }
-  .token-sale .content-right ul li.text {
+  .token-sale .content-right.content-right-preorder .text {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 1px;
     margin-top: 20px;
-    margin-bottom: 0px;
-    padding-left: 20px;
-    position: relative;
-    text-transform: initial; }
-  .token-sale .content-right ul li.text:after {
-    position: absolute;
-    content: "";
-    top: 8px;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #00F58A; }
+    margin-bottom: 20px; }
   .token-sale  .btn-preorder {
     padding: 10px 40px;
     color: #fff;
@@ -439,10 +533,10 @@ a:focus {
     letter-spacing: 3px;
     border-radius: 40px;
     margin-top: 30px;
-    background: linear-gradient(#38d67e, #3493dc); }
+    background: linear-gradient(to right, #38d67e, #3493dc); }
   .token-sale  .btn-preorder:focus,
   .token-sale  .btn-preorder:hover {
-    background: linear-gradient(#38d67e, #3493dc);
+    background: linear-gradient(to right, #38d67e, #3493dc);
     color: #fff;  }
 
   @media screen and (max-width: 767px) {
@@ -453,6 +547,7 @@ a:focus {
       content: none; }
     .token-sale  .btn-preorder {
       padding: 10px 20px;
+      margin-top: 10px;
       font-size: 16px; }
   }
       .roadmap {
@@ -985,15 +1080,15 @@ footer {
         footer .footer-right ul li a {
           color: #fff; }
 
-input#email-subscribe::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+input#email-subscribe::-webkit-input-placeholder {
   color: #fff;
 }
-input#email-subscribe::-moz-placeholder { /* Firefox 19+ */
+input#email-subscribe::-moz-placeholder {
   color: #fff;
 }
-input#email-subscribe:-ms-input-placeholder { /* IE 10+ */
+input#email-subscribe:-ms-input-placeholder {
   color: #fff;
 }
-input#email-subscribe:-moz-placeholder { /* Firefox 18- */
+input#email-subscribe:-moz-placeholder {
   color: #fff;
 }
