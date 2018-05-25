@@ -114,10 +114,8 @@ a:focus {
             align-items: center;
         }
     .site-header .content-banner .content-banner-left {
-      padding-left: 40px;
+      padding-left: 60px;
       margin-top: 100px;
-      position: relative;
-      z-index: 10000;
     }
     @media screen and (max-width: 1500px) {
       .site-header .content-banner .content-banner-left {
@@ -177,7 +175,7 @@ a:focus {
       letter-spacing: 3px;
     }
     .site-header .content-banner .action {
-      margin-bottom: 20px;
+      margin: 10px 0px;
     }
     @media screen and (max-width: 1200px) {
       .site-header .content-banner .action {
@@ -250,76 +248,6 @@ a:focus {
         .site-header .content-banner .description {
           padding: 0px 10px;
           font-size: 20px; } }
-    /* .site-header .content-banner .action {
-      position: relative;
-      margin-top: 40px;
-      z-index: 10; }
-      @media screen and (max-width: 992px) {
-        .site-header .content-banner .action {
-          padding: 0px 10px;
-          margin-top: 20px; } }
-      .site-header .content-banner .action .subcribe {
-        padding: 25px;
-        border-radius: 50px;
-        border-color: #00F58A;
-        background-color: rgba(255, 255, 255, 0.3);
-        color: #fff;
-        font-size: 16px; }
-        @media screen and (max-width: 767px) {
-          .site-header .content-banner .action .subcribe {
-            font-size: 14px;
-            padding: 20px; } } */
-      /* .site-header .content-banner .action .btn-action {
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: #3bdc90;
-        color: #fff;
-        padding: 14px 40px;
-        border-radius: 50px;
-        font-size: 16px;
-        text-transform: uppercase;
-        letter-spacing: 3px; }
-        @media screen and (max-width: 992px) {
-          .site-header .content-banner .action .btn-action {
-            right: 10px; } }
-        @media screen and (max-width: 767px) {
-          .site-header .content-banner .action .btn-action {
-            font-size: 14px;
-            letter-spacing: 1px;
-            padding: 10px 20px; } }
-    .site-header .content-banner .button {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      margin-top: 30px;
-      position: relative;
-      z-index: 10; }
-      @media screen and (max-width: 767px) {
-        .site-header .content-banner .button {
-          display: block; } } */
-      /* .site-header .content-banner .button .btn-click {
-        background-color: transparent;
-        border: 1px solid #00F58A;
-        border-radius: 40px;
-        padding: 10px 20px;
-        margin: 10px 15px;
-        text-transform: uppercase;
-        color: #00F58A;
-        letter-spacing: 2px;
-        -webkit-transition: all .3s;
-        transition: all .3s;
-        width: 240px;
-        font-weight: bold; }
-        .site-header .content-banner .button .btn-click:hover {
-          background: rgba(6, 10, 26, 0.8);
-          color: #00ff90; }
-        .site-header .content-banner .button .btn-click:focus {
-          background: transparent;
-          color: #00ff90; } */
     .site-header .content-banner ul.social {
       position: relative;
       margin-top: 20px;
