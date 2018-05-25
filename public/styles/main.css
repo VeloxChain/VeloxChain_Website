@@ -207,7 +207,18 @@ a:focus {
     .site-header .content-banner img {
       width: 100%;
     }
-
+    .flex {
+      display: flex;
+      height: 182px;
+      justify-content: center;
+      align-items: center;
+    }
+    @media screen and (max-width: 1200px) {
+      .flex {
+        display: block;
+        height: auto;
+      }
+    }
     .site-header .content-banner .title {
       letter-spacing: 5px;
       font-weight: bold;
@@ -216,7 +227,7 @@ a:focus {
       font-size: 55px; }
       @media screen and (max-width: 767px) {
         .site-header .content-banner .action {
-          margin: 20px 0px 0px;}
+          margin: 10px 0px;}
         .site-header .content-banner .btn-click::after {
           content: none; }
         .site-header .content-banner .title {
@@ -302,6 +313,7 @@ a:focus {
           color: #00ff90; } */
     .site-header .content-banner ul.social {
       position: relative;
+      margin-top: 20px;
       list-style: none;
       -webkit-padding-start: 0px;
       z-index: 10; }
@@ -310,7 +322,7 @@ a:focus {
           margin-top: 20px; } }
       .site-header .content-banner ul.social li {
         display: inline-block;
-        width: 30px; }
+        width: 40px; }
         .site-header .content-banner ul.social li a {
           color: #fff;
           font-size: 22px; }
