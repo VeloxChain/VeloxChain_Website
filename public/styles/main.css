@@ -138,6 +138,9 @@ a:focus {
       .site-header {
         min-height: auto;
       }
+      .site-header .content-banner .content-banner-left {
+        padding-left: 0px;
+      }
       .site-header .content-banner {
         position: initial;
         padding-top: 100px;
@@ -202,7 +205,13 @@ a:focus {
       background: #00F58A;
     }
     .site-header .content-banner .btn-click:hover {
+      color: rgb(198, 216, 250);
+    }
+    .site-header .content-banner .btn-click:focus {
       color: #00F58A;
+    }
+    .site-header .content-banner .btn-click:hover.btn-click::after {
+      background: rgb(198, 216, 250);
     }
     .site-header .content-banner img {
       width: 100%;
