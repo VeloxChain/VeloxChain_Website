@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const models = require("../models");
 const sgMail = require('@sendgrid/mail');
+const _ = require('lodash')
 
 const appConfig = require('../configs/app.config');
 
@@ -73,6 +74,15 @@ router.post('/add_whitelist', function(req, res, next) {
 
 router.post('/action_presale', function(req, res, next) {
   let { full_name, email, is_investor, represent_type, desired_allocation, citizenship, sending_addr, note } = req.body;
+  
+  if(
+    _.isEmpty(full_name) ||
+    _.isEmpty(email) ||
+    _.isEmpty(desired_allocation)
+  ) {
+    return failResponse(res, 'Bad request');
+  }
+  
   if(!validateEmail(email)) {
     return failResponse(res, 'Invalid email');
   }
