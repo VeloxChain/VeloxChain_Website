@@ -1038,6 +1038,7 @@ input#email-subscribe:-moz-placeholder {
 
 #thankyou.modal.in .modal-dialog {
   margin: 100px auto;
+  font-size: 16px;
 }
 
 #thankyou .modal-header {
@@ -1047,6 +1048,10 @@ input#email-subscribe:-moz-placeholder {
   justify-content: center;
   align-items: center;
   border-radius: 6px 6px 0px 0px;
+}
+
+#thankyou .modal-header img {
+  width: 200px;
 }
 
 #thankyou .modal-body {
