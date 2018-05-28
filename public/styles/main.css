@@ -235,14 +235,13 @@ a:focus {
         .site-header .content-banner .title {
           font-size: 30px; } }
     .site-header .content-banner .description {
-      font-size: 22px;
+      font-size: 20px;
       letter-spacing: 1px;
       margin: 30px 0px;
       font-family: "Lato-Light"; }
       @media screen and (max-width: 767px) {
         .site-header .content-banner .description {
-          padding: 0px 10px;
-          font-size: 20px; } }
+          padding: 0px 10px; } }
     .site-header .content-banner ul.social {
       position: relative;
       margin-top: 20px;
@@ -1035,4 +1034,67 @@ input#email-subscribe:-ms-input-placeholder {
 }
 input#email-subscribe:-moz-placeholder {
   color: #fff;
+}
+
+#thankyou.modal.in .modal-dialog {
+  margin: 100px auto;
+  font-size: 16px;
+}
+
+#thankyou .modal-header {
+  background: #17202a;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px 6px 0px 0px;
+}
+
+#thankyou .modal-header img {
+  width: 200px;
+}
+
+#thankyou .modal-body {
+  text-align: center;
+  padding: 35px 15px 20px;
+  color: #000;
+}
+
+#thankyou .modal-body h3 {
+  color: #00F58A;
+  margin-bottom: 20px;
+  font-size: 26px;
+  margin-top: 0px;
+}
+
+.action-home {
+  margin: 50px 0px 20px;
+}
+
+.btn-gohome {
+  color: #fff;
+  background-color: #00F58A;
+  border-color: #00F58A;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border-radius: 4px;
+}
+
+.btn-gohome:hover {
+  color: #fff;
+  background-color: #00F58A;
+  text-decoration: none;
+}
+
+@media screen and (max-width:767px) {
+  .btn-gohome {
+    display: block;
+  }
+
+  .block {
+    display: block;
+  }
 }
