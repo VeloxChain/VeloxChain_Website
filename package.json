@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev-server": "PORT=3000 nodemon --exec npm start"
   },
   "dependencies": {
     "@sendgrid/mail": "^6.2.1",
@@ -12,6 +13,7 @@
     "debug": "^2.6.9",
     "express": "^4.16.3",
     "http-errors": "^1.6.3",
+    "lodash": "^4.17.10",
     "morgan": "^1.9.0",
     "mysql2": "^1.5.3",
     "pug": "^2.0.0-beta11",
