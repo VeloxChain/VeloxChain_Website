@@ -114,10 +114,7 @@ a:focus {
             align-items: center;
         }
     .site-header .content-banner .content-banner-left {
-      padding-left: 40px;
       margin-top: 100px;
-      position: relative;
-      z-index: 10000;
     }
     @media screen and (max-width: 1500px) {
       .site-header .content-banner .content-banner-left {
@@ -129,17 +126,9 @@ a:focus {
         margin-top: 0px;
       }
     }
-    @media screen and (max-width: 1100px) {
-      .site-header .content-banner .content-banner-left {
-        padding-left: 15px;
-      }
-    }
     @media screen and (max-width: 767px) {
       .site-header {
         min-height: auto;
-      }
-      .site-header .content-banner .content-banner-left {
-        padding-left: 0px;
       }
       .site-header .content-banner {
         position: initial;
@@ -147,6 +136,10 @@ a:focus {
         padding-bottom: 20px;
         text-align: center;
       }
+    }
+
+    .content-banner .container {
+      padding: 0px;
     }
     .site-header .content-banner .content-banner-left .block {
       padding: 20px 0px;
@@ -177,7 +170,7 @@ a:focus {
       letter-spacing: 3px;
     }
     .site-header .content-banner .action {
-      margin-bottom: 20px;
+      margin: 10px 0px;
     }
     @media screen and (max-width: 1200px) {
       .site-header .content-banner .action {
@@ -242,84 +235,13 @@ a:focus {
         .site-header .content-banner .title {
           font-size: 30px; } }
     .site-header .content-banner .description {
-      font-size: 22px;
+      font-size: 20px;
       letter-spacing: 1px;
       margin: 30px 0px;
       font-family: "Lato-Light"; }
       @media screen and (max-width: 767px) {
         .site-header .content-banner .description {
-          padding: 0px 10px;
-          font-size: 20px; } }
-    /* .site-header .content-banner .action {
-      position: relative;
-      margin-top: 40px;
-      z-index: 10; }
-      @media screen and (max-width: 992px) {
-        .site-header .content-banner .action {
-          padding: 0px 10px;
-          margin-top: 20px; } }
-      .site-header .content-banner .action .subcribe {
-        padding: 25px;
-        border-radius: 50px;
-        border-color: #00F58A;
-        background-color: rgba(255, 255, 255, 0.3);
-        color: #fff;
-        font-size: 16px; }
-        @media screen and (max-width: 767px) {
-          .site-header .content-banner .action .subcribe {
-            font-size: 14px;
-            padding: 20px; } } */
-      /* .site-header .content-banner .action .btn-action {
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: #3bdc90;
-        color: #fff;
-        padding: 14px 40px;
-        border-radius: 50px;
-        font-size: 16px;
-        text-transform: uppercase;
-        letter-spacing: 3px; }
-        @media screen and (max-width: 992px) {
-          .site-header .content-banner .action .btn-action {
-            right: 10px; } }
-        @media screen and (max-width: 767px) {
-          .site-header .content-banner .action .btn-action {
-            font-size: 14px;
-            letter-spacing: 1px;
-            padding: 10px 20px; } }
-    .site-header .content-banner .button {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      margin-top: 30px;
-      position: relative;
-      z-index: 10; }
-      @media screen and (max-width: 767px) {
-        .site-header .content-banner .button {
-          display: block; } } */
-      /* .site-header .content-banner .button .btn-click {
-        background-color: transparent;
-        border: 1px solid #00F58A;
-        border-radius: 40px;
-        padding: 10px 20px;
-        margin: 10px 15px;
-        text-transform: uppercase;
-        color: #00F58A;
-        letter-spacing: 2px;
-        -webkit-transition: all .3s;
-        transition: all .3s;
-        width: 240px;
-        font-weight: bold; }
-        .site-header .content-banner .button .btn-click:hover {
-          background: rgba(6, 10, 26, 0.8);
-          color: #00ff90; }
-        .site-header .content-banner .button .btn-click:focus {
-          background: transparent;
-          color: #00ff90; } */
+          padding: 0px 10px; } }
     .site-header .content-banner ul.social {
       position: relative;
       margin-top: 20px;
@@ -1112,4 +1034,67 @@ input#email-subscribe:-ms-input-placeholder {
 }
 input#email-subscribe:-moz-placeholder {
   color: #fff;
+}
+
+#thankyou.modal.in .modal-dialog {
+  margin: 100px auto;
+  font-size: 16px;
+}
+
+#thankyou .modal-header {
+  background: #17202a;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px 6px 0px 0px;
+}
+
+#thankyou .modal-header img {
+  width: 200px;
+}
+
+#thankyou .modal-body {
+  text-align: center;
+  padding: 35px 15px 20px;
+  color: #000;
+}
+
+#thankyou .modal-body h3 {
+  color: #00F58A;
+  margin-bottom: 20px;
+  font-size: 26px;
+  margin-top: 0px;
+}
+
+.action-home {
+  margin: 50px 0px 20px;
+}
+
+.btn-gohome {
+  color: #fff;
+  background-color: #00F58A;
+  border-color: #00F58A;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border-radius: 4px;
+}
+
+.btn-gohome:hover {
+  color: #fff;
+  background-color: #00F58A;
+  text-decoration: none;
+}
+
+@media screen and (max-width:767px) {
+  .btn-gohome {
+    display: block;
+  }
+
+  .block {
+    display: block;
+  }
 }
