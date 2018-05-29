@@ -31,10 +31,25 @@
     <meta name="apple-mobile-web-app-title" content="Bike Coin">
     <meta name="msapplication-TileColor" content="transparent">
     <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5LJFWKV');
+    </script>
+    <!-- End Google Tag Manager -->
+
 </head>
 
 <body class="theme-dark is-smooth-effect no-touch loaded" data-spy="scroll" data-target="#mainnav" data-offset="80" id="home">
     
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LJFWKV"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <header class="site-header is-sticky has-fixed">
         <div class="navbar-fixed-top">
             <nav class="navbar navbar-default">
@@ -80,10 +95,6 @@
                 </div>
             </nav>
         </div>
-
-        <!-- <div id="particles-js" class="particles-container particles-js">
-            <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="1301" height="882"></canvas>
-        </div> -->
 
         <div class="content-banner">
             <div class="container">
@@ -946,31 +957,6 @@ I am passionate about blockchain technology and digital media. An early Bitcoin 
 
     <script src="scripts/vendor.js"></script>
     <script src="scripts/main.js"></script>
-
-    <!-- <script>
-        $( document ).ready(function() {
-          $("#add-whitelist").on("submit", function( event ) {
-            event.preventDefault();
-            serializedData = $(this).serialize();
-  
-            request = $.ajax({
-                url: "/add_whitelist",
-                type: "post",
-                data: serializedData
-            });
-
-            $('#email-subscribe').val('');
-
-            request.done(function (response, textStatus, jqXHR){
-              if(response.status === "success") {
-                toastr.success("Thank you for registration!");
-              } else {
-                toastr.error(response.data);
-              }
-            });
-          });
-        });
-    </script> -->
 
 </body>
 
