@@ -81,8 +81,7 @@
                             <div class="form-group">
                                 <p>
                                     <strong>Are you an accredited investor?*</strong>&nbsp;(
-                                    <a id="huh" data-toggle="tooltip" data-placement="top"
-                                        title="An accredited investor must have a net worth of at least $1,000,000, excluding the value of one's primary residence, or have income at least $200,000 each year for the last two years (or $300,000 combined income if married.)">Huh?</a>)</p>
+                                    <a id="huh" data-toggle="tooltip" data-placement="top" title="An accredited investor must have a net worth of at least $1,000,000, excluding the value of one's primary residence, or have income at least $200,000 each year for the last two years (or $300,000 combined income if married.)">Huh?</a>)</p>
                                 <label class="radio-inline">
                                     <input type="radio" name="is_investor" value="1" checked>Yes
                                 </label>
@@ -475,8 +474,8 @@
             $("#presale-form").on("submit", function (event) {
                 event.preventDefault();
 
-                if(
-                    $("#full_name").val() == ""||
+                if (
+                    $("#full_name").val() == "" ||
                     $("#email").val() == "" ||
                     $("#desired_allocation").val() == ""
                 ) {
