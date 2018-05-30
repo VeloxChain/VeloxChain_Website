@@ -14,13 +14,19 @@ import spritesmith from 'gulp.spritesmith';
 import config from '../config';
 
 export function optimizeImages() {
-  return gulp.src([`${config.src}/images/**/*`, `!${config.src}/images/{sprite,sprite/**}`])
+  return gulp.src([`${config.src}/images/**/*`])
     .pipe(newer(`${config.dist}/images`))
-    .pipe(cache(imagemin({
-      progressive: true,
-      interlaced: true,
-      use: [pngquant()]
-    })))
+    .pipe(cache(imagemin([
+    imagemin.gifsicle({interlaced: true}),
+    imagemin.jpegtran({progressive: true}),
+    imagemin.optipng({optimizationLevel: 7}),
+    imagemin.svgo({
+        plugins: [
+            {removeViewBox: true},
+            {cleanupIDs: false}
+        ]
+    })
+])))
     .pipe(gulp.dest(`${config.dist}/images`));
 }
 
