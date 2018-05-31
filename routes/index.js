@@ -105,7 +105,10 @@ router.post('/action_presale', function(req, res, next) {
         to: email,
         from: appConfig.email_sender_address,
         subject: 'Resale is successfully',
-        html: '<p>TBD</p>',
+        templateId: "811addca-9f9d-4980-a81e-29ecfa3a4cc8",
+        substitutions: {
+          name: `${_.isEmpty(full_name)? "": full_name}`
+        }
       };
       sgMail.send(msg);
       return successResponse(res, data);
