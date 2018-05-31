@@ -1011,10 +1011,11 @@ footer {
     @media screen and (max-width: 767px) {
       footer .footer-right {
         text-align: center; } }
-    footer .footer-right ul {
+    footer .footer-right ul.navbar-default {
       list-style: none;
       display: inline-block;
       margin-bottom: 0px;
+      margin-top: 0px;
       -webkit-padding-start: 0px; }
       footer .footer-right ul li {
         display: inline-block;
@@ -1023,8 +1024,11 @@ footer {
           footer .footer-right ul li {
             margin: 0px 5px; } }
         footer .footer-right ul li a {
+          letter-spacing: 1px;
           color: #fff; }
-
+        footer .footer-right ul li a:focus {
+          text-decoration: none; }
+          
 input#email-subscribe::-webkit-input-placeholder {
   color: #fff;
 }

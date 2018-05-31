@@ -1,5 +1,5 @@
 const AppConfig = {
-  mail_api_key: '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',
+  mail_api_key: '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',
   email_sender_address: 'info@volatacycles.com'
 }
 
