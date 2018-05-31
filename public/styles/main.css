@@ -1100,3 +1100,7 @@ input#email-subscribe:-moz-placeholder {
     display: block;
   }
 }
+
+.updating {
+  text-transform: initial;
+}
