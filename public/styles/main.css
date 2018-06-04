@@ -700,23 +700,23 @@ a:focus {
     color: #333; }
   
     .team .member.member-first {
-      min-height: 762px; }
+      min-height: 765px; }
     .team .member.member-second {
-      min-height: 737px; }
+      min-height: 750px; }
     .team .member.member-three {
       min-height: 686px; }
     @media screen and (max-width: 1200px) {
       .team .member.member-first {
-        min-height: 878px; }
+        min-height: 880px; }
       .team .member.member-second {
-        min-height: 811px; }
+        min-height: 830px; }
       .team .member.member-three {
         min-height: 730px; } }
     @media screen and (max-width: 992px) {
       .team .member.member-first {
-        min-height: 1062px; }
+        min-height: 1063px; }
       .team .member.member-second {
-        min-height: 1020px; }
+        min-height: 1047px; }
       .team .member.member-three {
         min-height: 892px; } }
     @media screen and (max-width: 767px) {
