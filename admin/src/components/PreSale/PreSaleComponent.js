@@ -1,24 +1,28 @@
 import React, { Component } from "react";
 import { Card } from "material-ui/Card";
-import styles from "../Dashboard/DashboardComponent.style";
-import TransactionList from "./TransactionListComponent";
+import RaisedButton from "material-ui/RaisedButton";
+import PropsType from "prop-types";
+import Cookies from "universal-cookie";
 
+import styles from "./PreSaleComponent.styles";
+import PreSaleList from "./PreSaleListComponent";
 import Chart1 from "../../assets/images/Bar Chart.png";
 import Chart2 from "../../assets/images/Bar Chart-1.png";
 import Chart3 from "../../assets/images/Bar Chart-2.png";
 
+const cookies = new Cookies();
 
-class TransactionComponent extends Component {
+class PreSaleComponent extends Component {
   render() {
     return (
       <div>
-        <h2 style={styles.title}>Transactions Summary</h2>
+        <h2 style={styles.title}>Pre-sale</h2>
         <div className="row">
           <div className="col-sm-4">
             <Card style={styles.card}>
               <div className="row">
                 <div className="col-sm-6">
-                  <h3 style={styles.numberSub}>100.000</h3>
+                  <h3 style={styles.numberSub}>{this.props.overviewIndex.reSale.week}</h3>
                   <h4 style={styles.description}>Week</h4>
                 </div>
                 <div className="col-sm-6 text-right">
@@ -31,7 +35,7 @@ class TransactionComponent extends Component {
             <Card style={styles.card}>
               <div className="row">
                 <div className="col-sm-6">
-                  <h3 style={styles.numberCon}>100.000</h3>
+                  <h3 style={styles.numberCon}>{this.props.overviewIndex.reSale.month}</h3>
                   <h4 style={styles.description}>Month</h4>
                 </div>
                 <div className="col-sm-6 text-right">
@@ -44,7 +48,7 @@ class TransactionComponent extends Component {
             <Card style={styles.card}>
               <div className="row">
                 <div className="col-sm-6">
-                  <h3 style={styles.numberRe}>100.000</h3>
+                  <h3 style={styles.numberRe}>{this.props.overviewIndex.reSale.year}</h3>
                   <h4 style={styles.description}>Year</h4>
                 </div>
                 <div className="col-sm-6 text-right">
@@ -56,11 +60,24 @@ class TransactionComponent extends Component {
         </div>
 
         <Card style={styles.card}>
-          <TransactionList {...this.props} />
+          <div>
+            {/* <RaisedButton
+              label="Export excel"
+              primary={true}
+              onClick={() => {this.props.exportExcel();}}
+              style={styles.buttonExcel}
+            /> */}
+          </div>
+          <PreSaleList {...this.props} />
         </Card>
       </div>
     );
   }
 }
 
-export default TransactionComponent;
+PreSaleComponent.propTypes = {
+  overviewIndex: PropsType.object.isRequired,
+  exportExcel: PropsType.func.isRequired,
+};
+
+export default PreSaleComponent;

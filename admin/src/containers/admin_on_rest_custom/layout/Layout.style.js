@@ -30,10 +30,10 @@ const styles = {
     zIndex: 1200,
   },
   appBar: {
-    background: "#fff"
+    background: "rgba(6, 10, 26, 0.8)"
   },
   logoTopBar: {
-    height: "25px"
+    height: "40px"
   }
 };
 

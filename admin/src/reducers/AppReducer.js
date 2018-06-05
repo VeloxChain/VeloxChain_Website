@@ -2,9 +2,7 @@ import AppConstant from "../constants/AppConstant";
 
 const initState = {
   overviewIndex: {
-    contributor: {},
-    whitelist: {},
-    reOrder: {}
+    reSale: {}
   }
 };
 

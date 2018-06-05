@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { jsonServerRestClient, Admin, Resource, fetchUtils } from "admin-on-rest";
 
-import DashboardContainer from "./containers/Dashboard/DashboardContainer";
-import ContributorContainer from "./containers/Contributor/ContributorContainer";
-import PreOrderContainer from "./containers/PreOrder/PreOrderContainer";
+import PreSaleContainer from "./containers/PreSale/PreSaleContainer";
 import AuthClient from "./service/AuthClient";
 import Menu from "./containers/admin_on_rest_custom/menu/Menu";
 import Logout from "./containers/admin_on_rest_custom/logout/Logout";
@@ -34,10 +32,7 @@ class App extends Component {
         title="Ulabs"
         restClient={jsonServerRestClient("/admin", httpClient)}
       >
-        <Resource options={{ label: "Overview" }} name="overview_contributors" list={DashboardContainer} />
-        <Resource name="contributors" options={{ label: "Whiteist" }} list={ContributorContainer} />
-        <Resource name="pre-order" options={{ label: "Pre-orders" }} list={PreOrderContainer} />
-        {/* <Resource name="transactions" options={{ label: "Transactions" }} list={TransactionContainer} /> */}
+        <Resource name="pre-sale" options={{ label: "Pre-sale" }} list={PreSaleContainer} />
       </Admin>
     );
   }

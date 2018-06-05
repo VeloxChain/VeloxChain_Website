@@ -1,21 +1,15 @@
 const styles = {
   menu: {
-    background: "#0f1949",
+    background: "rgb(35, 40, 53)",
     height: "100%",
     position: "fixed",
     width: "256px"
   },
 
   logo: {
-    width: "70px",
+    width: "120px",
     paddingTop: "30px",
-    margin: "0px auto",
-    display: "block",
-  },
-
-  ulabs: {
-    width: "100px",
-    margin: "10px auto 30px",
+    margin: "20px auto",
     display: "block",
   },
 

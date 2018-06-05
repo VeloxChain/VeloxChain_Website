@@ -5,30 +5,13 @@ import PropsType from "prop-types";
 import _ from "lodash";
 
 import { getOverviewIndex } from "../../actions/AppAction";
-import PreOrderComponent from "../../components/PreOrder/PreOrderComponent";
-import {importDataForPreOrder} from "../../service/ApiService";
+import PreSaleComponent from "../../components/PreSale/PreSaleComponent";
 import {fetchDataFromTypeForm, getAccessToken} from "../../service/TypeFormService";
 import appConfig from "../../configs/App.config";
 
-class PreOrderContainer extends Component {
+class PreSaleContainer extends Component {
   componentDidMount() {
     getOverviewIndex(this.props.dispatch);
-
-    var url = new URL(window.location.href.replace("#/", ""));
-    var code = url.searchParams.get("code");
-    if(!_.isEmpty(code)) {
-      getAccessToken(code).then(data => {
-        if(!_.isEmpty(data.access_token)) {
-          importDataForPreOrder("GJmaK7QrBwZtna4ptkaf1uE1b7UdbjqABLmhqQizeE3z", appConfig.type_form_pre_order_form_id, this.props.dispatch).then((data) => {
-            if(_.isEmpty(data)) {
-              return;
-            }
-            this.props.showNotification(`${_.isEmpty(data.data.total) ? 0: data.data.total} record is imported`);
-            this.props.refreshView();
-          });
-        }
-      });
-    }
   }
 
   exportExcel = () => {
@@ -52,12 +35,12 @@ class PreOrderContainer extends Component {
 
   render() {
     return (
-      <PreOrderComponent exportExcel={this.exportExcel} fetchDataFromTypeForm={fetchDataFromTypeForm} {...this.props} overviewIndex={this.props.overviewIndex}/>
+      <PreSaleComponent exportExcel={this.exportExcel} fetchDataFromTypeForm={fetchDataFromTypeForm} {...this.props} overviewIndex={this.props.overviewIndex}/>
     );
   }
 }
 
-PreOrderContainer.propTypes = {
+PreSaleContainer.propTypes = {
   dispatch: PropsType.func.isRequired,
   overviewIndex: PropsType.object.isRequired,
   showNotification: PropsType.func.isRequired,
@@ -77,4 +60,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PreOrderContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(PreSaleContainer);

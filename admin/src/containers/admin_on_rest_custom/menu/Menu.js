@@ -3,40 +3,22 @@ import { connect } from "react-redux";
 import { getResources } from "admin-on-rest";
 import PropTypes from "prop-types";
 import styles from "./Menu.style";
-import logo from "../../../assets/images/favicon.png";
-import ulabs from "../../../assets/images/ULABS.svg";
+import logo from "../../../assets/images/iconBike.png";
 import { Link } from "react-router-dom";
 import MenuItem from "material-ui/MenuItem";
-import overview from "../../../assets/images/overview.png";
-import preorder from "../../../assets/images/preorder.png";
-import contributor from "../../../assets/images/contributor.png";
+import presale from "../../../assets/images/newspaper.png";
 
 const Menu = ({onMenuTap, logout }) => (
   <div style={styles.menu}>
     <div className="text-center">
       <a href="/">
-        <img src={logo} style={styles.logo} />
+        <img src={logo} style={styles.logo} alt="Bikecoin" />
       </a>
-      <img src={ulabs} style={styles.ulabs} />
     </div>
     <MenuItem
-      containerElement={<Link to="/overview_contributors" />}
-      primaryText="Overview"
-      leftIcon={<img src={overview} style={styles.icon} />}
-      onClick={onMenuTap}
-      style={styles.item}
-    />
-    <MenuItem
-      containerElement={<Link to="/contributors" />}
-      primaryText="Whitelist"
-      leftIcon={<img src={contributor} style={styles.icon} />}
-      onClick={onMenuTap}
-      style={styles.item}
-    />
-    <MenuItem
-      containerElement={<Link to="/pre-order" />}
-      primaryText="Pre-orders"
-      leftIcon={<img src={preorder} style={styles.icon} />}
+      containerElement={<Link to="/pre-sale" />}
+      primaryText="Pre-sale"
+      leftIcon={<img src={presale} style={styles.icon} />}
       onClick={onMenuTap}
       style={styles.item}
     />

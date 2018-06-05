@@ -6,8 +6,8 @@ import CircularProgress from "material-ui/CircularProgress";
 import { AppBar } from "material-ui";
 import { toggleSidebar } from "admin-on-rest";
 import IconButton from "material-ui/IconButton";
-import logo from "../../../assets/images/logo.svg";
-import iconMenu from "../../../assets/images/Menu.png";
+import logo from "../../../assets/images/logo.png";
+import iconMenu from "../../../assets/images/Menu-Green.png";
 
 import {
   Menu,

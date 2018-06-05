@@ -23,21 +23,21 @@ TextFieldCustomForDate.defaultProps = {
 
 const PostFilter = (props) => (
   <Filter {...props}>
-    <TextInput label="Search" source="email" alwaysOn />
+    <TextInput label="Search" source="search" alwaysOn />
   </Filter>
 );
 
-class PreOrderList extends Component {
+class PreSaleList extends Component {
   render() {
     return (
       <div>
-        <List title="Pre-orders Log" {...this.props} filters={<PostFilter />}>
+        <List title="Pre-sale Log" {...this.props} filters={<PostFilter />}>
           <Datagrid>
             <TextField source="id" styles={{width: "10%"}}/>
+            <TextField source="full_name"/>
             <TextField source="email"/>
-            <TextField source="storage_size"/>
-            <TextField source="number_recommend" label="RATE"/>
-            <TextField source="coins_address" label="ETH ADDRESS"/>
+            <TextField source="citizenship" label="Citizenship"/>
+            <TextField source="desired_allocation" label="Desired Allocation" />
             <TextFieldCustomForDate source="created_at" label="Date"/>
           </Datagrid>
         </List>
@@ -46,4 +46,4 @@ class PreOrderList extends Component {
   }
 }
 
-export default PreOrderList;
+export default PreSaleList;

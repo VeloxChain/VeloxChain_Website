@@ -2,9 +2,14 @@ var express = require('express');
 var router = express.Router();
 const models = require("../models");
 const sgMail = require('@sendgrid/mail');
-const _ = require('lodash')
+const _ = require('lodash');
+var Sequelize = require("sequelize");
 
+var moment = require("moment");
+const responseRouter= require("./response");
 const appConfig = require('../configs/app.config');
+
+const Op = Sequelize.Op
 
 sgMail.setApiKey(appConfig.mail_api_key);
 
@@ -116,6 +121,85 @@ router.post('/action_presale', function(req, res, next) {
   ).catch((message) => {
     return failResponse(res, message);
   });
+});
+
+router.get('/admin/pre-sale', function(req, res, next) {
+  let option = {
+    limit: appConfig.paginate_limit_item
+  }
+
+  if (!_.isEmpty(req.query._sort) && !_.isEmpty(req.query._order)) {
+    option["order"] = [
+      [
+        req.query._sort,
+        req.query._order
+      ]
+    ]
+  }
+
+  if (!_.isEmpty(req.query.search)) {
+    option["where"] = {
+      [Op.or]: [
+        {
+          email: {
+            [Op.like]: `%${req.query.search}%`
+          }
+        },
+        {
+          full_name: {
+            [Op.like]: `%${req.query.search}%`
+          }
+        }
+      ]
+    }
+  }
+
+  if (!_.isEmpty(req.query._start) && _.isNumber(_.toNumber(req.query._start))) {
+    option["offset"] = _.toNumber(req.query._start)
+  }
+
+  models.presale.findAndCountAll(option)
+    .then(
+      (data) => {
+        res.set("X-Total-Count", data.count)
+        return res.json(data.rows)
+      }
+    ).catch((message) => {
+      return responseRouter.fail(res, message.name)
+    })
+});
+
+const processDataForGetOverviewInformation = (listPreSale, req) => {
+  let dataResponse = {
+    reSale: {},
+  }
+
+  if (!_.isEmpty(req.query.to_day)) {
+    dataResponse.reSale["today"] = _.filter(listPreSale, data => moment(data.created_at).format("MM-DD-YYYY") == moment().format("MM-DD-YYYY")).length
+  }
+
+  dataResponse.reSale["week"] = _.filter(listPreSale, data => moment(data.created_at).format("WW-MM-YYYY") == moment().format("WW-MM-YYYY")).length
+
+  dataResponse.reSale["month"] = _.filter(listPreSale, data => moment(data.created_at).format("MM-YYYY") == moment().format("MM-YYYY")).length
+
+  dataResponse.reSale["year"] = _.filter(listPreSale, data => moment(data.created_at).format("YYYY") == moment().format("YYYY")).length
+
+  dataResponse.reSale["total"] = listPreSale.length
+
+  return dataResponse
+}
+
+router.get('/admin/get_overview_information', function(req, res, next) {
+  let queryOption = {}
+
+  queryOption["attributes"] = ["id", "created_at"]
+
+  let listPreSale = []
+
+  models.presale.findAll(queryOption).then(data => {
+    listPreSale = data
+    return responseRouter.success(res, processDataForGetOverviewInformation(listPreSale, req))
+  })
 });
 
 module.exports = router;
