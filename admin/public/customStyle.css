@@ -1,0 +1,23 @@
+@font-face{
+  font-family: "Raleway-Regular";
+  src: url(../fonts/Raleway-Regular-vi.ttf);
+}
+
+@font-face{
+  font-family: "OpenSans-Regular";
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+* {
+  font-size: 100%;
+  font-family: "Raleway-Regular";
+}
+
+body {
+  font-family: "Raleway-Regular";
+}
+
+.body {
+  overflow-x: hidden !important;
+  background: #f5f6fa !important;
+}
