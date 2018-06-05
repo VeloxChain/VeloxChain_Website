@@ -3,16 +3,25 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var oauthserver = require('oauth2-server');
+const bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
 
-const bodyParser = require('body-parser');
 var app = express();
+
+app.oauth = oauthserver({
+  model: require('./models/auth.js'),
+  grants: ['password'],
+  debug: true
+});
 
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: false, limit: '5mb'
 }));
 app.use(bodyParser.json({limit: '5mb'}));
+
+app.all('/oauth/token', app.oauth.grant());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

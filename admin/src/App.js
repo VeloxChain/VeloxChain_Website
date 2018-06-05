@@ -28,7 +28,7 @@ class App extends Component {
         appLayout={Layout}
         menu={Menu}
         logoutButton={Logout}
-        // authClient={AuthClient}
+        authClient={AuthClient}
         title="Ulabs"
         restClient={jsonServerRestClient("/admin", httpClient)}
       >
