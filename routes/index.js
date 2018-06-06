@@ -79,7 +79,7 @@ router.post('/add_whitelist', function(req, res, next) {
 
 router.post('/action_presale', function(req, res, next) {
   let { full_name, email, is_investor, represent_type, desired_allocation, citizenship, sending_addr, note } = req.body;
-  
+
   if(
     _.isEmpty(full_name) ||
     _.isEmpty(email) ||
@@ -87,7 +87,7 @@ router.post('/action_presale', function(req, res, next) {
   ) {
     return failResponse(res, 'Bad request');
   }
-  
+
   if(!validateEmail(email)) {
     return failResponse(res, 'Invalid email');
   }
@@ -123,7 +123,7 @@ router.post('/action_presale', function(req, res, next) {
   });
 });
 
-router.get('/admin/pre-sale', function(req, res, next) {
+router.getPresale = function(req, res, next) {
   let option = {
     limit: appConfig.paginate_limit_item
   }
@@ -167,7 +167,7 @@ router.get('/admin/pre-sale', function(req, res, next) {
     ).catch((message) => {
       return responseRouter.fail(res, message.name)
     })
-});
+};
 
 const processDataForGetOverviewInformation = (listPreSale, req) => {
   let dataResponse = {
@@ -189,7 +189,7 @@ const processDataForGetOverviewInformation = (listPreSale, req) => {
   return dataResponse
 }
 
-router.get('/admin/get_overview_information', function(req, res, next) {
+router.getOverviewInformation = function(req, res, next) {
   let queryOption = {}
 
   queryOption["attributes"] = ["id", "created_at"]
@@ -200,6 +200,6 @@ router.get('/admin/get_overview_information', function(req, res, next) {
     listPreSale = data
     return responseRouter.success(res, processDataForGetOverviewInformation(listPreSale, req))
   })
-});
+};
 
 module.exports = router;

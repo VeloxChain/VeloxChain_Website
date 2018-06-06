@@ -35,6 +35,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 
+app.use(app.oauth.authorise(),function (req, res, next) {
+  return next();
+});
+app.use(app.oauth.errorHandler());
+app.get('/admin/pre-sale', indexRouter.getPresale);
+app.get('/admin/get_overview_information', indexRouter.getOverviewInformation);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
