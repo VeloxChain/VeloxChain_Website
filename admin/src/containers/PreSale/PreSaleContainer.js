@@ -2,11 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { showNotification, refreshView } from "admin-on-rest";
 import PropsType from "prop-types";
-import _ from "lodash";
 
 import { getOverviewIndex } from "../../actions/AppAction";
 import PreSaleComponent from "../../components/PreSale/PreSaleComponent";
-import appConfig from "../../configs/App.config";
 
 class PreSaleContainer extends Component {
   componentDidMount() {

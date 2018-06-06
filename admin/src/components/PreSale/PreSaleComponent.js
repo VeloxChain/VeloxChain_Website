@@ -1,16 +1,12 @@
 import React, { Component } from "react";
 import { Card } from "material-ui/Card";
-import RaisedButton from "material-ui/RaisedButton";
 import PropsType from "prop-types";
-import Cookies from "universal-cookie";
 
 import styles from "./PreSaleComponent.styles";
 import PreSaleList from "./PreSaleListComponent";
 import Chart1 from "../../assets/images/Bar Chart.png";
 import Chart2 from "../../assets/images/Bar Chart-1.png";
 import Chart3 from "../../assets/images/Bar Chart-2.png";
-
-const cookies = new Cookies();
 
 class PreSaleComponent extends Component {
   render() {
@@ -26,7 +22,7 @@ class PreSaleComponent extends Component {
                   <h4 style={styles.description}>Week</h4>
                 </div>
                 <div className="col-sm-6 text-right">
-                  <img src={Chart1} style={styles.iconToday} />
+                  <img src={Chart1} style={styles.iconToday} alt="Bikecoin" />
                 </div>
               </div>
             </Card>
@@ -39,7 +35,7 @@ class PreSaleComponent extends Component {
                   <h4 style={styles.description}>Month</h4>
                 </div>
                 <div className="col-sm-6 text-right">
-                  <img src={Chart2} style={styles.iconToday} />
+                  <img src={Chart2} style={styles.iconToday} alt="Bikecoin" />
                 </div>
               </div>
             </Card>
@@ -52,7 +48,7 @@ class PreSaleComponent extends Component {
                   <h4 style={styles.description}>Year</h4>
                 </div>
                 <div className="col-sm-6 text-right">
-                  <img src={Chart3} style={styles.iconToday} />
+                  <img src={Chart3} style={styles.iconToday} alt="Bikecoin" />
                 </div>
               </div>
             </Card>
@@ -60,14 +56,6 @@ class PreSaleComponent extends Component {
         </div>
 
         <Card style={styles.card}>
-          <div>
-            {/* <RaisedButton
-              label="Export excel"
-              primary={true}
-              onClick={() => {this.props.exportExcel();}}
-              style={styles.buttonExcel}
-            /> */}
-          </div>
           <PreSaleList {...this.props} />
         </Card>
       </div>

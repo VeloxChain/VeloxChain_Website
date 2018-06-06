@@ -92,20 +92,29 @@ router.post('/action_presale', function(req, res, next) {
     return failResponse(res, 'Invalid email');
   }
 
-  models.presale.create({
-    email: email,
-    full_name: full_name,
-    email: email,
-    is_investor: is_investor,
-    represent_type: represent_type,
-    desired_allocation: desired_allocation,
-    citizenship: citizenship,
-    sending_addr: sending_addr,
-    note: note,
-    created_at: new Date(),
-    updated_at: new Date(),
-  }).then(
-    (data) => {
+  models.presale.findOrCreate({
+    where: {
+      email: email,
+    },
+    defaults: {
+      email: email,
+      full_name: full_name,
+      email: email,
+      is_investor: is_investor,
+      represent_type: represent_type,
+      desired_allocation: desired_allocation,
+      citizenship: citizenship,
+      sending_addr: sending_addr,
+      note: note,
+      created_at: new Date(),
+      updated_at: new Date(),
+    }
+  }).spread(
+    (data, created) => {
+      if (!created) {
+        return failResponse(res, 'Email is added');
+      }
+
       const msg = {
         to: email,
         from: appConfig.email_sender_address,
@@ -119,8 +128,38 @@ router.post('/action_presale', function(req, res, next) {
       return successResponse(res, data);
     }
   ).catch((message) => {
-    return failResponse(res, message);
-  });
+    return responseRouter.fail(res, message.name)
+  })
+
+  // models.presale.create({
+  //   email: email,
+  //   full_name: full_name,
+  //   email: email,
+  //   is_investor: is_investor,
+  //   represent_type: represent_type,
+  //   desired_allocation: desired_allocation,
+  //   citizenship: citizenship,
+  //   sending_addr: sending_addr,
+  //   note: note,
+  //   created_at: new Date(),
+  //   updated_at: new Date(),
+  // }).then(
+  //   (data) => {
+  //     const msg = {
+  //       to: email,
+  //       from: appConfig.email_sender_address,
+  //       subject: 'Resale is successfully',
+  //       templateId: "811addca-9f9d-4980-a81e-29ecfa3a4cc8",
+  //       substitutions: {
+  //         name: `${_.isEmpty(full_name)? "": full_name}`
+  //       }
+  //     };
+  //     sgMail.send(msg);
+  //     return successResponse(res, data);
+  //   }
+  // ).catch((message) => {
+  //   return failResponse(res, message);
+  // });
 });
 
 router.getPresale = function(req, res, next) {

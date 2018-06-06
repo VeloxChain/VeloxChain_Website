@@ -18,20 +18,20 @@ gulp.task('minify-css',() => {
 });
 
 
-gulp.task('compress', function (cb) {
-  pump([
-        gulp.src('front/scripts/*.js'),
-        uglify(),
-        gulp.dest('public/scripts')
-    ],
-    cb
-  );
-});
+// gulp.task('compress', function (cb) {
+//   pump([
+//         gulp.src('front/scripts/*.js'),
+//         uglify(),
+//         gulp.dest('public/scripts')
+//     ],
+//     cb
+//   );
+// });
 
 gulp.task('watch', function () {
   // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
   return watch('front/**/*.*', function () {
-    gulp.start('compress');
+    // gulp.start('compress');
     gulp.start('minify-css');
   });
 });
@@ -47,5 +47,5 @@ gulp.task('nodestart', function (cb) {
 
 gulp.task(
   'default',
-  ['nodestart', 'compress', 'minify-css','watch']
+  ['nodestart', 'minify-css','watch']
 );

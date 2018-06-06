@@ -82,10 +82,10 @@ const styles = {
 
   titleStyle: {
     textAlign: "center",
-    background: "#0f1949",
+    background: "rgb(35, 40, 53)",
     textTransform: "uppercase",
     padding: "15px 0px",
-    color: "#fff",
+    color: "#00f58a",
     letterSpacing: "3px",
   },
 
@@ -97,6 +97,35 @@ const styles = {
     marginTop: "20px",
     marginBottom: "20px",
     marginLeft: "10px"
+  },
+
+  close: {
+    fontSize: "24px",
+    position: "absolute",
+    color: "#fff",
+    top: "14px",
+    right: "14px",
+    cursor: "pointer"
+  },
+
+  text: {
+    position: "relative",
+    padding: "0px 30px"
+  },
+
+  icon: {
+    position: "absolute",
+    left: "0",
+    bottom: "15px"
+  },
+
+  actions: {
+    textAlign: "center",
+    marginTop: "20px"
+  },
+
+  buttonAction: {
+    margin: "0px 5px"
   }
 };
 

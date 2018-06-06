@@ -9,7 +9,7 @@ const Logout = (props) => {
   const { userLogout } = props;
   return (
     <div onClick={userLogout} style={styles.logout}>
-      <img src={logout} style={styles.icon} />
+      <img src={logout} style={styles.icon} alt="Bikecoin" />
       <div style={styles.text}>Logout</div>
     </div>
   );
