@@ -6,7 +6,6 @@ import _ from "lodash";
 
 import { getOverviewIndex } from "../../actions/AppAction";
 import PreSaleComponent from "../../components/PreSale/PreSaleComponent";
-import {fetchDataFromTypeForm, getAccessToken} from "../../service/TypeFormService";
 import appConfig from "../../configs/App.config";
 
 class PreSaleContainer extends Component {
@@ -35,7 +34,7 @@ class PreSaleContainer extends Component {
 
   render() {
     return (
-      <PreSaleComponent exportExcel={this.exportExcel} fetchDataFromTypeForm={fetchDataFromTypeForm} {...this.props} overviewIndex={this.props.overviewIndex}/>
+      <PreSaleComponent exportExcel={this.exportExcel} fetchDataFromTypeForm={()=>{}} {...this.props} overviewIndex={this.props.overviewIndex}/>
     );
   }
 }
