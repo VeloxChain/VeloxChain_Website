@@ -356,7 +356,7 @@ a:focus {
       width: 50%;
       background-image: url("../images/Group-344.png");
       background-size: cover;
-      padding: 35px 20px 10px;
+      padding: 40px 20px;
       border-radius: 10px 0px 0px 10px; }
       @media screen and (max-width: 767px) {
         .tech .content .content-left {
@@ -483,7 +483,12 @@ a:focus {
   .token-sale  .btn-preorder:hover {
     background: linear-gradient(to right, #38d67e, #3493dc);
     color: #fff;  }
-
+    @media screen and (max-width: 768px) {
+      .token-sale  .btn-preorder {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    }
   @media screen and (max-width: 767px) {
     .token-sale .content .content-right.content-right-preorder {
       padding-left: 0px;
