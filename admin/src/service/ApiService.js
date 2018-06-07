@@ -21,3 +21,25 @@ export const callAPIOverview = (dispatch) => {
     return response.json();
   });
 };
+
+export const callAPIUpdate = (preSale, dispatch) => {
+  const request = new Request(`admin/pre_sale/${preSale.id}`, {
+    method: "PUT",
+    body: JSON.stringify(preSale),
+    headers: new Headers({
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${localStorage.getItem("token")}`
+    }),
+  });
+
+  return fetch(request).then(response => {
+    if (response.status == 401) {
+      dispatch(userLogout());
+    }
+
+    if (response.status < 200 || response.status >= 300) {
+      return {};
+    }
+    return response.json();
+  });
+};

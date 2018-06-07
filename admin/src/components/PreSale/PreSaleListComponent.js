@@ -72,7 +72,11 @@ class PreSaleList extends Component {
           open={this.state.openDialog}
           onRequestClose={this.handleCloseDialog}
         >
-          <PreSaleComponentDetail handleCloseDialog={this.handleCloseDialog} currentPreSale={this.state.currentPreSale} />
+          <PreSaleComponentDetail
+            handleCloseDialog={this.handleCloseDialog}
+            currentPreSale={this.state.currentPreSale}
+            callAPIUpdate={this.props.callAPIUpdate}
+          />
         </Dialog>
 
         <List title="Pre-sale Log" {...this.props} filters={<PostFilter />}>
@@ -90,5 +94,9 @@ class PreSaleList extends Component {
     );
   }
 }
+
+PreSaleList.propTypes = {
+  callAPIUpdate: PropTypes.func.isRequired
+};
 
 export default PreSaleList;

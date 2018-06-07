@@ -83,6 +83,7 @@ class PreSaleComponentDetail extends Component {
             label="Update"
             primary={true}
             style={styles.buttonAction}
+            onClick={() => {this.props.handleCloseDialog(); this.props.callAPIUpdate(this.state.currentPreSale);}}
           />
         </div>
         <i
@@ -98,6 +99,7 @@ class PreSaleComponentDetail extends Component {
 PreSaleComponentDetail.propTypes = {
   handleCloseDialog: PropTypes.func.isRequired,
   currentPreSale: PropTypes.object.isRequired,
+  callAPIUpdate: PropTypes.func.isRequired,
 };
 
 export default PreSaleComponentDetail;

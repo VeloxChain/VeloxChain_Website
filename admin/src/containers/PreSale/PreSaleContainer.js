@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { showNotification, refreshView } from "admin-on-rest";
 import PropsType from "prop-types";
 
+import { callAPIUpdate } from "../../service/ApiService";
 import { getOverviewIndex } from "../../actions/AppAction";
 import PreSaleComponent from "../../components/PreSale/PreSaleComponent";
 
@@ -30,9 +31,26 @@ class PreSaleContainer extends Component {
     });
   }
 
+  handleCallAPIUpdate = (preSale)=> {
+    callAPIUpdate(preSale, this.props.dispatch).then(response => {
+      if(response.code == 200) {
+        this.props.showNotification("Updated!");
+        this.props.refreshView();
+        return;
+      }
+      this.props.showNotification("Fail Update");
+    });
+  }
+
   render() {
     return (
-      <PreSaleComponent exportExcel={this.exportExcel} fetchDataFromTypeForm={()=>{}} {...this.props} overviewIndex={this.props.overviewIndex}/>
+      <PreSaleComponent
+        exportExcel={this.exportExcel}
+        fetchDataFromTypeForm={()=>{}}
+        {...this.props}
+        overviewIndex={this.props.overviewIndex}
+        callAPIUpdate={this.handleCallAPIUpdate}
+      />
     );
   }
 }

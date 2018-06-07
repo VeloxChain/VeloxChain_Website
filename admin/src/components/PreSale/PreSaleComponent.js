@@ -56,7 +56,10 @@ class PreSaleComponent extends Component {
         </div>
 
         <Card style={styles.card}>
-          <PreSaleList {...this.props} />
+          <PreSaleList
+            {...this.props}
+            callAPIUpdate={this.props.callAPIUpdate}
+          />
         </Card>
       </div>
     );
@@ -66,6 +69,7 @@ class PreSaleComponent extends Component {
 PreSaleComponent.propTypes = {
   overviewIndex: PropsType.object.isRequired,
   exportExcel: PropsType.func.isRequired,
+  callAPIUpdate: PropsType.func.isRequired,
 };
 
 export default PreSaleComponent;

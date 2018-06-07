@@ -130,36 +130,6 @@ router.post('/action_presale', function(req, res, next) {
   ).catch((message) => {
     return responseRouter.fail(res, message.name)
   })
-
-  // models.presale.create({
-  //   email: email,
-  //   full_name: full_name,
-  //   email: email,
-  //   is_investor: is_investor,
-  //   represent_type: represent_type,
-  //   desired_allocation: desired_allocation,
-  //   citizenship: citizenship,
-  //   sending_addr: sending_addr,
-  //   note: note,
-  //   created_at: new Date(),
-  //   updated_at: new Date(),
-  // }).then(
-  //   (data) => {
-  //     const msg = {
-  //       to: email,
-  //       from: appConfig.email_sender_address,
-  //       subject: 'Resale is successfully',
-  //       templateId: "811addca-9f9d-4980-a81e-29ecfa3a4cc8",
-  //       substitutions: {
-  //         name: `${_.isEmpty(full_name)? "": full_name}`
-  //       }
-  //     };
-  //     sgMail.send(msg);
-  //     return successResponse(res, data);
-  //   }
-  // ).catch((message) => {
-  //   return failResponse(res, message);
-  // });
 });
 
 router.getPresale = function(req, res, next) {
@@ -240,5 +210,39 @@ router.getOverviewInformation = function(req, res, next) {
     return responseRouter.success(res, processDataForGetOverviewInformation(listPreSale, req))
   })
 };
+
+router.put('/admin/pre_sale/:presale_id', function(req, res, next) {
+  let presale = req.body;
+
+  if (!req.params.presale_id || !presale) {
+    return responseRouter.fail(res, {
+      message: "Bad request"
+    }, 400)
+  }
+
+  if(
+    _.isEmpty(presale.full_name) ||
+    _.isEmpty(presale.email)
+  ) {
+    return failResponse(res, 'Bad request');
+  }
+
+  models.presale.update({
+    full_name: presale.full_name,
+    email: presale.email,
+  }, {
+    where: {
+      id: req.params.presale_id
+    }
+  }).then(() => {
+    return responseRouter.success(res, {
+      message: "success"
+    }, 200)
+  }).catch((error) => {
+    return responseRouter.fail(res, {
+      message: error.name
+    })
+  })
+});
 
 module.exports = router;
