@@ -17,6 +17,10 @@ router.get('/', function(req, res, next) {
   res.sendfile('./views/index.html');
 });
 
+router.get('/admin', function(req, res, next) {
+  res.sendfile('./views/admin.html');
+});
+
 router.get('/presale', function(req, res, next) {
   res.sendfile('./views/presale.html');
 });

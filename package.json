@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev-server": "PORT=3000 nodemon --exec npm start"
+    "dev-server": "cd docker/; docker-compose up -d; PORT=3000 nodemon --exec npm start",
+    "dev-client": "cd admin/; npm start",
+    "build": "cd admin/; npm run build; mv build/index.html ../views/admin.html; cp -r build/. ../public/admin_build"
   },
   "dependencies": {
     "@sendgrid/mail": "^6.2.1",
