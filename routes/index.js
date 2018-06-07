@@ -81,9 +81,9 @@ router.post('/action_presale', function(req, res, next) {
   let { full_name, email, is_investor, represent_type, desired_allocation, citizenship, sending_addr, note, currency } = req.body;
 
   if(
-    _.isEmpty(full_name) ||
-    _.isEmpty(email) ||
-    _.isEmpty(desired_allocation)
+    _.isNull(full_name) ||
+    _.isNull(email) ||
+    _.isNull(desired_allocation)
   ) {
     return failResponse(res, 'Bad request');
   }
@@ -221,9 +221,12 @@ router.put('/admin/pre_sale/:presale_id', function(req, res, next) {
     }, 400)
   }
 
+ 
+
   if(
-    _.isEmpty(presale.full_name) ||
-    _.isEmpty(presale.email)
+    _.isNull(presale.full_name) ||
+    _.isNull(presale.email) ||
+    _.isNull(presale.desired_allocation)
   ) {
     return failResponse(res, 'Bad request');
   }
@@ -231,6 +234,9 @@ router.put('/admin/pre_sale/:presale_id', function(req, res, next) {
   models.presale.update({
     full_name: presale.full_name,
     email: presale.email,
+    citizenship: presale.citizenship,
+    desired_allocation: presale.desired_allocation,
+    currency: presale.currency
   }, {
     where: {
       id: req.params.presale_id

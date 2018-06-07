@@ -68,7 +68,6 @@ class PreSaleComponent extends Component {
 
 PreSaleComponent.propTypes = {
   overviewIndex: PropsType.object.isRequired,
-  exportExcel: PropsType.func.isRequired,
   callAPIUpdate: PropsType.func.isRequired,
 };
 

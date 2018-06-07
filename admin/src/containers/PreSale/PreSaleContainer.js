@@ -12,25 +12,6 @@ class PreSaleContainer extends Component {
     getOverviewIndex(this.props.dispatch);
   }
 
-  exportExcel = () => {
-    const request = new Request("admin/preorder/excel", {
-      method: "POST",
-      headers: new Headers({
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${localStorage.getItem("token")}`
-      }),
-    });
-    fetch(request).then(response => {
-      return response.json();
-    }).then((data) => {
-      if(data.status == "success") {
-        var link = document.createElement("a");
-        link.href = data.data.filename;
-        link.click();
-      }
-    });
-  }
-
   handleCallAPIUpdate = (preSale)=> {
     callAPIUpdate(preSale, this.props.dispatch).then(response => {
       if(response.code == 200) {
@@ -45,7 +26,6 @@ class PreSaleContainer extends Component {
   render() {
     return (
       <PreSaleComponent
-        exportExcel={this.exportExcel}
         fetchDataFromTypeForm={()=>{}}
         {...this.props}
         overviewIndex={this.props.overviewIndex}
@@ -60,7 +40,6 @@ PreSaleContainer.propTypes = {
   overviewIndex: PropsType.object.isRequired,
   showNotification: PropsType.func.isRequired,
   refreshView: PropsType.func.isRequired,
-  exportExcel: PropsType.func.isRequired,
 };
 
 const mapStateToProps = state => ({

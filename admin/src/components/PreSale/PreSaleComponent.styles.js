@@ -89,6 +89,10 @@ const styles = {
     letterSpacing: "3px",
   },
 
+  contentPopup: {
+    margin: "20px auto",
+  },
+
   buttonImport: {
     marginBottom: "20px"
   },
