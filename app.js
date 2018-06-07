@@ -41,6 +41,7 @@ app.use(app.oauth.authorise(),function (req, res, next) {
 app.use(app.oauth.errorHandler());
 app.get('/admin/pre-sale', indexRouter.getPresale);
 app.get('/admin/get_overview_information', indexRouter.getOverviewInformation);
+app.put('/admin/pre_sale/:presale_id', indexRouter.updatePreSale);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

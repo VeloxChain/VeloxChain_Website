@@ -212,7 +212,7 @@ router.getOverviewInformation = function(req, res, next) {
   })
 };
 
-router.put('/admin/pre_sale/:presale_id', function(req, res, next) {
+router.updatePreSale = function(req, res, next) {
   let presale = req.body;
 
   if (!req.params.presale_id || !presale) {
@@ -250,6 +250,6 @@ router.put('/admin/pre_sale/:presale_id', function(req, res, next) {
       message: error.name
     })
   })
-});
+}
 
 module.exports = router;
