@@ -1,5 +1,3 @@
-/* jshint indent: 2 */
-
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('presale', {
     id: {
@@ -26,6 +24,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     desired_allocation: {
       type: DataTypes.INTEGER(11),
+      allowNull: true
+    },
+    currency: {
+      type: DataTypes.STRING(10),
       allowNull: true
     },
     citizenship: {
