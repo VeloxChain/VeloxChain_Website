@@ -26,6 +26,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER(11),
       allowNull: true
     },
+    currency: {
+      type: DataTypes.STRING(10),
+      allowNull: true
+    },
     citizenship: {
       type: DataTypes.STRING(10),
       allowNull: false

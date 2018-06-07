@@ -78,7 +78,7 @@ router.post('/add_whitelist', function(req, res, next) {
 });
 
 router.post('/action_presale', function(req, res, next) {
-  let { full_name, email, is_investor, represent_type, desired_allocation, citizenship, sending_addr, note } = req.body;
+  let { full_name, email, is_investor, represent_type, desired_allocation, citizenship, sending_addr, note, currency } = req.body;
 
   if(
     _.isEmpty(full_name) ||
@@ -103,6 +103,7 @@ router.post('/action_presale', function(req, res, next) {
       is_investor: is_investor,
       represent_type: represent_type,
       desired_allocation: desired_allocation,
+      currency: currency,
       citizenship: citizenship,
       sending_addr: sending_addr,
       note: note,

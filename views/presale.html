@@ -99,9 +99,7 @@
                                     <div class="input-group">
                                         <input name="desired_allocation" type="text" class="form-control" id="desired_allocation" placeholder="25000">
                                         <div class="input-group-btn">
-                                            <button type="button" id="desired_allocation_currency" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-                                                USD
-                                            </button>
+                                            <button type="button" id="desired_allocation_currency" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">USD</button>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a class="dropdown-item">USD</a>
                                                 <a class="dropdown-item">ETH</a>
@@ -478,8 +476,8 @@
                     return
                 }
 
-                serializedData = $(this).serialize();
-
+                serializedData = $(this).serialize() + '&currency=' + $("#desired_allocation_currency").html(), 
+                
                 request = $.ajax({
                     url: "/action_presale",
                     type: "post",

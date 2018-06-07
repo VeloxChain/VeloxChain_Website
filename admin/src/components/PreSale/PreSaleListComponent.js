@@ -86,6 +86,7 @@ class PreSaleList extends Component {
             <TextField source="email"/>
             <TextField source="citizenship" label="Citizenship"/>
             <TextField source="desired_allocation" label="Desired Allocation" />
+            <TextField source="currency" label="Currency" />
             <TextFieldCustomForDate source="created_at" label="Date"/>
             <ButtonViewCustom handleOpenDialog={this.handleOpenDialog} label=""/>
           </Datagrid>
