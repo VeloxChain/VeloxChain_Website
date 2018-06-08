@@ -97,6 +97,7 @@ a:focus {
 }
 .site-header {
   background-image: url("../images/banner.png");
+  background-position: center;
   background-size: cover;
   min-height: 100vh;
   position: relative; }
@@ -697,92 +698,137 @@ a:focus {
     color: #fff;
     margin-bottom: 40px; }
   .team .member {
-    padding: 30px 20px;
+    padding: 30px 15px;
     margin-bottom: 20px;
     border: 1px solid #bababa;
     text-align: center;
-    background: #fff;
-    color: #333; }
-  
-    .team .member.member-first {
-      min-height: 766px; }
-    .team .member.member-second {
-      min-height: 750px; }
-    .team .member.member-three {
-      min-height: 686px; }
-    @media screen and (max-width: 1200px) {
-      .team .member.member-first {
-        min-height: 880px; }
-      .team .member.member-second {
-        min-height: 830px; }
-      .team .member.member-three {
-        min-height: 730px; } }
-    @media screen and (max-width: 992px) {
-      .team .member.member-first {
-        min-height: 1063px; }
-      .team .member.member-second {
-        min-height: 1047px; }
-      .team .member.member-three {
-        min-height: 892px; } }
-    @media screen and (max-width: 767px) {
-      .team .member.member-first,
-      .team .member.member-second,
-      .team .member.member-three {
-        min-height: auto; } }
+    background: rgba(255,255,255,.1);
+    color: #fff; }
 
     .team .member .avatar {
       width: 150px;
       border-radius: 50%;
       margin: 0px auto; }
-    .team .member .title {
-      color: #0d2135; }
     .team .member .position {
-      color: #686868;
-      font-size: 16px; }
+      min-height: 48px;
+      font-size: 16px;
+      color: #00F58A;
+      line-height: 1.5; }
+    .team .member .position p {
+      margin-bottom: 0px;  }
     .team .member .linkedin {
       font-size: 20px;
-      color: #293448; }
+      color: #fff; }
     .team .member .description {
-      margin-top: 20px;
-      margin-bottom: 20px; }
-      @media screen and (max-width: 767px) {
-        .team .member .logo {
-          height: auto; }
-          .team .member.member-first,
-          .team .member.member-second,
-          .team .member.member-three {
-            height: auto; } }
-      .team .member .logo .logo-company {
-        width: 100%; }
-      .team .member .logo .logo-company.custom {
-        height: 80px;
-        width: auto; }
-      .team .member .logo .logo-company.w100 {
-        width: 80px; }
-      .team .member .logo .logo-company.w70 {
-        width: 60px; }
-      .team .member .logo .logo-company.h120 {
-        height: 120px;
-        width: auto; }
-      .team .member .logo .logo-company.w120 {
-        width: 120px; }
+      margin-top: 20px;}
 
-      @media screen and (max-width: 1200px) {
-        .team .member .logo .logo-company.custom {
-          height: 80px; } 
-        .team .member .logo .logo-company.w100 {
-          width: 80px; } 
-        .member.rossi .description {
-          margin-bottom: 0px; } }
+      .team .member .position.CEO {
+        min-height: auto;
+      }
+          .wrapper {
+            margin-top: 20px;
+          }
 
-      @media screen and (max-width: 992px) {
-        .team .member .logo .logo-company.w120 {
-          width: 100%; }
-        .team .member .logo .logo-company.custom {
-          height: auto; 
-          width: 100%; } 
-        .team .member .logo .logo-company.w100 {
-          width: 100%; } }
+          .btn-read {
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 0px;
+          }
+
+          .wrapper .btn-read .less {
+            display: none;
+          }
+
+          .wrapper .btn-read[aria-expanded="true"] .less {
+            display: block;
+          }
+
+          .wrapper .btn-read[aria-expanded="false"] .more {
+            display: block;
+          }
+
+          .wrapper .btn-read[aria-expanded="true"] .more {
+            display: none;
+          }
+          
+          .member .wrapp {
+            display: flex;
+          }
+
+          .member .wrapp .member-left {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .member .wrapp .member-right {
+            width: 50%;
+            display: flex;
+            margin-right: 20px;
+            align-items: center;
+            text-align: justify;
+          }
+
+          @media screen and (max-width: 1200px) {
+            .team .member.member-second .title {
+              height: 52px;
+            }
+
+            .team .member.member-second .position {
+              height: 72px;
+            }
+          }
+
+          @media screen and (max-width: 992px) {
+            .team .member .avatar {
+              width: 110px;
+            }
+
+            .team .member .title {
+              height: 52px;
+            }
+
+            .team .member.member-first .position {
+              height: 72px;
+            }
+
+            .team .member.member-second .position {
+              height: 92px;
+            }
+          }
+
+          @media screen and (max-width: 767px) {
+            .member .wrapp {
+              display: block;
+            }
+
+            .member .wrapp .member-left {
+              width: 100%;
+              display: block;
+            }
+
+            .member .wrapp .member-right {
+              width: 100%;
+              display: block;
+              text-align: center;
+            }
+
+            .team .member .avatar {
+              width: 150px;
+            }
+
+            .team .member .title {
+              height: auto;
+            }
+
+            .team .member.member-first .position,
+            .team .member.member-second .position,
+            .team .member .position {
+              height: auto;
+              min-height: auto;
+            }
+          }
 
   .team .contribuling {
     margin-top: 20px;
