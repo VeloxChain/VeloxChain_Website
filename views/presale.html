@@ -18,18 +18,8 @@
     <meta property="og:site-name" content="Bike Coin" />
     <meta property="og:description" content="Trustless infrastructure for Premium Smart Bicycles" />
 
-    <meta name="theme-color" content="#eeeeee">
-    <meta name="msapplication-navbutton-color" content="#eeeeee">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#eeeeee">
+    <meta name="theme-color" content="#00d679">
 
-
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="transparent">
-    <meta name="application-name" content="Bike Coin">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Bike Coin">
-    <meta name="msapplication-TileColor" content="transparent">
     <link rel="shortcut icon" href="images/favicon.png">
 </head>
 
@@ -109,9 +99,7 @@
                                     <div class="input-group">
                                         <input name="desired_allocation" type="text" class="form-control" id="desired_allocation" placeholder="25000">
                                         <div class="input-group-btn">
-                                            <button type="button" id="desired_allocation_currency" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-                                                USD
-                                            </button>
+                                            <button type="button" id="desired_allocation_currency" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">USD</button>
                                             <div class="dropdown-menu dropdown-menu-right">
                                                 <a class="dropdown-item">USD</a>
                                                 <a class="dropdown-item">ETH</a>
@@ -488,8 +476,8 @@
                     return
                 }
 
-                serializedData = $(this).serialize();
-
+                serializedData = $(this).serialize() + '&currency=' + $("#desired_allocation_currency").html(), 
+                
                 request = $.ajax({
                     url: "/action_presale",
                     type: "post",
