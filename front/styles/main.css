@@ -1155,6 +1155,10 @@ input#email-subscribe:-moz-placeholder {
   border: none;
 }
 
+.btn-submit:focus {
+  outline: none;
+}
+
 @media screen and (max-width:767px) {
   .btn-gohome {
     display: block;

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { jsonServerRestClient, Admin, Resource, fetchUtils } from "admin-on-rest";
 
 import PreSaleContainer from "./containers/PreSale/PreSaleContainer";
+import WhitelistContainer from "./containers/Whitelist/WhitelistContainer";
 import AuthClient from "./service/AuthClient";
 import Menu from "./containers/admin_on_rest_custom/menu/Menu";
 import Logout from "./containers/admin_on_rest_custom/logout/Logout";
@@ -32,6 +33,7 @@ class App extends Component {
         title="Ulabs"
         restClient={jsonServerRestClient("/admin", httpClient)}
       >
+        <Resource name="whitelist" options={{ label: "whitelist" }} list={WhitelistContainer} />
         <Resource name="pre-sale" options={{ label: "Pre-sale" }} list={PreSaleContainer} />
       </Admin>
     );
