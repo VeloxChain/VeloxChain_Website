@@ -121,13 +121,13 @@
                                 <div class="flex">
                                     <div>
                                         <div class="action">
-                                            <a class="btn btn-click" href="images/whitepaper/lightpaper1.2.jpg" target="_blank">light whitepaper</a>
+                                            <a class="btn btn-click" href="#" data-link="/images/whitepaper/lightpaper1.2.jpg">light whitepaper</a>
                                         </div>
                                         <div class="action">
-                                            <a class="btn btn-click" href="images/whitepaper/BikeCoin_Technical_Whitepaper.pdf" target="_blank">technical whitepaper</a>
+                                            <a class="btn btn-click" href="#" data-link="/images/whitepaper/BikeCoin_Technical_Whitepaper.pdf">technical whitepaper</a>
                                         </div>
                                         <div class="action">
-                                            <a class="btn btn-click" href="images/whitepaper/BikeCoin_Business_Whitepaper.pdf" target="_blank">business whitepaper</a>
+                                            <a class="btn btn-click" href="#" data-link="/images/whitepaper/BikeCoin_Business_Whitepaper.pdf">business whitepaper</a>
                                         </div>
                                     </div>
                                 </div>
@@ -174,6 +174,34 @@
         </div>
     </header>
 
+    <div class="modal fade" id="thankyou" tabindex="-1" role="dialog" aria-labelledby="thankyou" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="images/logo.png" alt="BikeCoin">
+                </div>
+                <div class="modal-body">
+                    <form id="joinwhitelist">
+                        <h3>Bikecoin shared this document with you</h3>
+                        <p>Please enter your info to continue</p>
+                        <div class="content-paper">
+                            <div class="form-group text-left">
+                                <label for="email" class="question">
+                                    Email*
+                                </label>
+                                <input name="email" id="email" type="email" class="form-control" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="action-submit">
+                            <button class="btn-gohome btn-submit">Continue</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="about" id="about">
         <div class="container">
             <div class="title-web">
@@ -992,6 +1020,65 @@
     <script src="scripts/vendor.js"></script>
     <script src="scripts/main.js"></script>
 
+    <script>
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        $(document).ready(function() {
+            var link = "";
+
+            $('.btn-click').click(function() {
+                link = $(this).attr('data-link');
+
+                if (getCookie("is_added_whitelist") != "true") {
+                    $("#thankyou").modal("show");
+                    return;
+                }
+
+                window.open(link, '_blank');
+                
+            });
+
+            $('#joinwhitelist').on("submit", function (event) {
+                event.preventDefault();
+
+                serializedData = $(this).serialize();
+
+                request = $.ajax({
+                    url: "/add_whitelist",
+                    type: "post",
+                    data: serializedData
+                });
+
+                // Callback handler that will be called on success
+                request.done(function (response, textStatus, jqXHR) {
+                    if (response.status === "success") {
+                        $("#email").val("");
+                        $("#thankyou").modal("hide");
+                        setTimeout(()=> {
+                            window.open(link, '_blank');
+                        }, 1000);
+                    } else {
+                        toastr.error(response.data);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

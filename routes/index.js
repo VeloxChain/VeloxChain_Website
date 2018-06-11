@@ -51,6 +51,8 @@ router.post('/add_whitelist', function(req, res, next) {
     return failResponse(res, 'Invalid email');
   }
 
+  res.cookie('is_added_whitelist', 'true');
+
   models.whitelist.findOrCreate({
     where: {
       email: emailToAdd,
