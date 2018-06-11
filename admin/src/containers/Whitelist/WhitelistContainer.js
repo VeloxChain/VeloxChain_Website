@@ -17,14 +17,9 @@ class WhitelistContainer extends Component {
 
 WhitelistContainer.propTypes = {
   dispatch: PropsType.func.isRequired,
-  overviewIndex: PropsType.object.isRequired,
   showNotification: PropsType.func.isRequired,
   refreshView: PropsType.func.isRequired,
 };
-
-const mapStateToProps = state => ({
-  overviewIndex: state.AppReducer.overviewIndex
-});
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -34,4 +29,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(WhitelistContainer);
+export default connect(mapDispatchToProps)(WhitelistContainer);

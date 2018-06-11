@@ -47,11 +47,11 @@ function validateEmail(email) {
 router.post('/add_whitelist', function(req, res, next) {
   let emailToAdd = req.body.email;
 
+  res.cookie('is_added_newsletter', 'true');
+
   if(!validateEmail(emailToAdd)) {
     return failResponse(res, 'Invalid email');
   }
-
-  res.cookie('is_added_whitelist', 'true');
 
   models.whitelist.findOrCreate({
     where: {

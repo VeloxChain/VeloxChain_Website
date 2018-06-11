@@ -33,7 +33,7 @@ class WhitelistListComponent extends Component {
   render() {
     return (
       <div>
-        <List title="Whitelist Log" {...this.props} filters={<PostFilter />}>
+        <List title="Newsletter Log" {...this.props} filters={<PostFilter />}>
           <Datagrid>
             <TextField source="id" styles={{width: "10%"}}/>
             <TextField source="email"/>

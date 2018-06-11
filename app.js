@@ -43,7 +43,7 @@ app.use(app.oauth.errorHandler());
 app.get('/admin/pre-sale', indexRouter.getPresale);
 app.get('/admin/get_overview_information', indexRouter.getOverviewInformation);
 app.put('/admin/pre_sale/:presale_id', indexRouter.updatePreSale);
-app.get('/admin/whitelist', indexRouter.getPresale);
+app.get('/admin/whitelist', indexRouter.getWhitelist);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

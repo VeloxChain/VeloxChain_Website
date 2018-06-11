@@ -18,7 +18,7 @@ const Menu = ({onMenuTap, logout }) => (
     </div>
     <MenuItem
       containerElement={<Link to="/whitelist" />}
-      primaryText="whitelist"
+      primaryText="newsletter"
       leftIcon={<img src={whitelist} style={styles.icon} alt="Bikecoin" />}
       onClick={onMenuTap}
       style={styles.item}
