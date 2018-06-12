@@ -1065,18 +1065,16 @@
 
                 // Callback handler that will be called on success
                 request.done(function (response, textStatus, jqXHR) {
-                    if (response.status !== "success") {
-                        toastr.error(response.data);
-                    } else {
-                        toastr.success("Thank you!");
-                    }
+                    // if (response.status === "success") {
+                    //     // toastr.success("Thank you!");
+                    // }
 
                     $("#email").val("");
 
                     $("#thankyou").modal("hide");
                     setTimeout(()=> {
                             window.open(link, '_blank');
-                    }, 1000);
+                    }, 500);
                 });
             });
         });
