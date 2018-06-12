@@ -47,8 +47,6 @@ function validateEmail(email) {
 router.post('/add_whitelist', function(req, res, next) {
   let emailToAdd = req.body.email;
 
-  res.cookie('is_added_newsletter', 'true');
-
   if(!validateEmail(emailToAdd)) {
     return failResponse(res, 'Invalid email');
   }
@@ -63,6 +61,9 @@ router.post('/add_whitelist', function(req, res, next) {
     }
   }).spread(
     (data, created) => {
+
+      res.cookie('is_added_newsletter', 'true');
+  
       if(!created){
         return failResponse(res, 'Email is added');
       }
