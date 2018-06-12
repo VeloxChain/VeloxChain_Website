@@ -1043,7 +1043,7 @@
             $('.btn-click').click(function() {
                 link = $(this).attr('data-link');
 
-                if (getCookie("is_added_whitelist") != "true") {
+                if (getCookie("is_added_newsletter") != "true") {
                     $("#thankyou").modal("show");
                     return;
                 }
@@ -1065,15 +1065,18 @@
 
                 // Callback handler that will be called on success
                 request.done(function (response, textStatus, jqXHR) {
-                    if (response.status === "success") {
-                        $("#email").val("");
-                        $("#thankyou").modal("hide");
-                        setTimeout(()=> {
-                            window.open(link, '_blank');
-                        }, 1000);
-                    } else {
+                    if (response.status !== "success") {
                         toastr.error(response.data);
+                    } else {
+                        toastr.success("Thank you!");
                     }
+
+                    $("#email").val("");
+
+                    $("#thankyou").modal("hide");
+                    setTimeout(()=> {
+                            window.open(link, '_blank');
+                    }, 1000);
                 });
             });
         });

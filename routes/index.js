@@ -61,20 +61,11 @@ router.post('/add_whitelist', function(req, res, next) {
     }
   }).spread(
     (data, created) => {
-
       res.cookie('is_added_newsletter', 'true');
   
       if(!created){
         return failResponse(res, 'Email is added');
       }
-
-      const msg = {
-        to: emailToAdd,
-        from: appConfig.email_sender_address,
-        templateId: "691924c8-b40b-4867-afdf-3e4241d150c6",
-      };
-
-      sgMail.send(msg);
 
       return successResponse(res, data);
     }
