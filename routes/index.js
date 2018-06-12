@@ -61,6 +61,9 @@ router.post('/add_whitelist', function(req, res, next) {
     }
   }).spread(
     (data, created) => {
+
+      res.cookie('is_added_newsletter', 'true');
+  
       if(!created){
         return failResponse(res, 'Email is added');
       }
@@ -68,8 +71,7 @@ router.post('/add_whitelist', function(req, res, next) {
       const msg = {
         to: emailToAdd,
         from: appConfig.email_sender_address,
-        subject: 'Thank for Registering our whitelist',
-        html: '<p>TBD</p>',
+        templateId: "691924c8-b40b-4867-afdf-3e4241d150c6",
       };
 
       sgMail.send(msg);
@@ -225,8 +227,6 @@ router.updatePreSale = function(req, res, next) {
     }, 400)
   }
 
- 
-
   if(
     _.isNull(presale.full_name) ||
     _.isNull(presale.email) ||
@@ -255,5 +255,42 @@ router.updatePreSale = function(req, res, next) {
     })
   })
 }
+
+router.getWhitelist = function(req, res, next) {
+  let option = {
+    limit: appConfig.paginate_limit_item
+  }
+
+  if (!_.isEmpty(req.query._sort) && !_.isEmpty(req.query._order)) {
+    option["order"] = [
+      [
+        req.query._sort,
+        req.query._order
+      ]
+    ]
+  }
+
+  if (!_.isEmpty(req.query.search)) {
+    option["where"] = {
+      email: {
+        [Op.like]: `%${req.query.search}%`
+      }
+    }
+  }
+
+  if (!_.isEmpty(req.query._start) && _.isNumber(_.toNumber(req.query._start))) {
+    option["offset"] = _.toNumber(req.query._start)
+  }
+
+  models.whitelist.findAndCountAll(option)
+    .then(
+      (data) => {
+        res.set("X-Total-Count", data.count)
+        return res.json(data.rows)
+      }
+    ).catch((message) => {
+      return responseRouter.fail(res, message.name)
+    })
+};
 
 module.exports = router;

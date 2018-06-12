@@ -201,9 +201,6 @@ a:focus {
     .site-header .content-banner .btn-click:hover {
       color: rgb(198, 216, 250);
     }
-    .site-header .content-banner .btn-click:focus {
-      color: #00F58A;
-    }
     .site-header .content-banner .btn-click:hover.btn-click::after {
       background: rgb(198, 216, 250);
     }
@@ -1128,6 +1125,10 @@ input#email-subscribe:-moz-placeholder {
   margin: 50px 0px 20px;
 }
 
+.action-submit {
+  margin: 20px 0px 10px;
+}
+
 .btn-gohome {
   color: #fff;
   background-color: #00F58A;
@@ -1146,6 +1147,18 @@ input#email-subscribe:-moz-placeholder {
   text-decoration: none;
 }
 
+#thankyou .modal-body .content-paper {
+  padding: 0px 20px;
+}
+
+.btn-submit {
+  border: none;
+}
+
+.btn-submit:focus {
+  outline: none;
+}
+
 @media screen and (max-width:767px) {
   .btn-gohome {
     display: block;
@@ -1153,7 +1166,7 @@ input#email-subscribe:-moz-placeholder {
 
   .block {
     display: block;
-  }
+  }   
 }
 
 .updating {
