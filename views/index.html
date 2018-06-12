@@ -1039,9 +1039,11 @@
 
         $(document).ready(function() {
             var link = "";
+            var selectedElement = null;
 
             $('.btn-click').click(function() {
                 link = $(this).attr('data-link');
+                selectedElement = $(this);
 
                 if (getCookie("is_added_newsletter") != "true") {
                     $("#thankyou").modal("show");
@@ -1060,20 +1062,17 @@
                 request = $.ajax({
                     url: "/add_whitelist",
                     type: "post",
+                    async: false,
                     data: serializedData
                 });
 
-                // Callback handler that will be called on success
                 request.done(function (response, textStatus, jqXHR) {
-                    // if (response.status === "success") {
-                    //     // toastr.success("Thank you!");
-                    // }
-
                     $("#email").val("");
 
                     $("#thankyou").modal("hide");
                     setTimeout(()=> {
-                            window.open(link, '_blank');
+                        $(selectedElement).trigger('click');
+                        selectedElement = null;
                     }, 500);
                 });
             });
