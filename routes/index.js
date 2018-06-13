@@ -56,7 +56,6 @@ router.post('/add_whitelist', function(req, res, next) {
       email: emailToAdd,
     },
     defaults: {
-      email: emailToAdd,
       created_at: new Date(),
       updated_at: new Date(),
     }
@@ -102,9 +101,7 @@ router.post('/action_presale', function(req, res, next) {
       email: email,
     },
     defaults: {
-      email: email,
       full_name: full_name,
-      email: email,
       is_investor: is_investor,
       represent_type: represent_type,
       desired_allocation: desired_allocation,
