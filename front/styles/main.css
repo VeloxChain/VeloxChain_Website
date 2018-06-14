@@ -256,6 +256,37 @@ a:focus {
           color: #fff;
           font-size: 22px; }
 
+    @media screen and (max-width: 1024px) and (max-height: 768px) {
+      .site-header .content-banner .content-banner-left {
+        margin-top: 20px;
+      }
+
+      .site-header .content-banner .title {
+        font-size: 40px;
+      }
+
+      .site-header .content-banner .description {
+        margin: 20px 0px;
+      }
+
+      .site-header .content-banner .action {
+        margin: 10px 0px;
+      }
+
+      .site-header .content-banner .content-banner-left .block {
+        padding: 10px 0px;
+      }
+
+      .site-header .content-banner .content-banner-left .block .private {
+        padding-bottom: 10px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .site-header .content-banner .title {
+        font-size: 40px;
+      }
+    }
 .title-web {
   text-align: center; }
   .title-web .title-top {
@@ -513,7 +544,7 @@ a:focus {
             .roadmap .timeline__item:after {
               top: 50% !important; } }
         .roadmap .timeline__wrap {
-          padding: 0px 30px; }
+          padding: 0px; }
           @media screen and (max-width: 767px) {
             .roadmap .timeline__wrap {
               padding: 0px 0px 0px 20px; } }
