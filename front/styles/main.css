@@ -1087,7 +1087,7 @@ footer {
       text-align: center;
       margin-bottom: 10px; } }
   footer .footer-left img {
-    width: 100px; }
+    height: 30px; }
   footer .footer-right {
     text-align: right; }
     @media screen and (max-width: 767px) {
