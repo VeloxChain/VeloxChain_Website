@@ -148,6 +148,7 @@ a:focus {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 4px;
       text-align: center;
+      margin-top: 20px;
     }
     .site-header .content-banner .content-banner-left .block .private {
       margin-top: 0px;
@@ -212,6 +213,7 @@ a:focus {
       height: 182px;
       justify-content: center;
       align-items: center;
+      margin-top: 20px;
     }
     @media screen and (max-width: 1200px) {
       .flex {
@@ -224,7 +226,7 @@ a:focus {
       font-weight: bold;
       margin-top: 0px;
       margin-bottom: 0px;
-      font-size: 55px; }
+      font-size: 40px; }
       @media screen and (max-width: 767px) {
         .site-header .content-banner .action {
           margin: 10px 0px;}
@@ -235,8 +237,11 @@ a:focus {
     .site-header .content-banner .description {
       font-size: 20px;
       letter-spacing: 1px;
-      margin: 30px 0px;
+      margin: 30px 0px 10px;
       font-family: "Lato-Light"; }
+      .site-header .content-banner .description.two {
+        margin-top: 10px;
+      }
       @media screen and (max-width: 767px) {
         .site-header .content-banner .description {
           padding: 0px 10px; } }
@@ -245,6 +250,7 @@ a:focus {
       margin-top: 20px;
       list-style: none;
       -webkit-padding-start: 0px;
+      text-align: center;
       z-index: 10; }
       @media screen and (max-width: 767px) {
         .site-header .content-banner ul.social {
@@ -283,8 +289,12 @@ a:focus {
     }
 
     @media screen and (max-width: 768px) {
+      .navbar-default .navbar-brand img {
+        height: 35px;
+      }
+
       .site-header .content-banner .title {
-        font-size: 40px;
+        font-size: 30px;
       }
     }
 .title-web {
@@ -371,7 +381,7 @@ a:focus {
   background: linear-gradient(#030A12, #323A4E, #0D2035); }
 
 .tech {
-  padding: 30px 0px 50px; }
+  padding: 30px 0px 0px; }
   .tech .title-top {
     color: #0d2135; }
   .tech .content {
@@ -379,6 +389,10 @@ a:focus {
     display: -ms-flexbox;
     display: flex; }
     @media screen and (max-width: 767px) {
+      .navbar-default .navbar-brand img {
+        height: 40px;
+      }
+
       .tech .content {
         display: block; } }
     .tech .content .content-left {
@@ -435,6 +449,10 @@ a:focus {
     display: -ms-flexbox;
     display: flex; }
     @media screen and (max-width: 767px) {
+      .token-sale .title-fund,
+      .token-sale .title-sale {
+        margin-top: 50px;
+      }
       .token-sale .content {
         display: block; } }
     .token-sale .content .content-left {
@@ -1205,4 +1223,8 @@ input#email-subscribe:-moz-placeholder {
 
 .updating {
   text-transform: initial;
+}
+
+.team .token-sale {
+  padding-bottom: 0px;
 }
