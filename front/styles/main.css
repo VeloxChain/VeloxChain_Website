@@ -213,6 +213,7 @@ a:focus {
       height: 182px;
       justify-content: center;
       align-items: center;
+      margin-top: 20px;
     }
     @media screen and (max-width: 1200px) {
       .flex {
