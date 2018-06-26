@@ -264,15 +264,20 @@ a:focus {
 
     @media screen and (max-width: 1024px) and (max-height: 768px) {
       .site-header .content-banner .content-banner-left {
-        margin-top: 20px;
+        margin-top: 40px;
+      }
+
+      .site-header .content-banner img {
+        margin-top: 40px;
       }
 
       .site-header .content-banner .title {
-        font-size: 40px;
+        font-size: 30px;
       }
 
       .site-header .content-banner .description {
         margin: 20px 0px;
+        font-size: 16px;
       }
 
       .site-header .content-banner .action {
@@ -281,6 +286,7 @@ a:focus {
 
       .site-header .content-banner .content-banner-left .block {
         padding: 10px 0px;
+        margin-top: 0px;
       }
 
       .site-header .content-banner .content-banner-left .block .private {
