@@ -201,6 +201,7 @@ a:focus {
       background: rgb(198, 216, 250);
     }
     .site-header .content-banner img {
+      margin-top: 70px;
       width: 100%;
     }
     .flex {
@@ -221,7 +222,7 @@ a:focus {
       font-weight: bold;
       margin-top: 0px;
       margin-bottom: 0px;
-      font-size: 40px; }
+      font-size: 35px; }
       @media screen and (max-width: 767px) {
         .site-header .content-banner .action {
           margin: 10px 0px;}
@@ -230,7 +231,7 @@ a:focus {
         .site-header .content-banner .title {
           font-size: 30px; } }
     .site-header .content-banner .description {
-      font-size: 20px;
+      font-size: 18px;
       letter-spacing: 1px;
       margin: 30px 0px 10px;
       font-family: "Lato-Light"; }
