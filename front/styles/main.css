@@ -57,7 +57,7 @@ a:focus {
     .navbar-default .navbar-nav li a {
      letter-spacing: 0px; }
     .nav>li>a {
-      padding: 15px 12px !important; } }
+      padding: 15px 8px !important; } }
   @media screen and (max-width: 767px) {
     .nav>li>a {
       padding: 10px 15px !important; }
