@@ -757,15 +757,25 @@ a:focus {
             border: 1px dashed #00F58A; } }
         .roadmap .timeline__content.active {
           background: #00F58A; }
-          .roadmap .timeline__content.active:before {
+          .roadmap .timeline__item--right .timeline__content.active:before {
             content: '';
             position: absolute;
-            right: -75px !important;
+            left: -75px !important;
             top: 10px;
             width: 60px;
             height: 60px;
             border-radius: 50%;
             border: 4px solid #00F58A; }
+            .roadmap .timeline__item--left .timeline__content.active:before {
+              content: '';
+              position: absolute;
+              right: -75px !important;
+              top: 10px;
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              border: 4px solid #00F58A;
+            }
             @media screen and (max-width: 767px) {
               .roadmap .timeline__content.active:before {
                 top: 50%;

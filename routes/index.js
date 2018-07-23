@@ -127,7 +127,41 @@ router.post('/action_presale', function(req, res, next) {
           name: `${_.isEmpty(full_name)? "": full_name}`
         }
       };
+
+      switch (represent_type) {
+        case "1": 
+          represent_type = "Individual";
+          break;
+        case "2":
+          represent_type = "Syndicate";
+          break;
+        case "3": 
+          represent_type = "Professional Fund";
+          break;
+        default: 
+          represent_type = "Individual";
+      }
+
+      const msg_quang = {
+        to: "quang@bikecoin.network",
+        from: appConfig.email_sender_address,
+        subject: 'You got a new lead from Pre-Sale',
+        templateId: "935df2d5-0bec-4c5f-b3e2-7b71dffcfcb2",
+        substitutions: {
+          full_name: `${_.isEmpty(full_name)? "": full_name}`,
+          email: `${_.isEmpty(email)? "": email}`,
+          is_investor: `${(is_investor == 1)? "Yes": "No"}`,
+          represent_type: `${_.isEmpty(represent_type)? "": represent_type}`,
+          desired_allocation: `${_.isEmpty(desired_allocation)? "": desired_allocation}`,
+          currency: `${_.isEmpty(currency)? "": currency}`,
+          citizenship: `${_.isEmpty(citizenship)? "": citizenship}`,
+          sending_addr: `${_.isEmpty(sending_addr)? "": sending_addr}`,
+          note: `${_.isEmpty(note)? "": note}`,
+        }
+      };
+
       sgMail.send(msg);
+      sgMail.send(msg_quang);
       return successResponse(res, data);
     }
   ).catch((message) => {
