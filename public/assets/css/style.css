@@ -4797,6 +4797,9 @@ header a:hover,
 	border: 1px solid #00F58A;
 	color: #00F58A;
 }
+.btn-banner:focus {
+	background: transparent;
+}
 .btn-request {
 	width: 100%;
 	background: #00F58A;
@@ -4806,6 +4809,9 @@ header a:hover,
 	font-size: 14px;
 	letter-spacing: 1px;
 	font-weight: bold;
+}
+.btn-request:focus {
+	background: #00F58A;
 }
 .btn-request:hover {
 	color: #fff;
