@@ -295,6 +295,9 @@ button:focus {
 .small_space {
 	margin-top:20px;
 }
+.big_space {
+	margin-top:50px;
+}
 .large_space {
 	margin-top: 50px;
 }
@@ -1356,7 +1359,7 @@ header a:hover,
 }
 .icon_list li {
 	line-height: normal;
-	padding: 0 7px;
+	padding: 0 8px;
 }
 .icon_list li i {
 	color: #ffffff;
@@ -2783,7 +2786,7 @@ header a:hover,
 	text-align: right;
 }
 .mobile_shape {
-	background-image:url('../images/mobile_shape_bg.png');
+	background-image:url('../../images/new/bg-MVP.png');
 	background-repeat:no-repeat;
 	background-position: center right;
 }
@@ -2875,13 +2878,14 @@ header a:hover,
 .team_info {
 	padding-top: 15px;
 }
-.team_info h4 a {
+.team_info h4 {
 	color: #444444;
 	font-size: 20px;
 	font-weight: 500;
 }
 .team_info p {
 	line-height: normal;
+	min-height: 50px;
 	margin: 0;
 }
 .team_img {
@@ -4858,7 +4862,7 @@ header a:hover,
 	background: transparent !important;
 }
 .content-problem {
-	min-height: 330px;
+	min-height: 240px;
 }
 .wrapper {
 	display: flex;
@@ -4915,6 +4919,9 @@ header a:hover,
 #partner .btn span::after {
 	z-index: 1;
 }
+#partner .logo {
+	margin-bottom: 10px;
+}
 .partner-video {
 	height: 100%;
 	display: flex;
@@ -4942,6 +4949,7 @@ header a:hover,
 }
 #opportunity {
 	background: #f6fafd;
+	padding-bottom: 0;
 }
 #opportunity .box_wrap {
 	padding: 30px 15px;
@@ -4960,9 +4968,39 @@ header a:hover,
 	width: 38px;
 	margin: 0 auto;
 }
+.wrapper-team {
+	margin-top: 10px;
+	text-align: center;
+}
+.btn-read {
+	cursor: pointer;
+	font-size: 16px;
+	margin-bottom: 0px;
+	text-align: center;
+    width: 100%;
+}
+.wrapper-team .btn-read .less {
+	display: none;
+}
+.wrapper-team .btn-read[aria-expanded="true"] .less {
+	display: block;
+}
+.wrapper-team .btn-read[aria-expanded="false"] .more {
+	display: block;
+}
+.wrapper-team .btn-read[aria-expanded="true"] .more {
+	display: none;
+}
+
+
+
+
 @media screen and (max-width: 1200px) {
 	.content-problem {
-		min-height: 420px;
+		min-height: 270px;
+	}
+	.box_wrap h4, .work_inner h4 {
+		min-height: 78px;
 	}
 	.wrapper-right {
 		height: 360px;
@@ -4970,10 +5008,19 @@ header a:hover,
 	.wrapper-left img {
 		width: 300px;
 	}
+	#opportunity .box_wrap p {
+		min-height: 60px;
+	}
 }
 @media screen and (max-width: 992px) {
+	#opportunity .box_wrap p {
+		min-height: auto;
+	}
+	.box_wrap h4, .work_inner h4 {
+		min-height: auto;
+	}
 	.content-problem {
-		min-height: 400px;
+		min-height: 240px;
 	}
 	.top_footer .social_icon {
 		margin: 0 auto;
@@ -5015,6 +5062,9 @@ header a:hover,
 @media screen and (max-width: 767px) {
 	.link-whitepaper {
 		width: 100%;
+	}
+	.team_info p {
+		min-height: auto;
 	}
 	.about_img img {
 		padding-left: 0px;

@@ -347,13 +347,6 @@ Version      : 1.4
             $(this).html(tm.strftime('<span class="counter_box"><span class="tk_counter days">%D </span><span class="tk_text">Days</span></span><span class="counter_box"><span class="tk_counter hours">%H</span><span class="tk_text">Hours</span></span><span class="counter_box"><span class="tk_counter minutes">%M</span><span class="tk_text">Minutes</span></span><span class="counter_box"><span class="tk_counter seconds">%S</span><span class="tk_text">Seconds</span></span>'));
         });
     });
-	
-	/*===================================*
-	 09. VIDEO JS
-	*===================================*/
-	$('.video').magnificPopup({
-		type: 'iframe'
-	});
 
 	/*===================================*
 	10. CONTACT FORM JS
@@ -405,15 +398,6 @@ Version      : 1.4
 			scrollTop: 0
 		}, 600);
 		return false;
-	});
-	
-	/*===================================*
-	12. POPUP JS
-	*===================================*/
-	$('.content-popup').magnificPopup({
-		type: 'inline',
-		preloader: true,
-		mainClass: 'mfp-zoom'
 	});
 	
 	/*===================================*
