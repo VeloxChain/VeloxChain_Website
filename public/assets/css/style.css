@@ -185,6 +185,9 @@ button:focus {
 	margin-bottom: 30px;
 	text-transform: capitalize;
 }
+.title_default_dark p span {
+	color: #00F58A;
+}
 .title_default_light h4,
 .title_default_light p {
 	color:#fff;
@@ -4738,7 +4741,10 @@ header a:hover,
 
 
 #whitepaper {
-	background: #2a2a2a;
+	background-image: url("../../images/new/bg-document.jpg");
+	background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 #whitepaper .title_default_light h4,
 #whitepaper .title_default_dark h4 {
@@ -4974,7 +4980,7 @@ header a:hover,
 }
 .btn-read {
 	cursor: pointer;
-	font-size: 16px;
+	font-size: 15px;
 	margin-bottom: 0px;
 	text-align: center;
     width: 100%;
