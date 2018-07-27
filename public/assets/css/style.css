@@ -631,8 +631,8 @@ button:focus {
 	color: #ffffff;
 	display: inline-block;
 	font-size: 20px;
-	height: 35px;
-	line-height: 38px;
+	height: 50px;
+	line-height: 50px;
 	margin-left: -20px;
 	margin-right: 13px;
 	padding-left: 2px;
@@ -640,7 +640,7 @@ button:focus {
 	text-align: center;
 	transition: all 0.5s ease 0s;
 	vertical-align: middle;
-	width: 35px;
+	width: 50px;
 }
 .btn span::after {
 	 -webkit-animation: rounded 2.5s infinite ;
