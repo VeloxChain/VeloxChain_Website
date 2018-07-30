@@ -2400,6 +2400,7 @@ header a:hover,
 	border-radius: 5px;
 	padding: 10px 5px;
 	position:relative;
+	text-align: left;
 }
 .roadmap_box.current .roadmap_inner {
 	background-color: #ff67cb;
@@ -2420,14 +2421,14 @@ header a:hover,
 .roadmap_box h6 {
 	color: #ffffff;
 }
-.roadmap_box p {
+.roadmap_box li {
 	color: #ffffff;
 	font-size:14px;
 	line-height:26px;
 	margin: 0;
 }
 .roadmap_box.current h6,
-.roadmap_box.current p {
+.roadmap_box.current li {
 	color: #2a2a2a;
 }
 .roadmap .owl-prev,
@@ -2993,6 +2994,7 @@ header a:hover,
 }
 .team_title span {
 	color:#fff;
+	padding: 0px 10px;
 }
 .mfp-bg {
 	background-color: #5957cd;
@@ -4983,19 +4985,8 @@ header a:hover,
 	font-size: 15px;
 	margin-bottom: 0px;
 	text-align: center;
-    width: 100%;
-}
-.wrapper-team .btn-read .less {
-	display: none;
-}
-.wrapper-team .btn-read[aria-expanded="true"] .less {
-	display: block;
-}
-.wrapper-team .btn-read[aria-expanded="false"] .more {
-	display: block;
-}
-.wrapper-team .btn-read[aria-expanded="true"] .more {
-	display: none;
+	width: 100%;
+	color: #333333;
 }
 
 #thankyou.modal.show .modal-dialog {
@@ -5049,6 +5040,13 @@ header a:hover,
 	background-color: #00F58A;
 	text-decoration: none;
 }
+.newsletter_form .form-check {
+	margin-top: 10px;
+}
+.newsletter_form .form-check input {
+	width: auto;
+	margin-top: 8px;
+}
 
 
 @media screen and (max-width: 1200px) {
@@ -5066,6 +5064,12 @@ header a:hover,
 	}
 	#opportunity .box_wrap p {
 		min-height: 60px;
+	}
+	#mobileapp .btn-video {
+		padding-left: 0px;
+		margin-top: 20px;
+		display: block;
+		text-align: left;
 	}
 }
 @media screen and (max-width: 992px) {
@@ -5112,6 +5116,9 @@ header a:hover,
 	}
 	.mobile {
 		display: block;
+	}
+	#mobileapp .btn-video {
+		text-align: center;
 	}
 }
 

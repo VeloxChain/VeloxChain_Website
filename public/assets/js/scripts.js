@@ -401,6 +401,15 @@ Version      : 1.4
 	});
 	
 	/*===================================*
+	12. POPUP JS
+	*===================================*/
+	$('.content-popup').magnificPopup({
+		type: 'inline',
+		preloader: true,
+		mainClass: 'mfp-zoom'
+	});
+	
+	/*===================================*
 	13. ANIMATION JS
 	*===================================*/
 	$(function() {
