@@ -154,10 +154,10 @@ section.small_pt {
 	margin-left: 0px;
 }
 .navbar-expand-lg .navbar-nav > li {
-	padding: 0 5px;
+	padding: 0 15px;
 }
 .navbar-expand-lg .navbar-nav .nav-link {
-	font-size: 13px;
+	font-size: 15px;
 }
 .navbar-expand-lg .navbar-nav.nav_btn > li {
 	margin-left: 0px;
@@ -376,7 +376,7 @@ header.fixed-top {
 	border-right: 1px solid rgba(255,255,255,0.6);
 	float: left;
 	text-align: center;
-	width: 50%;
+	width: 100%;
 }
 .navbar-nav:last-child {
 	border:0;

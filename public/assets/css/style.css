@@ -5120,6 +5120,15 @@ header a:hover,
 	#mobileapp .btn-video {
 		text-align: center;
 	}
+	.navbar-toggler {
+		color: #00F58A;
+	}
+	.navbar-toggler:focus {
+		color: #00F58A;
+	}
+	header .navbar-nav a {
+		color: #fff;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -5154,17 +5163,8 @@ header a:hover,
 	header.active {
 		background: #2a2a2a;
 	}
-	header .navbar-nav a {
-		color: #fff;
-	}
 	.navbar-nav {
 		padding-top: 20px;
-	}
-	.navbar-toggler {
-		color: #00F58A;
-	}
-	.navbar-toggler:focus {
-		color: #00F58A;
 	}
 }
 
