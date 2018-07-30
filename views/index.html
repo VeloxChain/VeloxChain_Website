@@ -20,6 +20,8 @@
     <!--- owl carousel CSS-->
     <link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.default.min.css">
+    <!--- toastr CSS-->
+    <link rel="stylesheet" href="assets/css/toastr.css">
     <!--- fancybox CSS-->
     <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
     <!-- Magnific Popup CSS -->
@@ -183,7 +185,7 @@
                         <div class="tk_countdown text-center animation bg-white" data-animation="fadeIn" data-animation-delay="1.1s">
                             <div class="banner_text tk_counter_inner">
                                 <div class="tk_countdown_time animation" data-animation="fadeInUp" data-animation-delay="1.2s" data-time="2018/09/06 00:00:00"></div>
-                            	<a href="#" class="btn btn-request animation" data-animation="fadeInUp" data-animation-delay="1.40s" >Request Invite</a>
+                            	<a href="/presale" class="btn btn-request animation" data-animation="fadeInUp" data-animation-delay="1.40s" >Request Invite</a>
                                 <ul class="icon_list list_none d-flex justify-content-center">
                                 	<li class="animation" data-animation="fadeInUp" data-animation-delay="1.5s">
                                         <img src="images/new/Ic-Bitcoin.png" alt="BikeCoinNetwork">
@@ -1121,9 +1123,9 @@
                             <img src="images/logo.png" alt="" class="logo-footer">
                             <div class="newsletter_form">
                                 <p class="animation" data-animation="fadeInUp" data-animation-delay="0.2s">Don’t Miss Out Our Good News</p>
-                                <form class="subscribe_form animation" data-animation="fadeInUp" data-animation-delay="0.4s">
-                                    <input class="input-rounded" type="text" required placeholder="Stay connected, enter email"/>
-                                    <button type="submit" title="Subscribe" class="btn-info" name="submit" value="Submit"> Subscribe Now </button>
+                                <form id="joinwhitelist" class="subscribe_form animation" data-animation="fadeInUp" data-animation-delay="0.4s">
+                                    <input id="email" class="input-rounded" type="email" name="email" required placeholder="Stay connected, enter email"/>
+                                    <button class="btn-info"> Subscribe Now </button>
                                 </form>
                             </div>
                         </div>
@@ -1176,6 +1178,25 @@
     </footer>
     <!-- END FOOTER SECTION --> 
 
+    <div class="modal fade" id="thankyou" tabindex="-1" role="dialog" aria-labelledby="thankyouLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="images/logo.png" alt="BikeCoin">
+                </div>
+                <div class="modal-body">
+                    <h3>Thank you for joining our
+                        <span class="block">BikeCoinNetwork</span>
+                    </h3>
+                    <p>We’ll keep in touch! We like to meet you in our Telegram Group!</p>
+                    <div class="action-home">
+                        <a href="https://t.me/BikeCoinNetwork" class="btn-gohome">Join Telegram</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <a href="#" class="scrollup btn-default"><i class="ion-ios-arrow-up"></i></a>
 
     <!-- Latest jQuery --> 
@@ -1188,8 +1209,6 @@
     <!-- <script src="assets/js/magnific-popup.min.js"></script>  -->
     <!-- waypoints min js  --> 
     <script src="assets/js/waypoints.min.js"></script> 
-    <!-- parallax js  --> 
-    <!-- <script src="assets/js/parallax.js"></script>  -->
     <!-- countdown js  --> 
     <script src="assets/js/jquery.countdown.min.js"></script> 
     <!-- particles min js  --> 
@@ -1200,51 +1219,20 @@
     <script src="assets/js/jquery.dd.min.js"></script> 
     <!-- jquery.counterup.min js --> 
     <script src="assets/js/jquery.counterup.min.js"></script>
-    <!-- modern_canvas js --> 
-    <!-- <script src="assets/js/modern_canvas.js"></script>   -->
+    <!-- toastr js --> 
+    <script src="assets/js/toastr.min.js"></script>  
     <!-- scripts js --> 
     <script src="assets/js/scripts.js"></script>
 
     <script>
 
-        function getCookie(cname) {
-            var name = cname + "=";
-            var decodedCookie = decodeURIComponent(document.cookie);
-            var ca = decodedCookie.split(';');
-            for(var i = 0; i <ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
-
         $(document).ready(function() {
-            var link = "";
-            var selectedElement = null;
-
-            // $('.btn-click').click(function() {
-            //     link = $(this).attr('data-link');
-            //     selectedElement = $(this);
-
-            //     if (getCookie("is_added_newsletter") != "true") {
-            //         $("#thankyou").modal("show");
-            //         return;
-            //     }
-
-            //     window.open(link, '_blank');
-                
-            // });
 
             $('#joinwhitelist').on("submit", function (event) {
                 event.preventDefault();
 
                 serializedData = $(this).serialize();
-
+                
                 request = $.ajax({
                     url: "/add_whitelist",
                     type: "post",
@@ -1253,13 +1241,13 @@
                 });
 
                 request.done(function (response, textStatus, jqXHR) {
-                    $("#email").val("");
 
-                    $("#thankyou").modal("hide");
-                    setTimeout(()=> {
-                        $(selectedElement).trigger('click');
-                        selectedElement = null;
-                    }, 500);
+                    if (response.status == "fail") {
+                        toastr.error(response.data);
+                    } else {
+                        $("#email").val("");
+                        $("#thankyou").modal("show");
+                    }
                 });
             });
         });
