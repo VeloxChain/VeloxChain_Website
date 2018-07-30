@@ -1026,6 +1026,7 @@ header a:hover,
 	font-weight:500;
 	position:relative;
 	text-transform:uppercase;
+	letter-spacing: 1px;
 }
 .navbar-expand-lg .navbar-nav > li > .nav-link.active:before {
 	background-color: #00F58A;
@@ -1288,6 +1289,7 @@ header a:hover,
 	font-weight:normal;
 	margin: 0 auto;
 	padding: 8px 25px 5px;
+	letter-spacing: 1px;
 }
 .alert-warning {
 	background-color: #00F58A;

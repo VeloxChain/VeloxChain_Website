@@ -82,7 +82,8 @@ class PreSaleList extends Component {
         <List title="Pre-sale Log" {...this.props} filters={<PostFilter />}>
           <Datagrid>
             <TextField source="id" styles={{width: "10%"}}/>
-            <TextField source="full_name"/>
+            <TextField source="first_name"/>
+            <TextField source="last_name"/>
             <TextField source="email"/>
             <TextField source="citizenship" label="Citizenship"/>
             <TextField source="desired_allocation" label="Desired Allocation" />

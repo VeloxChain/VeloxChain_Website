@@ -131,18 +131,20 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <p>
-                                    <strong>Which currency would you be contributing in?*</strong>
-                                </p>
-                                <label class="radio-inline">
-                                    <input type="radio" name="currency" value="BTC" checked>BTC
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="currency" value="ETH">ETH
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="currency" value="USD">USD
-                                </label>
+                                <label for="desired_allocation" class="control-label col-sm-4">How much would you like to contribute?*</label>
+                                <div class="col-sm-8">
+                                    <div class="input-group">
+                                        <input name="desired_allocation" type="text" class="form-control" id="desired_allocation" placeholder="25000">
+                                        <div class="input-group-btn">
+                                            <button type="button" id="desired_allocation_currency" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">USD</button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item">USD</a>
+                                                <a class="dropdown-item">ETH</a>
+                                                <a class="dropdown-item">BTC</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <p>
@@ -425,9 +427,14 @@
                                     </select>
                                 </div>
                             </div>
-
                             <div class="form-group">
-                                <label for="sending_addr" class="control-label col-sm-5">ETH or BTC address you plan to send from? (optional)</label>
+                                <label for="postal_code" class="control-label col-sm-5">Postal Code*</label>
+                                <div class="col-sm-7">
+                                    <input name="postal_code" id="postal_code" class="form-control" placeholder="Postal code">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sending_addr" class="control-label col-sm-5">Which address you plan to send from? (optional)</label>
                                 <div class="col-sm-7">
                                     <input name="sending_addr" id="sending_addr" class="form-control" placeholder="0x...">
                                 </div>
@@ -523,9 +530,12 @@
                 event.preventDefault();
 
                 if (
-                    $("#full_name").val() == "" ||
+                    $("#first_name").val() == "" ||
+                    $("#last_name").val() == "" ||
                     $("#email").val() == "" ||
-                    $("#desired_allocation").val() == ""
+                    $("#phone_number").val() == "" ||
+                    $("#desired_allocation").val() == "" ||
+                    $("#postal_code").val() == ""
                 ) {
                     toastr.warning("Bad request");
                     return
@@ -535,7 +545,7 @@
                     toastr.warning("Please agree to the 'I understand ....'");
                     return
                 }
-
+                
                 serializedData = $(this).serialize() + '&currency=' + $("#desired_allocation_currency").html(), 
                 
                 request = $.ajax({
@@ -547,10 +557,13 @@
                 // Callback handler that will be called on success
                 request.done(function (response, textStatus, jqXHR) {
                     if (response.status === "success") {
-                        $("#full_name").val("");
+                        $("#first_name").val("");
+                        $("#last_name").val("");
                         $("#email").val("");
+                        $("#phone_number").val("");
                         $("#desired_allocation").val("");
                         $("#sending_addr").val("");
+                        $("#postal_code").val("");
                         $("#note").val("");
                         $("#thankyou").modal("show");
                     } else {

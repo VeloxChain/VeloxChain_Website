@@ -82,12 +82,15 @@ router.post('/add_whitelist', function(req, res, next) {
 });
 
 router.post('/action_presale', function(req, res, next) {
-  let { full_name, email, is_investor, represent_type, desired_allocation, citizenship, sending_addr, note, currency } = req.body;
+  let { first_name, last_name, email, phone_number, is_investor, represent_type, desired_allocation, citizenship, postal_code , sending_addr, note, currency } = req.body;
 
   if(
-    _.isNull(full_name) ||
+    _.isNull(first_name) ||
+    _.isNull(last_name) ||
     _.isNull(email) ||
-    _.isNull(desired_allocation)
+    _.isNull(phone_number) ||
+    _.isNull(desired_allocation) ||
+    _.isNull(postal_code)
   ) {
     return failResponse(res, 'Bad request');
   }
@@ -101,12 +104,15 @@ router.post('/action_presale', function(req, res, next) {
       email: email,
     },
     defaults: {
-      full_name: full_name,
+      first_name: first_name,
+      last_name: last_name,
+      phone_number: phone_number,
       is_investor: is_investor,
       represent_type: represent_type,
       desired_allocation: desired_allocation,
       currency: currency,
       citizenship: citizenship,
+      postal_code: postal_code,
       sending_addr: sending_addr,
       note: note,
       created_at: new Date(),
@@ -192,7 +198,12 @@ router.getPresale = function(req, res, next) {
           }
         },
         {
-          full_name: {
+          first_name: {
+            [Op.like]: `%${req.query.search}%`
+          }
+        },
+        {
+          last_name: {
             [Op.like]: `%${req.query.search}%`
           }
         }
@@ -258,7 +269,8 @@ router.updatePreSale = function(req, res, next) {
   }
 
   if(
-    _.isNull(presale.full_name) ||
+    _.isNull(presale.first_name) ||
+    _.isNull(presale.last_name) ||
     _.isNull(presale.email) ||
     _.isNull(presale.desired_allocation)
   ) {
@@ -266,7 +278,8 @@ router.updatePreSale = function(req, res, next) {
   }
 
   models.presale.update({
-    full_name: presale.full_name,
+    first_name: presale.first_name,
+    last_name: presale.last_name,
     email: presale.email,
     citizenship: presale.citizenship,
     desired_allocation: presale.desired_allocation,

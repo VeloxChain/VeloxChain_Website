@@ -264,7 +264,8 @@ class PreSaleComponentDetail extends Component {
     super(props);
     this.state = {
       currentPreSale: {
-        full_name: "",
+        first_name: "",
+        last_name: "",
         email: "",
         is_investor: "",
         represent_type: "",
@@ -313,10 +314,19 @@ class PreSaleComponentDetail extends Component {
           <div className="row">
             <div className="col-sm-6">
               <TextFieldForm
-                floatingLabelText="Full Name"
-                name="full_name"
-                value={this.state.currentPreSale.full_name || ""}
-                onChange={e => this.onChangeCurrentPreSale({full_name: e.target.value})}
+                floatingLabelText="First Name"
+                name="first_name"
+                value={this.state.currentPreSale.first_name || ""}
+                onChange={e => this.onChangeCurrentPreSale({first_name: e.target.value})}
+                fullWidth
+              />
+            </div>
+            <div className="col-sm-6">
+              <TextFieldForm
+                floatingLabelText="Last Name"
+                name="last_name"
+                value={this.state.currentPreSale.last_name || ""}
+                onChange={e => this.onChangeCurrentPreSale({last_name: e.target.value})}
                 fullWidth
               />
             </div>
@@ -329,8 +339,6 @@ class PreSaleComponentDetail extends Component {
                 fullWidth
               />
             </div>
-          </div>
-          <div className="row">
             <div className="col-sm-6">
               <SelectField
                 floatingLabelText="Citizenship"
@@ -342,32 +350,30 @@ class PreSaleComponentDetail extends Component {
                 { this.renderDataCitizenship() }
               </SelectField>
             </div>
+          </div>
+          <div className="row">
             <div className="col-sm-6">
-              <div className="row">
-                <div className="col-sm-7">
-                  <TextFieldForm
-                    floatingLabelText="Desired Allocation"
-                    name="desired_allocation"
-                    type="number"
-                    value={this.state.currentPreSale.desired_allocation || ""}
-                    onChange={e => this.onChangeCurrentPreSale({desired_allocation: e.target.value})}
-                    fullWidth
-                  />
-                </div>
-                <div className="col-sm-5">
-                  <SelectField
-                    floatingLabelText="Currency"
-                    name="currency"
-                    value={this.state.currentPreSale.currency || ""}
-                    onChange={(e,b,c) => { this.onChangeCurrentPreSale({currency: c})}}
-                    fullWidth
-                  >
-                    <MenuItem value="USD" primaryText="USD" />
-                    <MenuItem value="ETH" primaryText="ETH" />
-                    <MenuItem value="BTC" primaryText="BTC" />
-                  </SelectField>
-                </div>
-              </div>  
+              <TextFieldForm
+                floatingLabelText="Desired Allocation"
+                name="desired_allocation"
+                type="number"
+                value={this.state.currentPreSale.desired_allocation || ""}
+                onChange={e => this.onChangeCurrentPreSale({desired_allocation: e.target.value})}
+                fullWidth
+              />
+            </div>
+            <div className="col-sm-6">
+              <SelectField
+                floatingLabelText="Currency"
+                name="currency"
+                value={this.state.currentPreSale.currency || ""}
+                onChange={(e,b,c) => { this.onChangeCurrentPreSale({currency: c})}}
+                fullWidth
+              >
+                <MenuItem value="USD" primaryText="USD" />
+                <MenuItem value="ETH" primaryText="ETH" />
+                <MenuItem value="BTC" primaryText="BTC" />
+              </SelectField>
             </div>
           </div>
           <div style={styles.actions}>
