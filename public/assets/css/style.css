@@ -1266,7 +1266,10 @@ header a:hover,
 }
 .social_icon li {
 	float:left;
-	margin-right:10px;
+	margin-right:15px;
+}
+.social_icon li a {
+	color: #2a2a2a;
 }
 .social_icon li a i {
 	background-color: #ffffff;
@@ -2398,7 +2401,7 @@ header a:hover,
 }
 .roadmap_inner {
 	border-radius: 5px;
-	padding: 10px 5px;
+	padding: 10px;
 	position:relative;
 	text-align: left;
 }
@@ -4834,6 +4837,9 @@ header a:hover,
 .btn-banner:focus {
 	background: transparent;
 }
+.btn-banner i.fa {
+	font-size: 22px;
+}
 .btn-request {
 	width: 100%;
 	background: #00F58A;
@@ -5105,6 +5111,7 @@ header a:hover,
 		width: 100%;
 		display: flex;
 		align-items: center;
+		text-align: center;
 		height: auto;
 	}
 	.wrapper .pd-left,
@@ -5129,6 +5136,9 @@ header a:hover,
 	header .navbar-nav a {
 		color: #fff;
 	}
+	#token-sale .content-token .text-title {
+		width: 160px;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -5145,6 +5155,7 @@ header a:hover,
 		min-height: auto;
 	}
 	#token-sale .content-token {
+		display: block;
 		padding: 10px;
 	}
 	#token-sale .content-token .text-title {
@@ -5152,7 +5163,7 @@ header a:hover,
 		margin-right: 10px;
 	}
 	#token-sale .content-token .text-detail {
-		display: inline-block;
+		display: block;
 	}
 	#mobileapp .btn-video {
 		margin-top: 20px;
@@ -5165,6 +5176,19 @@ header a:hover,
 	}
 	.navbar-nav {
 		padding-top: 20px;
+	}
+	#token-sale .content-token .content-token-left {
+		width: 100%;
+	}
+	#token-sale .content-token .content-token-right {
+		width: 100%;
+	}
+	.partner-video {
+		height: 400px;
+		margin-bottom: 20px;
+	}
+	#whitepaper {
+		background-position: center;
 	}
 }
 
