@@ -457,11 +457,22 @@ Version      : 1.4
 	/*===================================*
 	15. FAQ JS
 	*===================================*/
-	$(".tab-faq li a").click(function() {
-		var id =  $(this).attr('href');
-		$('html, body').animate({         
-			scrollTop: $(id).offset().top - 20
-		}, 1000);
+	$('.tab-faq li a').on('click', function(event) {
+		if ( location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname ) {
+          // Figure out element to scroll to
+          var target = $(this.hash),
+              speed= $(this).data("speed") || 800;
+              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+
+          // Does a scroll target exist?
+          if (target.length) {
+            // Only prevent default if animation is actually gonna happen
+            event.preventDefault();
+            $('html, body').animate({
+              scrollTop: target.offset().top - 60
+            }, speed);
+          }
+        }
 	});
 })(jQuery);
 
