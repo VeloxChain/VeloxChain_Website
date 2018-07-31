@@ -4977,8 +4977,11 @@ header a:hover,
 #about {
 	background: #fefefe;
 }
-#faq {
+#faq-page {
 	background: #f6fafd;
+}
+#faq {
+	padding-top: 30px;
 }
 .owl-carousel .owl-item .icon_roadmap .icon-roadmap {
 	width: 38px;
@@ -5537,7 +5540,7 @@ input#email-subscribe:-moz-placeholder {
 .team .token-sale {
 	padding-bottom: 0px;
 }
-#faq header {
+#faq-page header {
 	padding: 0;
 	height: 70px;
 }
