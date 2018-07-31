@@ -25,6 +25,10 @@ router.get('/presale', function(req, res, next) {
   res.sendfile('./views/presale.html');
 });
 
+router.get('/faq', function(req, res, next) {
+  res.sendfile('./views/faq.html');
+});
+
 const successResponse = (res, data) => {
   return res.json({
     status: 'success',
