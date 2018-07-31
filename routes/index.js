@@ -130,7 +130,8 @@ router.post('/action_presale', function(req, res, next) {
         subject: 'Resale is successfully',
         templateId: "811addca-9f9d-4980-a81e-29ecfa3a4cc8",
         substitutions: {
-          name: `${_.isEmpty(full_name)? "": full_name}`
+          first_name: `${_.isEmpty(first_name)? "": first_name}`,
+          last_name: `${_.isEmpty(last_name)? "": last_name}`,
         }
       };
 
@@ -154,13 +155,16 @@ router.post('/action_presale', function(req, res, next) {
         subject: 'You got a new lead from Pre-Sale',
         templateId: "935df2d5-0bec-4c5f-b3e2-7b71dffcfcb2",
         substitutions: {
-          full_name: `${_.isEmpty(full_name)? "": full_name}`,
+          first_name: `${_.isEmpty(first_name)? "": first_name}`,
+          last_name: `${_.isEmpty(last_name)? "": last_name}`,
           email: `${_.isEmpty(email)? "": email}`,
+          phone_number: `${_.isEmpty(phone_number)? "": phone_number}`,
           is_investor: `${(is_investor == 1)? "Yes": "No"}`,
           represent_type: `${_.isEmpty(represent_type)? "": represent_type}`,
           desired_allocation: `${_.isEmpty(desired_allocation)? "": desired_allocation}`,
           currency: `${_.isEmpty(currency)? "": currency}`,
           citizenship: `${_.isEmpty(citizenship)? "": citizenship}`,
+          postal_code: `${_.isEmpty(postal_code)? "": postal_code}`,
           sending_addr: `${_.isEmpty(sending_addr)? "": sending_addr}`,
           note: `${_.isEmpty(note)? "": note}`,
         }
