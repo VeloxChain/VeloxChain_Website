@@ -446,3 +446,17 @@ input#email-subscribe:-moz-placeholder {
   color: #2a2a2a;
   margin-bottom: 20px;
 }
+.tab-faq {
+  -webkit-padding-start: 0px;
+  list-style: none;
+  display: flex;
+  width: 80%;
+  margin: 20px auto;
+}
+.tab-faq li {
+  width: 25%;
+  text-align: center;
+}
+.tab-faq li .list-faq {
+  font-size: 18px;
+}

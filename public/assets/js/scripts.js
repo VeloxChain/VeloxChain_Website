@@ -453,6 +453,15 @@ Version      : 1.4
 			time: 1000
 		});
 	});
-			
+	
+	/*===================================*
+	15. FAQ JS
+	*===================================*/
+	$(".tab-faq li a").click(function() {
+		var id =  $(this).attr('href');
+		$('html, body').animate({         
+			scrollTop: $(id).offset().top - 20
+		}, 1000);
+	});
 })(jQuery);
 
