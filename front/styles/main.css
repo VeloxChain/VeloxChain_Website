@@ -382,3 +382,67 @@ input#email-subscribe:-moz-placeholder {
 .team .token-sale {
   padding-bottom: 0px;
 }
+.faq {
+  margin-top: 30px;
+	padding: 50px 0px;
+	background: #ececec;
+	color: #333;
+}
+.faq .panel-default .panel-heading {
+	padding: 0;
+}
+.faq .faq-description {
+	color: #333;
+}
+.faq .panel-title a {
+	display: block;
+	position: relative;
+	padding: 15px 0 15px 15px;
+}
+.faq .panel-title a:hover,
+.faq .panel-title a:focus {
+	text-decoration: none;
+}
+.faq .number {
+	margin-right: 20px;
+}
+.panel-heading .accordion-toggle.collapsed::before {
+	content: '';
+	top: 23px;
+	right: 20px;
+	position: absolute;
+	width: 12px;
+	height: 1px;
+	background-color: currentColor;
+}
+.panel-heading .accordion-toggle.collapsed::after {
+	content: '';
+	top: 23px;
+	right: 20px;
+	position: absolute;
+	width: 12px;
+	height: 1px;
+	background-color: currentColor;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+.panel-heading .accordion-toggle::after {
+	content: '';
+	top: 23px;
+	right: 18px;
+	position: absolute;
+	width: 15px;
+	height: 1px;
+	background-color: currentColor;
+}
+.panel-heading .accordion-toggle::before {
+	content: inherit;
+}
+.title-web .title-top {
+  color: #666666;
+  margin-bottom: 10px;
+}
+.title-web .title-bottom {
+  color: #2a2a2a;
+  margin-bottom: 20px;
+}

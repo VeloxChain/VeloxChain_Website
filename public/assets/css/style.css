@@ -5028,11 +5028,9 @@ header a:hover,
 .action-home {
 	margin: 50px 0px 20px;
 }
-  
 .action-submit {
 	margin: 20px 0px 10px;
 }
-  
 .btn-gohome {
 	color: #fff;
 	background-color: #00F58A;
@@ -5044,7 +5042,6 @@ header a:hover,
 	margin: 10px 5px;
 	border-radius: 4px;
 }
-  
 .btn-gohome:hover {
 	color: #fff;
 	background-color: #00F58A;
@@ -5057,7 +5054,6 @@ header a:hover,
 	width: auto;
 	margin-top: 8px;
 }
-
 
 @media screen and (max-width: 1200px) {
 	.content-problem {
