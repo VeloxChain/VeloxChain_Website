@@ -7,8 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>BikeCoin | Empower the future of urban mobility </title>
 
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/vendors.css">
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css" >
+    <!-- Latest Bootstrap min CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" >
+    <!-- ionicons CSS -->
+    <link rel="stylesheet" href="assets/css/ionicons.min.css">
+    <!--- owl carousel CSS-->
+    <link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.default.min.css">
+    <!--- toastr CSS-->
+    <link rel="stylesheet" href="assets/css/toastr.css">
+    <!--- fancybox CSS-->
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- Color CSS -->
+    <link id="layoutstyle" rel="stylesheet" href="assets/color/theme.css">
 
     <meta name="description" content="BikeCoin Network is a decentralised platform and protocol for bike sharing and urban mobility">
 
@@ -69,7 +91,7 @@
             var f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s),
                 dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
+            j.async = false;
             j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
@@ -79,7 +101,7 @@
 
 </head>
 
-<body>
+<body id="faq-page" class="bg_light" data-spy="scroll" data-offset="110"></body>
 
     <header>
         <div class="navbar-fixed-top">
@@ -98,61 +120,42 @@
     <div class="presale">
         <div class="container">
             <div class="content-presale">
-                <div class="presale-left">
-                    <h2 class="title-left">The trustless infrastructure for smart bikes</h2>
-                    <img src="images/illus-02.png" alt="Bikecoin" class="illus">
-                </div>
                 <div class="presale-right">
                     <div class="text-center">
-                        <h2 class="title">Pre-sale</h2>
-                        <p class="description">The exact date and details of the BikeCoin crowdsale have not yet been announced.</p>
-                        <p class="text">Please fill out this form if you are interested in participating in the BikeCoin pre-sale and want
-                            to be updated as more details are announced.</p>
+                        <h2 class="title">Private Token Sale</h2>
+                        <p class="description">Please fill out this form if you are interested in participating in the BikeCoin private sale.</p>
                     </div>
 
                     <form id="presale-form">
                         <div class="form-horizontal" id="presale">
-                            <div class="form-group">
-                                <label class="control-label col-sm-4" for="full_name">Full Name*</label>
+                            <div class="form-group row">
+                                <label class="control-label col-sm-4" for="first_name">First Name*</label>
                                 <div class="col-sm-8">
-                                    <input name="full_name" id="full_name" class="form-control" placeholder="Full Name">
+                                    <input name="first_name" id="first_name" class="form-control" placeholder="First Name">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group row">
+                                <label class="control-label col-sm-4" for="last_name">Last Name*</label>
+                                <div class="col-sm-8">
+                                    <input name="last_name" id="last_name" class="form-control" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="email" class="control-label col-sm-4">Email*</label>
                                 <div class="col-sm-8">
                                     <input name="email" id="email" type="email" class="form-control" placeholder="Email">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <p>
-                                    <strong>Are you an accredited investor?*</strong>&nbsp;(
-                                    <a id="huh" data-toggle="tooltip" data-placement="top" title="An accredited investor must have a net worth of at least $1,000,000, excluding the value of one's primary residence, or have income at least $200,000 each year for the last two years (or $300,000 combined income if married.)">Huh?</a>)</p>
-                                <label class="radio-inline">
-                                    <input type="radio" name="is_investor" value="1" checked>Yes
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="is_investor" value="0">No
-                                </label>
+                            <div class="form-group row">
+                                <label for="phone_number" class="control-label col-sm-4">Phone Number*</label>
+                                <div class="col-sm-8">
+                                    <input name="phone_number" id="phone_number" type="text" class="form-control" placeholder="Phone number">
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <p>
-                                    <strong>What type of entity do you represent?*</strong>
-                                </p>
-                                <label class="radio-inline">
-                                    <input type="radio" name="represent_type" value="1" checked>Individual
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="represent_type" value="2">Syndicate
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="represent_type" value="3">Professional Fund
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label for="desired_allocation" class="control-label col-sm-5">Desired allocation*</label>
-                                <div class="col-sm-7">
-                                    <div class="input-group">
+                            <div class="form-group row">
+                                <label for="desired_allocation" class="control-label col-sm-4">How much would you like to contribute?*</label>
+                                <div class="col-sm-8">
+                                    <!-- <div class="input-group">
                                         <input name="desired_allocation" type="text" class="form-control" id="desired_allocation" placeholder="25000">
                                         <div class="input-group-btn">
                                             <button type="button" id="desired_allocation_currency" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">USD</button>
@@ -162,10 +165,65 @@
                                                 <a class="dropdown-item">BTC</a>
                                             </div>
                                         </div>
+                                    </div> -->
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="25000" name="desired_allocation" id="desired_allocation">
+                                        <div class="input-group-append">
+                                            <button id="desired_allocation_currency" class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD</button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item">USD</a>
+                                                <a class="dropdown-item">ETH</a>
+                                                <a class="dropdown-item">BTC</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
+                                <p class="title-presale">Are you an accredited investor?*&nbsp;(
+                                    <a id="huh" data-toggle="tooltip" data-placement="top" title="An accredited investor must have a net worth of at least $1,000,000, excluding the value of one's primary residence, or have income at least $200,000 each year for the last two years (or $300,000 combined income if married.)">Huh?</a>)
+                                </p>
+                                <!-- <label class="radio-inline">
+                                    <input type="radio" name="is_investor" value="1" checked>Yes
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="is_investor" value="0">No
+                                </label> -->
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="is_investor" id="inlineRadio1" value="1" checked>
+                                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="is_investor" id="inlineRadio2" value="0">
+                                    <label class="form-check-label" for="inlineRadio2">No</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <p class="title-presale">What type of entity do you represent?*</p>
+                                <!-- <label class="radio-inline">
+                                    <input type="radio" name="represent_type" value="1" checked>Individual
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="represent_type" value="2">Syndicate
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="represent_type" value="3">Professional Fund
+                                </label> -->
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="represent_type" id="inlineRadio3" value="1" checked>
+                                    <label class="form-check-label" for="inlineRadio3">Individual</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="represent_type" id="inlineRadio4" value="2">
+                                    <label class="form-check-label" for="inlineRadio4">Syndicate</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="represent_type" id="inlineRadio5" value="3">
+                                    <label class="form-check-label" for="inlineRadio5">Professional Fund</label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="citizenship" class="control-label col-sm-5">Citizenship*</label>
                                 <div class="col-sm-7">
                                     <select name="citizenship" class="custom-select form-control" id="citizenship">
@@ -421,14 +479,19 @@
                                     </select>
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <label for="sending_addr" class="control-label col-sm-5">ETH or BTC address you plan to send from? (optional)</label>
+                            <div class="form-group row">
+                                <label for="postal_code" class="control-label col-sm-5">Postal Code*</label>
+                                <div class="col-sm-7">
+                                    <input name="postal_code" id="postal_code" class="form-control" placeholder="Postal code">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="sending_addr" class="control-label col-sm-5">Which address you plan to send from? (optional)</label>
                                 <div class="col-sm-7">
                                     <input name="sending_addr" id="sending_addr" class="form-control" placeholder="0x...">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group row">
                                 <label for="note" class="control-label col-sm-5">Anything else we should know? (optional)</label>
                                 <div class="col-sm-7">
                                     <input name="note" id="note" class="form-control" placeholder="">
@@ -441,8 +504,8 @@
                                 </label>
                                 <div class="form-check form-check-inline">
                                     <label for="confirm" class="form-check-label">
-                                        <input name="confirm" class="form-check-input" type="checkbox" id="confirm" value="1"> I understand the presale will be subject to Singapore regulations and securities
-                                        laws and that submitting this form is NOT a guarantee of allocation.
+                                        <input name="confirm" class="form-check-input" type="checkbox" id="confirm" value="1">
+                                        I understand the private sale will be subject to Singapore regulations and securities laws and that submitting this form is NOT a guarantee of allocation.
                                     </label>
                                 </div>
                             </div>
@@ -477,31 +540,34 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <div class="footer-left">
-                        <img src="images/logo.png" alt="Bikecoin">
+                        Copyright &copy; 2018 All Rights Reserved.
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-8">
                     <div class="footer-right">
                         <ul>
                             <li>
-                                <a href="">About</a>
+                                <a href="/#home">Home</a>
                             </li>
                             <li>
-                                <a href="">FAQ</a>
+                                <a href="/#why_choose">About</a>
                             </li>
                             <li>
-                                <a href="">Press</a>
+                                <a href="/#whitepaper">Document</a>
                             </li>
                             <li>
-                                <a href="">Careers</a>
+                                <a href="/#mobileapp">MVP</a>
                             </li>
                             <li>
-                                <a href="">Legal</a>
+                                <a href="/#roadmap">Roadmap</a>
                             </li>
                             <li>
-                                <a href="">Newsletter</a>
+                                <a href="/#token-sale">Token sale</a>
+                            </li>
+                            <li>
+                                <a href="/#team">Team</a>
                             </li>
                         </ul>
                     </div>
@@ -510,18 +576,51 @@
         </div>
     </footer>
 
-    <script src="scripts/vendor.js"></script>
-    <script src="scripts/main.js"></script>
-
+    
+    <!-- Latest jQuery --> 
+    <script src="assets/js/jquery-1.12.4.min.js"></script> 
+    <!-- Latest popper --> 
+    <script src="assets/js/popper.min.js"></script>
+    <!-- Latest compiled and minified Bootstrap -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script> 
+    <!-- owl-carousel min js  --> 
+    <script src="assets/owlcarousel/js/owl.carousel.min.js"></script> 
+    <!-- magnific-popup min js  --> 
+    <script src="assets/js/magnific-popup.min.js"></script> 
+    <!-- waypoints min js  --> 
+    <script src="assets/js/waypoints.min.js"></script> 
+    <!-- countdown js  --> 
+    <script src="assets/js/jquery.countdown.min.js"></script> 
+    <!-- particles min js  --> 
+    <script src="assets/js/particles.min.js"></script> 
+    <!-- fancybox min js  --> 
+    <script src="assets/js/jquery.fancybox.min.js"></script> 
+    <!-- scripts js --> 
+    <script src="assets/js/jquery.dd.min.js"></script> 
+    <!-- jquery.counterup.min js --> 
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!-- toastr js --> 
+    <script src="assets/js/toastr.min.js"></script>  
+    <!-- scripts js --> 
+    <script src="assets/js/scripts.js"></script>
+    
     <script>
         $(document).ready(function () {
+            $(".dropdown-item").click(function() {
+                $(".dropdown-toggle").val($(this).html()),
+                $(".dropdown-toggle").html($(this).html())
+            });
+
             $("#presale-form").on("submit", function (event) {
                 event.preventDefault();
 
                 if (
-                    $("#full_name").val() == "" ||
+                    $("#first_name").val() == "" ||
+                    $("#last_name").val() == "" ||
                     $("#email").val() == "" ||
-                    $("#desired_allocation").val() == ""
+                    $("#phone_number").val() == "" ||
+                    $("#desired_allocation").val() == "" ||
+                    $("#postal_code").val() == ""
                 ) {
                     toastr.warning("Bad request");
                     return
@@ -531,7 +630,7 @@
                     toastr.warning("Please agree to the 'I understand ....'");
                     return
                 }
-
+                
                 serializedData = $(this).serialize() + '&currency=' + $("#desired_allocation_currency").html(), 
                 
                 request = $.ajax({
@@ -543,10 +642,13 @@
                 // Callback handler that will be called on success
                 request.done(function (response, textStatus, jqXHR) {
                     if (response.status === "success") {
-                        $("#full_name").val("");
+                        $("#first_name").val("");
+                        $("#last_name").val("");
                         $("#email").val("");
+                        $("#phone_number").val("");
                         $("#desired_allocation").val("");
                         $("#sending_addr").val("");
+                        $("#postal_code").val("");
                         $("#note").val("");
                         $("#thankyou").modal("show");
                     } else {

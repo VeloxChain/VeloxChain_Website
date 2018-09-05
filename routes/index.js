@@ -25,6 +25,10 @@ router.get('/presale', function(req, res, next) {
   res.sendfile('./views/presale.html');
 });
 
+router.get('/faq', function(req, res, next) {
+  res.sendfile('./views/faq.html');
+});
+
 const successResponse = (res, data) => {
   return res.json({
     status: 'success',
@@ -82,12 +86,15 @@ router.post('/add_whitelist', function(req, res, next) {
 });
 
 router.post('/action_presale', function(req, res, next) {
-  let { full_name, email, is_investor, represent_type, desired_allocation, citizenship, sending_addr, note, currency } = req.body;
+  let { first_name, last_name, email, phone_number, is_investor, represent_type, desired_allocation, citizenship, postal_code , sending_addr, note, currency } = req.body;
 
   if(
-    _.isNull(full_name) ||
+    _.isNull(first_name) ||
+    _.isNull(last_name) ||
     _.isNull(email) ||
-    _.isNull(desired_allocation)
+    _.isNull(phone_number) ||
+    _.isNull(desired_allocation) ||
+    _.isNull(postal_code)
   ) {
     return failResponse(res, 'Bad request');
   }
@@ -101,12 +108,15 @@ router.post('/action_presale', function(req, res, next) {
       email: email,
     },
     defaults: {
-      full_name: full_name,
+      first_name: first_name,
+      last_name: last_name,
+      phone_number: phone_number,
       is_investor: is_investor,
       represent_type: represent_type,
       desired_allocation: desired_allocation,
       currency: currency,
       citizenship: citizenship,
+      postal_code: postal_code,
       sending_addr: sending_addr,
       note: note,
       created_at: new Date(),
@@ -124,7 +134,8 @@ router.post('/action_presale', function(req, res, next) {
         subject: 'Resale is successfully',
         templateId: "811addca-9f9d-4980-a81e-29ecfa3a4cc8",
         substitutions: {
-          name: `${_.isEmpty(full_name)? "": full_name}`
+          first_name: `${_.isEmpty(first_name)? "": first_name}`,
+          last_name: `${_.isEmpty(last_name)? "": last_name}`,
         }
       };
 
@@ -148,13 +159,16 @@ router.post('/action_presale', function(req, res, next) {
         subject: 'You got a new lead from Pre-Sale',
         templateId: "935df2d5-0bec-4c5f-b3e2-7b71dffcfcb2",
         substitutions: {
-          full_name: `${_.isEmpty(full_name)? "": full_name}`,
+          first_name: `${_.isEmpty(first_name)? "": first_name}`,
+          last_name: `${_.isEmpty(last_name)? "": last_name}`,
           email: `${_.isEmpty(email)? "": email}`,
+          phone_number: `${_.isEmpty(phone_number)? "": phone_number}`,
           is_investor: `${(is_investor == 1)? "Yes": "No"}`,
           represent_type: `${_.isEmpty(represent_type)? "": represent_type}`,
           desired_allocation: `${_.isEmpty(desired_allocation)? "": desired_allocation}`,
           currency: `${_.isEmpty(currency)? "": currency}`,
           citizenship: `${_.isEmpty(citizenship)? "": citizenship}`,
+          postal_code: `${_.isEmpty(postal_code)? "": postal_code}`,
           sending_addr: `${_.isEmpty(sending_addr)? "": sending_addr}`,
           note: `${_.isEmpty(note)? "": note}`,
         }
@@ -192,7 +206,12 @@ router.getPresale = function(req, res, next) {
           }
         },
         {
-          full_name: {
+          first_name: {
+            [Op.like]: `%${req.query.search}%`
+          }
+        },
+        {
+          last_name: {
             [Op.like]: `%${req.query.search}%`
           }
         }
@@ -258,7 +277,8 @@ router.updatePreSale = function(req, res, next) {
   }
 
   if(
-    _.isNull(presale.full_name) ||
+    _.isNull(presale.first_name) ||
+    _.isNull(presale.last_name) ||
     _.isNull(presale.email) ||
     _.isNull(presale.desired_allocation)
   ) {
@@ -266,7 +286,8 @@ router.updatePreSale = function(req, res, next) {
   }
 
   models.presale.update({
-    full_name: presale.full_name,
+    first_name: presale.first_name,
+    last_name: presale.last_name,
     email: presale.email,
     citizenship: presale.citizenship,
     desired_allocation: presale.desired_allocation,

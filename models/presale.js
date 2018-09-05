@@ -10,8 +10,20 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(50),
       allowNull: true
     },
+    first_name: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    last_name: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
     email: {
       type: DataTypes.STRING(30),
+      allowNull: true
+    },
+    phone_number: {
+      type: DataTypes.STRING(15),
       allowNull: true
     },
     is_investor: {
@@ -33,6 +45,10 @@ module.exports = function(sequelize, DataTypes) {
     citizenship: {
       type: DataTypes.STRING(10),
       allowNull: false
+    },
+    postal_code: {
+      type: DataTypes.STRING(45),
+      allowNull: true
     },
     sending_addr: {
       type: DataTypes.STRING(50),
