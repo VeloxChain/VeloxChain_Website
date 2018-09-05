@@ -67,14 +67,14 @@ h3,
 h4,
 h5,
 h6 {
-	color: #00f58a;
+	color: #24539C;
 }
 p {
 	color:#7a7a7a;
 	margin-bottom:30px;
 }
 a {
-	color: #00F58A;
+	color: #24539C;
 	text-decoration: none;
 	-webkit-transition: all 0.5s ease;
 	transition: all .5s ease;
@@ -2456,7 +2456,7 @@ header a:hover,
 }
 .roadmap_box.current h6,
 .roadmap_box.current li {
-	color: #2a2a2a;
+	color: #fff;
 }
 .roadmap .owl-prev,
 .roadmap .owl-next {
@@ -3041,7 +3041,7 @@ header a:hover,
 	display: inline-block;
 }
 .social_single_team li a {
-	border: 1px solid #00F58A;
+	border: 1px solid #24539C;
 	border-radius: 40px;
 	display: block;
 	height: 40px;
@@ -4809,7 +4809,7 @@ header a:hover,
 	color: #fff;
 }
 .link-whitepaper .ion-ios-arrow-thin-right {
-	font-size: 25px;
+	font-size: 30px;
 	margin-left: 10px;
 }
 #token-sale {
@@ -4832,7 +4832,7 @@ header a:hover,
 }
 #token-sale .content-token .content-token-right {
 	width: 50%;
-	background: #f4f4f4;
+	background: #f6fafd;
 	padding: 20px;
 	box-shadow: 1px 1px 5px 1px #eae5e5;
 }
@@ -4854,6 +4854,10 @@ header a:hover,
 }
 #token-sale .token-distribution {
 	margin-top: 50px;
+}
+.image-token {
+	width: 80%;
+	margin-top: 20px;
 }
 .more-question {
 	margin-top: 20px;
@@ -5076,7 +5080,7 @@ header a:hover,
 	width: 38px;
 	margin: 0 auto;
 	border-radius: 50%;
-	border: 1px solid #00F58A;
+	border: 1px solid #24539C;
 }
 .wrapper-team {
 	margin-top: 10px;
@@ -5257,6 +5261,10 @@ header a:hover,
 	}
 	#token-sale .content-token .text-detail {
 		display: block;
+	}
+	.image-token {
+		width: 100%;
+		margin-bottom: 20px;
 	}
 	#mobileapp .btn-video {
 		margin-top: 20px;

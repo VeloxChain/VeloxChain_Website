@@ -67,7 +67,7 @@ header a:hover,
 	background-color: #24539c;
 }
 .roadmap_box.current .roadmap_inner::before {
-	border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #00f58a;
+	border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #24539c;
 }
 .btn-default {
 	/* background-image: -webkit-linear-gradient(left, #ff67cb 0%,#ffcc67 51%,#ff67cb);
