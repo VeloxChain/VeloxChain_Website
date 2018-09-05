@@ -47,7 +47,7 @@ header a:hover,
 .v_navy_blue .nav-item a.active,
 .footer_link_s2 li a:hover,
 .roadmap_wrap .owl-nav i:hover {
-	color: #00f58a;
+	color: #24539c;
 }
 .pr_box h6,
 .chart_list_info li p span,
@@ -64,7 +64,7 @@ header a:hover,
 .roadmap_box.current .roadmap_inner,
 .roadmap .owl-nav i:hover,
 .box_roadmap .roadmap_inner::after  {
-	background-color: #00f58a;
+	background-color: #24539c;
 }
 .roadmap_box.current .roadmap_inner::before {
 	border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #00f58a;
@@ -109,7 +109,7 @@ button,
 .tk_counter_inner .progress-bar.gradient {
 	/* background-image: -webkit-linear-gradient(left, #ff67cb 0%,#ffcc67 99%);
 	background-image: linear-gradient(to right, #ff67cb 0%,#ffcc67 99%); */
-	background: #00f58A;
+	/* background: #00f58A; */
 }
 /* .gradient_box {
 	background-image: -webkit-linear-gradient(left, #ff67cb 0%,#ffcc67 99%) !important;
