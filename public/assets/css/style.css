@@ -1266,7 +1266,7 @@ header a:hover,
 }
 .banner_text p {
 	color:#2a2a2a;
-	font-size: 16px;
+	font-size: 18px;
 	margin-bottom: 10px;
 }
 .banner_image_right {
@@ -5160,7 +5160,7 @@ header a:hover,
 		min-height: 78px;
 	}
 	.wrapper-right {
-		height: 360px;
+		height: 450px;
 	}
 	.wrapper-left img {
 		width: 300px;
