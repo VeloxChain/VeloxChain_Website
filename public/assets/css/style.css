@@ -835,10 +835,7 @@ button:focus {
 }
 .btn-info {
 	/* background: #00F58A none repeat scroll 0 0; */
-	background-color: transparent;
-	background-image: url('../../images/new/Rectangle13.png');
-	background-position: center;
-	background-size: cover;
+	background-image: linear-gradient(to right, #ffcc67 0%, #ff67cb 99%);
 	height: auto;
 	line-height: normal;
 	padding: 12px 30px;
@@ -850,9 +847,7 @@ button:focus {
 .btn-info:active:not(:disabled):not(.disabled),
 .btn-info.active:focus:not(:disabled):not(.disabled), 
 .btn-info:active:focus:not(:disabled):not(.disabled) {
-	background-image: url('../../images/new/Rectangle13.png');
-	background-position: center;
-	background-size: cover;
+	background-image: linear-gradient(to right, #ffcc67 0%, #ff67cb 99%);
 	box-shadow: none;
 }
 .box_shadow,
@@ -4810,7 +4805,8 @@ header a:hover,
 	transition: all 0.3s;
 }
 .link-whitepaper:hover {
-	color: #fff;
+	color: #24539C;
+	border: 2px solid #24539C;
 }
 .link-whitepaper .ion-ios-arrow-thin-right {
 	font-size: 30px;
@@ -4969,18 +4965,16 @@ header a:hover,
 	display: block;
 }
 .btn-order {
-	background-image: url(../../images/new/Rectangle13.png);
     color: #514d4d;
-    background-position: center;
-    background-size: cover;
+	background-image: linear-gradient(to right, #ffcc67 0%, #ff67cb 99%);
 	border-radius: 10px;
 	padding: 0px 40px;
 }
 .btn-order:hover {
-	color: #514d4d;
+	color: #fff;
 }
 .btn-order:focus {
-	background-image: url(../../images/new/Rectangle13.png);
+	background-image: linear-gradient(to right, #ffcc67 0%, #ff67cb 99%);
 	color: #514d4d;
 }
 #partner .btn span::after {
