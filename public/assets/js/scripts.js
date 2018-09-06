@@ -243,13 +243,13 @@ Version      : 1.4
 	     navText: ['<i class="ion-ios-arrow-back"></i>', '<i class="ion-ios-arrow-forward"></i>'],
 	     responsive: {
 	         0: {
-	             items: 1,
+				 items: 1,
 	         },
 	         380: {
 	             items: 2,
 	         },
 	         600: {
-	             items: 3,
+	             items: 2,
 				 margin: 15
 	         },
 	         1000: {
@@ -261,6 +261,26 @@ Version      : 1.4
 	     }
 	 });
 	 
+	var windowsize = $(window).width();
+
+	$(window).resize(function() {
+		windowsize = $(window).width();
+	});
+
+	if (windowsize < 767) {
+		var roadmap = $(".owl-item");
+
+		for (var i = 0; i < roadmap.length; i++) {
+			$(roadmap[i]).removeClass('active');
+		}
+
+		$('.owl-stage-outer').css('height', '370px');
+		$('.owl-stage').css('transform', 'translate3d(-650px, 0px, 0px)');
+		$('.owl-stage').css('width', '2275px');
+
+		$(roadmap[3]).addClass('active');
+	}
+
 	 $('.roadmap_wrap').owlCarousel({
 	     loop: false,
 	     margin: 30,
