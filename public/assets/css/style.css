@@ -226,7 +226,7 @@ button:focus {
 	background-color: #0c0e27;
 }
 .title_border h4::before {
-	background-color: #00f58a;
+	background-color: #24539C;
 	bottom: 0;
 	content: "";
 	height: 2px;
@@ -321,8 +321,7 @@ button:focus {
     z-index: 5;
 }
 .gradient_box {
-	background: #00F58A !important;
-	background: #00F58A !important;
+	background: #FFCF6B !important;
 }
 .gradient_box2 {
 	background: -moz-linear-gradient(180deg, rgba(25,61,192,1) 0%, rgba(10,29,149,1) 50%, rgba(25,61,192,1) 100%); /* ff3.6+ */
@@ -378,9 +377,9 @@ button:focus {
 	-webkit-border-radius: 50% 50% 50% 50%;
 	border-radius: 50% 50% 50% 50%;
 	position: absolute;
-	border-top: 5px solid #00F58A;
+	border-top: 5px solid #f8dda9;
 	border-bottom: 5px solid transparent;
-	border-left:  5px solid #00F58A;
+	border-left:  5px solid #f2665d;
 	border-right: 5px solid transparent;
 	-webkit-animation: animate 2s infinite;
 	animation: animate 2s infinite;	
@@ -659,7 +658,7 @@ button:focus {
     -o-animation: rounded 2.5s infinite ;
     -ms-transition:rounded 2.5s infinite ;
 	animation: rounded 2.5s infinite ;
-	border: 1px solid #00F58A;
+	border: 1px solid #FFCF6B;
 	border-radius: 100%;
 	bottom: -5px;
 	content: "";
@@ -3756,6 +3755,7 @@ header a:hover,
 	position: absolute;
 	right: 5px;
 	top: 5px;
+	color: #181818;
 }
 .newslattter_small {
 	margin: 0 auto;
@@ -4969,16 +4969,19 @@ header a:hover,
 	display: block;
 }
 .btn-order {
-	background: #00F58A;
-	color: #fff;
+	background-image: url(../../images/new/Rectangle13.png);
+    color: #514d4d;
+    background-position: center;
+    background-size: cover;
 	border-radius: 10px;
 	padding: 0px 40px;
 }
 .btn-order:hover {
-	color: #fff;
+	color: #514d4d;
 }
 .btn-order:focus {
-	background: #00F58A;
+	background-image: url(../../images/new/Rectangle13.png);
+	color: #514d4d;
 }
 #partner .btn span::after {
 	z-index: 1;
@@ -4991,7 +4994,7 @@ header a:hover,
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-image: url("../../images/rectangle-18.png");
+	background-image: url("../../images/new/rectangle-18.png");
 	background-position: center;
     background-size: cover;
 }
