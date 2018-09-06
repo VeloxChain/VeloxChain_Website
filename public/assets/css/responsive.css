@@ -571,6 +571,9 @@ header.nav-fixed {
 .video_text span {
 	padding-top: 15px;
 }
+.team_info h4.text-height {
+	min-height: auto;
+}
 }
 /* -------------------------------------------------
   max-width: 767px
@@ -1024,7 +1027,8 @@ section.small_pb {
 	padding: 100px 0 30px;
 }
 .section_banner.banner_shape {
-	padding-bottom: 50px;
+	padding-top: 150px;
+	padding-bottom: 150px;
 }
 .banner_cl_logo,
 .client_logo_border {

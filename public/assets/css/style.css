@@ -1253,6 +1253,7 @@ header a:hover,
 .banner_text h1 {
 	color: #24539c;
 	/* font-weight: bold; */
+	font-size: 3.7rem;
 	margin-bottom:25px;
 }
 .banner_text_s2 h1 {
@@ -1266,7 +1267,7 @@ header a:hover,
 }
 .banner_text p {
 	color:#2a2a2a;
-	font-size: 18px;
+	font-size: 20px;
 	margin-bottom: 10px;
 }
 .banner_image_right {
@@ -2914,9 +2915,12 @@ header a:hover,
 	font-size: 20px;
 	font-weight: 500;
 }
+.team_info h4.text-height {
+	min-height: 48px;
+}
 .team_info p {
 	line-height: normal;
-	min-height: 50px;
+	min-height: 30px;
 	margin: 0;
 }
 .team_img {
@@ -4881,7 +4885,7 @@ header a:hover,
 	font-weight: bold;
 }
 .btn-banner:focus {
-	background: transparent;
+	background-image: linear-gradient(to right, #87e2e4, #29589f);
 }
 .btn-banner i.fa {
 	font-size: 22px;
@@ -5043,6 +5047,7 @@ header a:hover,
 }
 #about p {
 	color: #000;
+	margin-bottom: 10px;
 }
 #about .title_border h4 {
 	color: #24539c;
@@ -5064,6 +5069,9 @@ header a:hover,
 }
 #tech_stack .title_border h4::before {
 	background: #24539C;
+}
+#tech_stack .image-stack {
+	width: 80%;
 }
 #team .title_border h4 {
 	color: #24539c;
@@ -5094,55 +5102,6 @@ header a:hover,
 	text-align: center;
 	width: 100%;
 	color: #333333;
-}
-
-#thankyou.modal.show .modal-dialog {
-	margin: 100px auto;
-	font-size: 16px;
-}  
-#thankyou .modal-header {
-	background: #17202a;
-	height: 150px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 6px 6px 0px 0px;
-} 
-#thankyou .modal-header img {
-	width: 200px;
-} 
-#thankyou .modal-body {
-	text-align: center;
-	padding: 35px 15px 20px;
-	color: #000;
-} 
-#thankyou .modal-body h3 {
-	color: #00F58A;
-	margin-bottom: 20px;
-	font-size: 26px;
-	margin-top: 0px;
-}
-.action-home {
-	margin: 50px 0px 20px;
-}
-.action-submit {
-	margin: 20px 0px 10px;
-}
-.btn-gohome {
-	color: #fff;
-	background-color: #00F58A;
-	border-color: #00F58A;
-	font-weight: 700;
-	font-size: 16px;
-	letter-spacing: 2px;
-	padding: 10px 20px;
-	margin: 10px 5px;
-	border-radius: 4px;
-}
-.btn-gohome:hover {
-	color: #fff;
-	background-color: #00F58A;
-	text-decoration: none;
 }
 .newsletter_form .form-check {
 	margin-top: 10px;
@@ -5291,6 +5250,17 @@ header a:hover,
 	}
 	#whitepaper {
 		background-position: center;
+	}
+
+	.wrapper-left {
+		padding: 20px 0;
+	}
+	.wrapper-left img {
+		width: auto;
+		height: 150px;
+	}
+	#tech_stack .image-stack {
+		width: 100%;
 	}
 }
 
@@ -5605,7 +5575,7 @@ input#email-subscribe:-moz-placeholder {
 	font-size: 16px;
 }
 #thankyou .modal-header {
-	background: #17202a;
+	background: #2a2a2a;
 	height: 150px;
 	display: flex;
 	justify-content: center;
@@ -5613,7 +5583,7 @@ input#email-subscribe:-moz-placeholder {
 	border-radius: 6px 6px 0px 0px;
 }
 #thankyou .modal-header img {
-	width: 200px;
+	width: 230px;
 }
 #thankyou .modal-body {
 	text-align: center;
@@ -5621,13 +5591,16 @@ input#email-subscribe:-moz-placeholder {
 	color: #000;
 }
 #thankyou .modal-body h3 {
-	color: #00F58A;
+	color: #24539C;
 	margin-bottom: 20px;
 	font-size: 26px;
 	margin-top: 0px;
 }
+#thankyou .modal-body p {
+	margin-bottom: 10px;
+}
 .action-home {
-	margin: 50px 0px 20px;
+	margin: 0px 20px 20px;
 }
 .action-submit {
 	margin: 20px 0px 10px;
@@ -5699,5 +5672,8 @@ input#email-subscribe:-moz-placeholder {
   	}
   	.block {
 		display: block;
-  	}  
+	}
+	.banner_text h1 {
+		font-size: 2.5rem;
+	}  
 }
