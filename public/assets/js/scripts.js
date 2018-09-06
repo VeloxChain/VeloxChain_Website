@@ -281,6 +281,8 @@ Version      : 1.4
 		$(roadmap[3]).addClass('active');
 	}
 
+	$('.owl-stage-outer').css('height', '390px');
+
 	 $('.roadmap_wrap').owlCarousel({
 	     loop: false,
 	     margin: 30,
