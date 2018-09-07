@@ -1008,10 +1008,13 @@ header.nav-fixed {
 	padding: 0;
 }
 .navbar-brand img {
-	max-width: 200px;
+	max-width: 230px;
 }
 .nav-fixed .navbar-brand img {
 	max-width: 180px;
+}
+.navbar-nav {
+	margin-right: 100px;
 }
 header.no-sticky {
 	left: 0;
@@ -1034,7 +1037,7 @@ header a:hover,
 }
 .navbar-expand-lg .navbar-nav .nav-link {
 	padding: 15px 0;
-	font-weight:500;
+	font-weight: bold;
 	position:relative;
 	text-transform:uppercase;
 	letter-spacing: 1px;
@@ -1291,6 +1294,7 @@ header a:hover,
 	border-radius: 100%;
 	display: block;
 	height: 30px;
+	color: #24539C;
 	font-size: 20px;
 	line-height: 30px;
 	text-align: center;
@@ -5109,6 +5113,9 @@ header a:hover,
 }
 
 @media screen and (max-width: 1200px) {
+	.navbar-nav {
+		margin-right: 0;
+	}
 	.content-problem {
 		min-height: 270px;
 	}
@@ -5182,6 +5189,7 @@ header a:hover,
 	}
 	.navbar-toggler {
 		color: #fff;
+		background: #24539C;
 	}
 	.navbar-toggler:focus {
 		color: #fff;
@@ -5281,33 +5289,7 @@ a:focus {
 .btn:focus {
 	outline: none !important;
 }
-.particles-container {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	z-index: 2;
-}
-.navbar-default {
-	background-color: transparent !important;
-	border: none !important;
-	margin-top: 20px;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-.navbar-default .navbar-nav {
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-.navbar-default .navbar-nav li a {
-	color: #fff !important;
-	letter-spacing: 1px;
-}
 @media screen and (max-width: 768px) {
-	.navbar-default .navbar-nav li a {
-		letter-spacing: 0px;
-	}
 	.nav>li>a {
 		padding: 15px 8px !important;
 	}
@@ -5316,28 +5298,6 @@ a:focus {
 	.nav>li>a {
 		padding: 10px 15px !important;
 	}
-	.navbar-default .navbar-collapse {
-		margin-top: 10px;
-	}
-}
-.navbar-default .navbar-toggle {
-	border-color: #00F58A !important;
-	border-radius: 0px;
-	margin-top: 18px;
-}
-.navbar-default .navbar-toggle:hover {
-	background-color: transparent !important;
-}
-.navbar-default .navbar-toggle .icon-bar {
-	background-color: #00F58A !important;
-}
-.navbar-default .navbar-brand {
-	padding: 5px 15px;
-	-webkit-transition: all 0.3s;
-	transition: all 0.3s;
-}
-.navbar-default .navbar-brand img {
-	height: 40px;
 }
 .navbar {
 	min-height: 70px !important;
@@ -5532,13 +5492,6 @@ footer .footer-right {
 	footer .footer-right {
 		text-align: center;
 	}
-}
-footer .footer-right ul.navbar-default {
-	list-style: none;
-	display: inline-block;
-	margin-bottom: 0px;
-	margin-top: 0px;
-	-webkit-padding-start: 0px;
 }
 footer .footer-right ul li {
 	display: inline-block;
