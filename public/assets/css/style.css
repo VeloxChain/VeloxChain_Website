@@ -323,6 +323,9 @@ button:focus {
 .gradient_box {
 	background: #FFCF6B !important;
 }
+.team_box .gradient_box {
+	background: #d9d9d9 !important;
+}
 .gradient_box2 {
 	background: -moz-linear-gradient(180deg, rgba(25,61,192,1) 0%, rgba(10,29,149,1) 50%, rgba(25,61,192,1) 100%); /* ff3.6+ */
 	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(25,61,192,1)), color-stop(50%, rgba(10,29,149,1)), color-stop(100%, rgba(25,61,192,1))); /* safari4+,chrome */
