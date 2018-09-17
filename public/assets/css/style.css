@@ -2431,6 +2431,9 @@ header a:hover,
 	position:relative;
 	text-align: left;
 }
+.roadmap_inner ul {
+	-webkit-padding-start: 20px;
+}
 .roadmap_box.current .roadmap_inner {
 	background-color: #ff67cb;
 }
