@@ -2923,8 +2923,8 @@ header a:hover,
 	min-height: 48px;
 }
 .team_info p {
-	line-height: normal;
-	min-height: 30px;
+	min-height: 40px;
+	line-height: 22px;
 	margin: 0;
 }
 .team_img {
