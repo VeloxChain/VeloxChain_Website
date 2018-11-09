@@ -1723,7 +1723,7 @@ header a:hover,
 	content: "";
 	left: 25px;
 	position: absolute;
-	right: -50px;
+	right: 0;
 	top: 0;
 	z-index: -1;
 }
@@ -4798,7 +4798,7 @@ header a:hover,
 
 .link-whitepaper {
 	padding: 10px;
-	font-size: 18px;
+	font-size: 16px;
 	color: #fff;
 	text-transform: uppercase;
 	letter-spacing: 1px;
