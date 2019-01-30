@@ -5739,8 +5739,29 @@ input#email-subscribe:-moz-placeholder {
 	background: #f72222;
 	outline: none;
 }
-  
+
+#communities {
+	padding-bottom: 30px;
+}
+
+.communities {
+	display: flex;
+}
+ 
+.communities .item {
+	margin: 10px;
+}
+
 @media screen and (max-width: 767px) {
+	.communities {
+		display: block;
+	}
+
+	.communities .item {
+		margin: 30px 40px;
+		text-align: center;
+	}
+
 	.modal-newsletter {
 		width: 100%;
 		all: inherit;
