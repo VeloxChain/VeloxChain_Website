@@ -5749,7 +5749,7 @@ input#email-subscribe:-moz-placeholder {
 }
  
 .communities .item {
-	margin: 10px;
+	margin: 10px 5px;
 }
 
 @media screen and (max-width: 767px) {
