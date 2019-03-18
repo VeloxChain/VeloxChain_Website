@@ -31,3 +31,13 @@ cd docker && docker-compose up -d
 
 ### Start project as development environment
 cd .. && npm start
+
+
+
+### AWS EC2 Update website
+1. `sudo chmod 400 path/to/VeloxChain_Website.pem` (do only once)
+2. Now ssh to the server
+`ssh ec2-user@34.222.148.157 -i path/to/VeloxChain_Website.pem`
+3. cd VeloxChain_Website
+4. Type `git pull` to fetch latest data
+5. Type `pm2 reload all` to reload the website 
