@@ -6,7 +6,7 @@
     "@material-ui/core": "^1.1.0",
     "admin-on-rest": "^1.4.1",
     "blueimp-md5": "^2.10.0",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.19",
     "moment": "^2.22.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
