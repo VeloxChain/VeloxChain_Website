@@ -21,7 +21,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-watch": "^5.0.0",
     "http-errors": "^1.6.3",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.19",
     "morgan": "^1.9.0",
     "mysql2": "^1.5.3",
     "oauth2-server": "^2.4.0",
