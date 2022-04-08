@@ -7,7 +7,7 @@
     "admin-on-rest": "^1.4.1",
     "blueimp-md5": "^2.10.0",
     "lodash": "^4.17.10",
-    "moment": "^2.22.1",
+    "moment": "^2.29.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
