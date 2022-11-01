@@ -15,7 +15,7 @@
     "debug": "^2.6.9",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-clean-css": "^3.9.4",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
